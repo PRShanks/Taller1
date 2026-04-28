@@ -1,0 +1,3474 @@
+{
+  "url": "https://wabi-paas-1-scus-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "response": {
+    "jobIds": [
+      "e3512014-8b2e-41a2-a627-feaef8003c52"
+    ],
+    "results": [
+      {
+        "jobId": "e3512014-8b2e-41a2-a627-feaef8003c52",
+        "result": {
+          "data": {
+            "timestamp": "2026-04-25T20:07:15.305Z",
+            "rootActivityId": "a5f52fba-1763-45fa-8dc8-52e3c4f01daa",
+            "descriptor": {
+              "Select": [
+                {
+                  "Kind": 2,
+                  "Value": "M0",
+                  "Name": "Medidas.a. Ingresos"
+                },
+                {
+                  "Kind": 1,
+                  "Depth": 0,
+                  "Value": "G0",
+                  "GroupKeys": [
+                    {
+                      "Source": {
+                        "Entity": "Código CIIU",
+                        "Property": "Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)"
+                      },
+                      "Calc": "G0",
+                      "IsSameAsSelect": true
+                    }
+                  ],
+                  "Name": "Código CIIU.Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)"
+                },
+                {
+                  "Kind": 2,
+                  "Value": "M1",
+                  "Format": "#,0",
+                  "Min": [
+                    "A0"
+                  ],
+                  "Max": [
+                    "A1"
+                  ],
+                  "Aggregates": [
+                    {
+                      "Ids": [
+                        "A0"
+                      ],
+                      "Aggregate": {
+                        "Min": {}
+                      }
+                    },
+                    {
+                      "Ids": [
+                        "A1"
+                      ],
+                      "Aggregate": {
+                        "Max": {}
+                      }
+                    }
+                  ],
+                  "Name": "Medidas.a. Ingresos1"
+                }
+              ],
+              "Expressions": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Keys": [
+                        {
+                          "Source": {
+                            "Entity": "Código CIIU",
+                            "Property": "Clasificación Industrial Internacional Uniforme Versión 4 A.C (CIIU)"
+                          },
+                          "Select": 1
+                        }
+                      ],
+                      "Member": "DM0"
+                    }
+                  ]
+                }
+              },
+              "Limits": {
+                "Primary": {
+                  "Id": "L0",
+                  "Top": {
+                    "Count": 1000
+                  }
+                }
+              },
+              "Version": 2
+            },
+            "metrics": {
+              "Version": "1.0.0",
+              "Events": [
+                {
+                  "Id": "a618f18d-c73b-4863-9f41-019d6af910ba",
+                  "Name": "Execute Semantic Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:15.3052275Z",
+                  "End": "2026-04-25T20:07:15.4771287Z"
+                },
+                {
+                  "Id": "49065645-e417-4ac0-9449-47990e205fc2",
+                  "ParentId": "a618f18d-c73b-4863-9f41-019d6af910ba",
+                  "Name": "Execute DAX Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:15.3208694Z",
+                  "End": "2026-04-25T20:07:15.4615053Z",
+                  "Metrics": {
+                    "RowCount": 475
+                  }
+                },
+                {
+                  "Id": "CBF41E4D-E80E-43BC-A83C-86876C10AEBA",
+                  "ParentId": "49065645-e417-4ac0-9449-47990e205fc2",
+                  "Name": "Execute Query",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:15.37Z",
+                  "End": "2026-04-25T20:07:15.437Z"
+                },
+                {
+                  "Id": "5EA74D1F-CE89-46C1-AE99-027C74A00DB8",
+                  "ParentId": "CBF41E4D-E80E-43BC-A83C-86876C10AEBA",
+                  "Name": "Serialize Rowset",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:15.437Z",
+                  "End": "2026-04-25T20:07:15.437Z"
+                }
+              ]
+            },
+            "fromCache": false,
+            "dsr": {
+              "Version": 2,
+              "MinorVersion": 1,
+              "DS": [
+                {
+                  "N": "DS0",
+                  "S": [
+                    {
+                      "N": "A0",
+                      "T": 2
+                    },
+                    {
+                      "N": "A1",
+                      "T": 2
+                    }
+                  ],
+                  "C": [
+                    0.0,
+                    66536358.523
+                  ],
+                  "PH": [
+                    {
+                      "DM0": [
+                        {
+                          "S": [
+                            {
+                              "N": "G0",
+                              "T": 1
+                            },
+                            {
+                              "N": "M0",
+                              "T": 3
+                            },
+                            {
+                              "N": "M1",
+                              "T": 2
+                            }
+                          ],
+                          "C": [
+                            "G4711 - Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas (alcohólicas y no alcohólicas) o tabaco",
+                            "0.051062892893181382",
+                            66536358.523
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4511 - Comercio de vehículos automotores nuevos",
+                            "0.032535084160906183",
+                            42394112.469
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4645 - Comercio al por mayor de productos farmacéuticos, medicinales, cosméticos y de tocador",
+                            "0.031532371145493905",
+                            41087549.74
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4661 - Comercio al por mayor de combustibles sólidos, líquidos, gaseosos y productos conexos",
+                            "0.030072428751930027",
+                            39185204.514
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0610 - Extracción de petróleo crudo",
+                            "0.021398352260442562",
+                            27882643.484
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4631 - Comercio al por mayor de productos alimenticios",
+                            "0.019894191083470878",
+                            25922679.963
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4731 - Comercio al por menor de combustible para automotores",
+                            "0.019836484247264544",
+                            25847486.363
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4111 - Construcción de edificios residenciales",
+                            "0.019499593540830591",
+                            25408508.476
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4620 - Comercio al por mayor de materias primas agropecuarias; animales vivos",
+                            "0.018733927948030783",
+                            24410825.08
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0510 - Extracción de hulla (carbón de piedra)",
+                            "0.018082130606804019",
+                            23561515.158
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4632 - Comercio al por mayor de bebidas y tabaco",
+                            "0.017373847936118774",
+                            22638603.293
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4290 - Construcción de otras obras de ingeniería civil",
+                            "0.016066163648026623",
+                            20934654.58
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4663 - Comercio al por mayor de materiales de construcción, artículos de ferretería, pinturas, productos de vidrio, equipo y materiales de fontanería y calefacción",
+                            "0.016028292520671082",
+                            20885307.456
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6120 - Actividades de telecomunicaciones inalámbricas",
+                            "0.015280384250193428",
+                            19910762.341
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1090 - Elaboración de alimentos preparados para animales",
+                            "0.014811189808478169",
+                            19299389.036
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4664 - Comercio al por mayor de productos químicos básicos, cauchos y plásticos en formas primarias y productos químicos de uso agropecuario",
+                            "0.013857927523997976",
+                            18057261.974
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4659 - Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.",
+                            "0.01273421700738258",
+                            16593036.162
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4741 - Comercio al por menor de computadores, equipos periféricos, programas de informática y equipos de telecomunicaciones en establecimientos especializados",
+                            "0.012467697777614356",
+                            16245754.251
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4690 - Comercio al por mayor no especializado",
+                            "0.012432822363484553",
+                            16200310.624
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2023 - Fabricación de jabones y detergentes, preparados para limpiar y pulir; perfumes y preparados de tocador",
+                            "0.012378050369191406",
+                            16128941.204
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2229 - Fabricación de artículos de plástico n.c.p.",
+                            "0.011752054846842205",
+                            15313251.764
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1104 - Elaboración de bebidas no alcohólicas, producción de aguas minerales y otras aguas embotelladas",
+                            "0.011470050798428069",
+                            14945792.707
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1089 - Elaboración de otros productos alimenticios n.c.p.",
+                            "0.011335871689970261",
+                            14770953.626
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1051 - Elaboración de productos de molinería",
+                            "0.010983386933128506",
+                            14311656.261
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0145 - Cría de aves de corral",
+                            "0.010910057963456005",
+                            14216106.59
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4773 - Comercio al por menor de productos farmacéuticos y medicinales, cosméticos y artículos de tocador en establecimientos especializados",
+                            "0.010874931899223903",
+                            14170336.359
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1410 - Confección de prendas de vestir, excepto prendas de piel",
+                            "0.010580536199964217",
+                            13786730.639
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4651 - Comercio al por mayor de computadores, equipo periférico y programas de informática",
+                            "0.009804676057140721",
+                            12775763.463
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1040 - Elaboración de productos lácteos",
+                            "0.0097675036126092865",
+                            12727326.742
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1011 - Procesamiento y conservación de carne y productos cárnicos",
+                            "0.009750540743914923",
+                            12705223.656
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4669 - Comercio al por mayor de otros productos n.c.p.",
+                            "0.0095064615308516655",
+                            12387181.706
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H4930 - Transporte por tuberías",
+                            "0.0094651183803270214",
+                            12333310.44
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2100 - Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico",
+                            "0.0093133976909489033",
+                            12135614.195
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7820 - Actividades de empresas de servicios temporales",
+                            "0.0092981107215281186",
+                            12115694.852
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8220 - Actividades de centros de llamadas (Call center)",
+                            "0.0090311947772145056",
+                            11767896.011
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6202 - Actividades de consultoría informática y actividades de administración de instalaciones informáticas",
+                            "0.0089407770013766128",
+                            11650079.154
+                          ]
+                        },
+                        {
+                          "C": [
+                            "L6810 - Actividades inmobiliarias realizadas con bienes propios o arrendados",
+                            "0.0084815469495555535",
+                            11051689.724
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7112 - Actividades de ingeniería y otras actividades conexas de consultoría técnica",
+                            "0.0084694526523512257",
+                            11035930.521
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0910 - Actividades de apoyo para la extracción de petróleo y de gas natural",
+                            "0.008404627975329225",
+                            10951462.178
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2029 - Fabricación de otros productos químicos n.c.p.",
+                            "0.0078629028417399934",
+                            10245579.38
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4530 - Comercio de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",
+                            "0.0076602540989177334",
+                            9981522.476
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1103 - Producción de malta, elaboración de cervezas y otras bebidas malteadas",
+                            "0.007256114033120444",
+                            9454916.818
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6201 - Actividades de desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas)",
+                            "0.0072293131402363549",
+                            9419994.515
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1709 - Fabricación de otros artículos de papel y cartón",
+                            "0.006928461713537018",
+                            9027976.804
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1061 - Trilla de café",
+                            "0.00656093609334408",
+                            8549080.779
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4652 - Comercio al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones",
+                            "0.0061109154074992806",
+                            7962691.407
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0125 - Cultivo de flor de corte",
+                            "0.0060776304754190285",
+                            7919320.222
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4719 - Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (víveres en general), bebidas (alcohólicas y no alcohólicas) y tabaco",
+                            "0.0060760245961514322",
+                            7917227.717
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4771 - Comercio al por menor de prendas de vestir y sus accesorios (incluye artículos de piel) en establecimientos especializados",
+                            "0.0059877554448021005",
+                            7802210.577
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4662 - Comercio al por mayor de metales y productos metalíferos",
+                            "0.0058071075261441644",
+                            7566821.354
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4210 - Construcción de carreteras y vías de ferrocarril",
+                            "0.0056467281874459227",
+                            7357842.65
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8299 - Otras actividades de servicio de apoyo a las empresas n.c.p.",
+                            "0.0054754550218986545",
+                            7134668.989
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0722 - Extracción de oro y otros metales preciosos",
+                            "0.0054360199130835188",
+                            7083283.954
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1032 - Elaboración de aceites y grasas de origen vegetal refinados",
+                            "0.0054108289976150786",
+                            7050459.496
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4752 - Comercio al por menor de artículos de ferretería, pinturas y productos de vidrio en establecimientos especializados",
+                            "0.0053709592648501893",
+                            6998508.134
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2013 - Fabricación de plásticos en formas primarias",
+                            "0.0052144397937549814",
+                            6794558.944
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3091 - Fabricación de motocicletas",
+                            "0.0051991748545660256",
+                            6774668.307
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5611 - Expendio a la mesa de comidas preparadas",
+                            "0.0051798985552033881",
+                            6749550.757
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2410 - Industrias básicas de hierro y de acero",
+                            "0.0050166414132918917",
+                            6536822.196
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6190 - Otras actividades de telecomunicaciones",
+                            "0.0048579016546057025",
+                            6329979.91
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6209 - Otras actividades de tecnologías de información y actividades de servicios informáticos",
+                            "0.0046977249570495233",
+                            6121265.253
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1071 - Elaboración y refinación de azúcar",
+                            "0.004441549896546158",
+                            5787462.08
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1031 - Extracción de aceites de origen vegetal crudos",
+                            "0.0044349949762724555",
+                            5778920.838
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1081 - Elaboración de productos de panadería",
+                            "0.00435529533645335",
+                            5675070.008
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2511 - Fabricación de productos metálicos para uso estructural",
+                            "0.004239025838727207",
+                            5523567.644
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7020 - Actividades de consultoría de gestión",
+                            "0.0041937173623571083",
+                            5464529.449
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7310 - Publicidad",
+                            "0.0040030980416741208",
+                            5216147.214
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1082 - Elaboración de cacao, chocolate y productos de confitería",
+                            "0.0039254209261745361",
+                            5114931.789
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2750 - Fabricación de aparatos de uso doméstico",
+                            "0.0038715957038489863",
+                            5044796.039
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2021 - Fabricación de plaguicidas y otros productos químicos de uso agropecuario",
+                            "0.0038630636067220978",
+                            5033678.481
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5511 - Alojamiento en hoteles",
+                            "0.0038617925154525883",
+                            5032022.214
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5229 - Otras actividades complementarias al transporte",
+                            "0.0038565309108434197",
+                            5025166.198
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4541 - Comercio de motocicletas y de sus partes, piezas y accesorios",
+                            "0.0038497837122166327",
+                            5016374.412
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6499 - Otras actividades de servicio financiero, excepto las de seguros y pensiones n.c.p.",
+                            "0.0036739717801670606",
+                            4787286.613
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4321 - Instalaciones eléctricas",
+                            "0.0035869014491696021",
+                            4673831.569
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2599 - Fabricación de otros productos elaborados de metal n.c.p.",
+                            "0.003426218623422044",
+                            4464457.413
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2012 - Fabricación de abonos y compuestos inorgánicos nitrogenados",
+                            "0.003409477988701158",
+                            4442643.904
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2221 - Fabricación de formas básicas de plástico",
+                            "0.0033863753782005734",
+                            4412540.565
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7010 - Actividades de administración empresarial",
+                            "0.00331548544052714",
+                            4320169.02
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2310 - Fabricación de vidrio y productos de vidrio",
+                            "0.0032498988310612144",
+                            4234707.858
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4641 - Comercio al por mayor de productos textiles, productos confeccionados para uso doméstico",
+                            "0.0030839466472232578",
+                            4018467.583
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4723 - Comercio al por menor de carnes (incluye aves de corral), productos cárnicos, pescados y productos de mar, en establecimientos especializados",
+                            "0.0030628491792153733",
+                            3990977
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2910 - Fabricación de vehículos automotores y sus motores",
+                            "0.0030424127325114664",
+                            3964347.746
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2011 - Fabricación de sustancias y productos químicos básicos",
+                            "0.0030356053371549271",
+                            3955477.522
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0144 - Cría de ganado porcino",
+                            "0.0030327610052205351",
+                            3951771.279
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2394 - Fabricación de cemento, cal y yeso",
+                            "0.0030206934142810106",
+                            3936046.875
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4774 - Comercio al por menor de otros productos nuevos en establecimientos especializados",
+                            "0.0029713639823917078",
+                            3871769.264
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7730 - Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p.",
+                            "0.0029229705022847238",
+                            3808711.224
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7490 - Otras actividades profesionales, científicas y técnicas n.c.p.",
+                            "0.0029044100066422389",
+                            3784526.386
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4610 - Comercio al por mayor a cambio de una retribución o por contrata",
+                            "0.0028129632771543307",
+                            3665368.774
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1702 - Fabricación de papel y cartón ondulado (corrugado); fabricación de envases, empaques y de embalajes de papel y cartón",
+                            "0.0028128065935961503",
+                            3665164.611
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6619 - Otras actividades auxiliares de las actividades de servicios financieros n.c.p.",
+                            "0.0027456780382745655",
+                            3577694.251
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4649 - Comercio al por mayor de otros utensilios domésticos n.c.p.",
+                            "0.0026903181109223582",
+                            3505558.738
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1811 - Actividades de impresión",
+                            "0.0026799974599621894",
+                            3492110.645
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5612 - Expendio por autoservicio de comidas preparadas",
+                            "0.0026598281871856207",
+                            3465829.526
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4644 - Comercio al por mayor de aparatos y equipo de uso doméstico",
+                            "0.0026533584017167538",
+                            3457399.217
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1701 - Fabricación de pulpas (pastas) celulósicas; papel y cartón",
+                            "0.0025882931979390724",
+                            3372617.461
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0126 - Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos",
+                            "0.002561051071114749",
+                            3337120.218
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6311 - Procesamiento de datos, alojamiento (hosting) y actividades relacionadas",
+                            "0.0025450309737052486",
+                            3316245.589
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2395 - Fabricación de artículos de hormigón, cemento y yeso",
+                            "0.0025018882089522456",
+                            3260029.376
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2022 - Fabricación de pinturas, barnices y revestimientos similares, tintas para impresión y masillas",
+                            "0.0023414462537750358",
+                            3050969.081
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4799 - Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados",
+                            "0.0023045865800563965",
+                            3002939.909
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6613 - Otras actividades relacionadas con el mercado de valores",
+                            "0.0022863297303240236",
+                            2979150.73
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1062 - Descafeinado, tostión y molienda del café",
+                            "0.0022362555007008232",
+                            2913902.627
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0122 - Cultivo de plátano y banano",
+                            "0.00223372003329204",
+                            2910598.843
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0150 - Explotación mixta (agrícola y pecuaria)",
+                            "0.0022321124426255379",
+                            2908504.108
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4220 - Construcción de proyectos de servicio público",
+                            "0.0021437870645314486",
+                            2793413.703
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4643 - Comercio al por mayor de calzado",
+                            "0.0021000034085163024",
+                            2736362.391
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2731 - Fabricación de hilos y cables eléctricos y de fibra óptica",
+                            "0.0020832194638914555",
+                            2714492.448
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4665 - Comercio al por mayor de desperdicios, desechos y chatarra",
+                            "0.002055462923556209",
+                            2678324.91
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1020 - Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos",
+                            "0.0020178565081694004",
+                            2629322.713
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7710 - Alquiler y arrendamiento de vehículos automotores",
+                            "0.0019995396965449713",
+                            2605455.402
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2421 - Industrias básicas de metales preciosos",
+                            "0.0019933202772243266",
+                            2597351.327
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0811 - Extracción de piedra, arena, arcillas comunes, yeso y anhidrita",
+                            "0.0019845373435063776",
+                            2585906.922
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3290 - Otras industrias manufactureras n.c.p.",
+                            "0.0019021437668793873",
+                            2478545.818
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2592 - Tratamiento y revestimiento de metales; mecanizado",
+                            "0.0018902602012060277",
+                            2463061.204
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1921 - Fabricación de productos de la refinación del petróleo",
+                            "0.0018832363737485327",
+                            2453908.963
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4754 - Comercio al por menor de electrodomésticos y gasodomésticos, muebles y equipos de iluminación en establecimientos especializados",
+                            "0.0018759945017913825",
+                            2444472.604
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1312 - Tejeduría de productos textiles",
+                            "0.0018638393562978076",
+                            2428634.114
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8121 - Limpieza general interior de edificios",
+                            "0.0018313254877037129",
+                            2386267.646
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4761 - Comercio al por menor de libros, periódicos, materiales y artículos de papelería y escritorio, en establecimientos especializados",
+                            "0.0018187069322238162",
+                            2369825.32
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M6910 - Actividades jurídicas",
+                            "0.0017702946044730117",
+                            2306742.721
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2790 - Fabricación de otros tipos de equipo eléctrico n.c.p.",
+                            "0.0017682713280589041",
+                            2304106.336
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4772 - Comercio al por menor de todo tipo de calzado y artículos de cuero y sucedáneos del cuero en establecimientos especializados",
+                            "0.0017636229330264426",
+                            2298049.349
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0723 - Extracción de minerales de níquel",
+                            "0.0016863618302053757",
+                            2197376
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6020 - Actividades de programación y transmisión de televisión",
+                            "0.001673361038000876",
+                            2180435.609
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8691 - Actividades de apoyo diagnóstico",
+                            "0.0016568873508115091",
+                            2158969.94
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1910 - Fabricación de productos de hornos de coque",
+                            "0.0016470270346917362",
+                            2146121.676
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4112 - Construcción de edificios no residenciales",
+                            "0.0016382671503705263",
+                            2134707.305
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3312 - Mantenimiento y reparación especializado de maquinaria y equipo",
+                            "0.0016188842224141983",
+                            2109450.815
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2393 - Fabricación de otros productos de cerámica y porcelana",
+                            "0.0016175211599535532",
+                            2107674.707
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2930 - Fabricación de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",
+                            "0.0016145074309926995",
+                            2103747.735
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5619 - Otros tipos de expendio de comidas preparadas n.c.p.",
+                            "0.0015605324873559968",
+                            2033416.894
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4729 - Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados",
+                            "0.0015604922794584825",
+                            2033364.502
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3110 - Fabricación de muebles",
+                            "0.0015580733951524488",
+                            2030212.629
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2711 - Fabricación de motores, generadores y transformadores eléctricos",
+                            "0.0015316681807650845",
+                            1995805.906
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4732 - Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para vehículos automotores",
+                            "0.0014626572201826178",
+                            1905882.72
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2392 - Fabricación de materiales de arcilla para la construcción",
+                            "0.0014389727870077636",
+                            1875021.25
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1012 - Procesamiento y conservación de pescados, crustáceos y moluscos",
+                            "0.0014329992650120998",
+                            1867237.586
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6110 - Actividades de telecomunicaciones alámbricas",
+                            "0.001344363690878007",
+                            1751742.987
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4390 - Otras actividades especializadas para la construcción de edificios y obras de ingeniería civil",
+                            "0.0013379862165777269",
+                            1743432.962
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0620 - Extracción de gas natural",
+                            "0.0012973606279861919",
+                            1690496.699
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4653 - Comercio al por mayor de maquinaria y equipo agropecuarios",
+                            "0.0012862240641443334",
+                            1675985.449
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M6920 - Actividades de contabilidad, teneduría de libros, auditoría financiera y asesoría tributaria",
+                            "0.0011384510770401609",
+                            1483433.169
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0141 - Cría de ganado bovino y bufalino",
+                            "0.0010766508094895827",
+                            1402905.715
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1521 - Fabricación de calzado de cuero y piel, con cualquier tipo de suela",
+                            "0.0010666328766003878",
+                            1389852.072
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9603 - Pompas fúnebres y actividades relacionadas",
+                            "0.0010620452400662886",
+                            1383874.255
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1392 - Confección de artículos con materiales textiles, excepto prendas de vestir",
+                            "0.001039303707874242",
+                            1354241.411
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1311 - Preparación e hilatura de fibras textiles",
+                            "0.0010275034428158599",
+                            1338865.34
+                          ]
+                        },
+                        {
+                          "C": [
+                            "L6820 - Actividades inmobiliarias realizadas a cambio de una retribución o por contrata",
+                            "0.0010181507744255072",
+                            1326678.555
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1052 - Elaboración de almidones y productos derivados del almidón",
+                            "0.0010134188155449635",
+                            1320512.682
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8129 - Otras actividades de limpieza de edificios e instalaciones industriales",
+                            "0.001002770026484248",
+                            1306637.016
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4759 - Comercio al por menor de otros artículos domésticos en establecimientos especializados",
+                            "0.0010015831874596007",
+                            1305090.532
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7830 - Otras actividades de provisión de talento humano",
+                            "0.00096366774791894507",
+                            1255685.668
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5210 - Almacenamiento y depósito",
+                            "0.00094151767595608061",
+                            1226823.513
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5222 - Actividades de puertos y servicios complementarios para el transporte acuático",
+                            "0.000897680445480758",
+                            1169702.392
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5629 - Actividades de otros servicios de comidas",
+                            "0.000888713613124814",
+                            1158018.362
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0124 - Cultivo de caña de azúcar",
+                            "0.00088499126371454967",
+                            1153168.038
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1399 - Fabricación de otros artículos textiles n.c.p.",
+                            "0.00084437436488525976",
+                            1100243.098
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8530 - Establecimientos que combinan diferentes niveles de educación",
+                            "0.00082995737397015159",
+                            1081457.361
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2720 - Fabricación de pilas, baterías y acumuladores eléctricos",
+                            "0.00081636479690788818",
+                            1063745.858
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8211 - Actividades combinadas de servicios administrativos de oficina",
+                            "0.00081295579005579409",
+                            1059303.828
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0990 - Actividades de apoyo para otras actividades de explotación de minas y canteras",
+                            "0.00080526748856621572",
+                            1049285.759
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2819 - Fabricación de otros tipos de maquinaria y equipo de uso general n.c.p.",
+                            "0.00080349255378449477",
+                            1046972.97
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6494 - Otras actividades de distribución de fondos",
+                            "0.00080304012898379325",
+                            1046383.448
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6493 - Actividades de compra de cartera o factoring",
+                            "0.0008003001240801692",
+                            1042813.146
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3120 - Fabricación de colchones y somieres",
+                            "0.00079837385251882139",
+                            1040303.161
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H4923 - Transporte de carga por carretera",
+                            "0.00078887208598140139",
+                            1027922.097
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2920 - Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques",
+                            "0.000743104094400517",
+                            968285.141
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1620 - Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y otros tableros y paneles",
+                            "0.00073741635606854082",
+                            960873.861
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0161 - Actividades de apoyo a la agricultura",
+                            "0.000731220521052723",
+                            952800.517
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3250 - Fabricación de instrumentos, aparatos y materiales médicos y odontológicos (incluido mobiliario)",
+                            "0.0007255924760075931",
+                            945467.019
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9312 - Actividades de clubes deportivos",
+                            "0.00072052821411087043",
+                            938868.146
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4520 - Mantenimiento y reparación de vehículos automotores",
+                            "0.00071826770097117561",
+                            935922.635
+                          ]
+                        },
+                        {
+                          "C": [
+                            "D3511 - Generación de energía eléctrica",
+                            "0.00071505556638868967",
+                            931737.135
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6399 - Otras actividades de servicios de información n.c.p.",
+                            "0.00068672047345573711",
+                            894815.727
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7911 - Actividades de las agencias de viaje",
+                            "0.00065834218343301175",
+                            857838.032
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9511 - Mantenimiento y reparación de computadores y de equipo periférico",
+                            "0.000651468282961516",
+                            848881.15
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8291 - Actividades de agencias de cobranza y oficinas de calificación crediticia",
+                            "0.00062753469619909947",
+                            817695.026
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4329 - Otras instalaciones especializadas",
+                            "0.00060879803928353684",
+                            793280.645
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4755 - Comercio al por menor de artículos y utensilios de uso doméstico en establecimientos especializados",
+                            "0.000596472745436357",
+                            777220.447
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1084 - Elaboración de comidas y platos preparados",
+                            "0.00057717114806765636",
+                            752069.933
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0322 - Acuicultura de agua dulce",
+                            "0.00057545969851089459",
+                            749839.867
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1513 - Fabricación de artículos de viaje, bolsos de mano y artículos similares; artículos de talabartería y guarnicionería elaborados en otros materiales",
+                            "0.00057165383283404216",
+                            744880.719
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4791 - Comercio al por menor realizado a través de internet",
+                            "0.00055644694844015545",
+                            725065.729
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4642 - Comercio al por mayor de prendas de vestir",
+                            "0.00055214876241457367",
+                            719465.074
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2399 - Fabricación de otros productos minerales no metálicos n.c.p.",
+                            "0.00054676495855144822",
+                            712449.829
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2593 - Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería",
+                            "0.00054183207223007794",
+                            706022.142
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7111 - Actividades de arquitectura",
+                            "0.00053736915293191225",
+                            700206.835
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4762 - Comercio al por menor de artículos deportivos, en establecimientos especializados",
+                            "0.000534678673456794",
+                            696701.066
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2712 - Fabricación de aparatos de distribución y control de la energía eléctrica",
+                            "0.000528820904957505",
+                            689068.232
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1313 - Acabado de productos textiles",
+                            "0.0005202952528207545",
+                            677959.072
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H4921 - Transporte de pasajeros",
+                            "0.00051974042880724523",
+                            677236.121
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2219 - Fabricación de formas básicas de caucho y otros productos de caucho n.c.p.",
+                            "0.0005073963655954772",
+                            661151.466
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8230 - Organización de convenciones y eventos comerciales",
+                            "0.00049914910587449553",
+                            650405.059
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5320 - Actividades de mensajería",
+                            "0.00049743925643733829",
+                            648177.078
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0121 - Cultivo de frutas tropicales y subtropicales",
+                            "0.00048875576190278967",
+                            636862.245
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6010 - Actividades de programación y transmisión en el servicio de radiodifusión sonora",
+                            "0.00048309293325048819",
+                            629483.423
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8292 - Actividades de envase y empaque",
+                            "0.00047383645775771964",
+                            617421.98
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5911 - Actividades de producción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",
+                            "0.00046410015512823177",
+                            604735.309
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7320 - Estudios de mercado y realización de encuestas de opinión pública",
+                            "0.00045327126013507786",
+                            590624.96
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1083 - Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares",
+                            "0.00044942992782637855",
+                            585619.598
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4751 - Comercio al por menor de productos textiles en establecimientos especializados",
+                            "0.00044718657242001565",
+                            582696.444
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9200 - Actividades de juegos de azar y apuestas",
+                            "0.00043487895509794348",
+                            566659.279
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8621 - Actividades de la práctica médica, sin internación",
+                            "0.00043120752786327384",
+                            561875.308
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9311 - Gestión de instalaciones deportivas",
+                            "0.00042853652226583592",
+                            558394.914
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5811 - Edición de libros",
+                            "0.00041049894340775955",
+                            534891.451
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4322 - Instalaciones de fontanería, calefacción y aire acondicionado",
+                            "0.0004102650949450278",
+                            534586.74
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5224 - Manipulación de carga",
+                            "0.00040736092774675063",
+                            530802.53
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1522 - Fabricación de otros tipos de calzado, excepto calzado de cuero y piel",
+                            "0.00040309785993368691",
+                            525247.635
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2813 - Fabricación de otras bombas, compresores, grifos y válvulas",
+                            "0.00040038566180878151",
+                            521713.566
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8551 - Formación para el trabajo",
+                            "0.00039854019667118093",
+                            519308.874
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4330 - Terminación y acabado de edificios y obras de ingeniería civil",
+                            "0.00039582706533503384",
+                            515773.589
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0112 - Cultivo de arroz",
+                            "0.00038243529369008747",
+                            498323.741
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4722 - Comercio al por menor de leche, productos lácteos y huevos, en establecimientos especializados",
+                            "0.00037660297208089183",
+                            490724.065
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4721 - Comercio al por menor de productos agrícolas para el consumo en establecimientos especializados",
+                            "0.00036584793431099661",
+                            476709.954
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8010 - Actividades de seguridad privada",
+                            "0.00036356288446914641",
+                            473732.471
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4312 - Preparación del terreno",
+                            "0.00035619763293000538",
+                            464135.345
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5613 - Expendio de comidas preparadas en cafeterías",
+                            "0.00034872553484323272",
+                            454398.995
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9007 - Actividades de espectáculos musicales en vivo",
+                            "0.00033997826959475955",
+                            443001.067
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5223 - Actividades de aeropuertos, servicios de navegación aérea y demás actividades conexas al transporte aéreo",
+                            "0.00033757890060835276",
+                            439874.623
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7120 - Ensayos y análisis técnicos",
+                            "0.00032868982792563816",
+                            428291.916
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2829 - Fabricación de otros tipos de maquinaria y equipo de uso especial n.c.p.",
+                            "0.00032506962984394538",
+                            423574.698
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0210 - Silvicultura y otras actividades forestales",
+                            "0.00032239341177055849",
+                            420087.512
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2640 - Fabricación de aparatos electrónicos de consumo",
+                            "0.00031281034687813641",
+                            407600.514
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4724 - Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados",
+                            "0.00031258188356613105",
+                            407302.82
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2211 - Fabricación de llantas y neumáticos de caucho",
+                            "0.00030300555299002987",
+                            394824.597
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1812 - Actividades de servicios relacionados con la impresión",
+                            "0.00030066539533597938",
+                            391775.307
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3311 - Mantenimiento y reparación especializado de productos elaborados en metal",
+                            "0.00029441296827231853",
+                            383628.222
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9321 - Actividades de parques de atracciones y parques temáticos",
+                            "0.00028959182095060791",
+                            377346.134
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2432 - Fundición de metales no ferrosos",
+                            "0.00028727659139487496",
+                            374329.326
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0113 - Cultivo de hortalizas, raíces y tubérculos",
+                            "0.00028661267145696647",
+                            373464.22
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4742 - Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados",
+                            "0.00027980352939912238",
+                            364591.72
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2740 - Fabricación de equipos eléctricos de iluminación",
+                            "0.00027421721485932206",
+                            357312.598
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5630 - Expendio de bebidas alcohólicas para el consumo dentro del establecimiento",
+                            "0.00025716330051062927",
+                            335090.877
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2732 - Fabricación de dispositivos de cableado",
+                            "0.00025239916349344485",
+                            328883.075
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5221 - Actividades de estaciones, vías y servicios complementarios para el transporte terrestre",
+                            "0.0002497237412589212",
+                            325396.926
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8610 - Actividades de hospitales y clínicas, con internación",
+                            "0.00024158680306953705",
+                            314794.271
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3210 - Fabricación de joyas, bisutería y artículos conexos",
+                            "0.00023794797529796497",
+                            310052.778
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6130 - Actividades de telecomunicación satelital",
+                            "0.00023688623953330929",
+                            308669.307
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1033 - Elaboración de aceites y grasas de origen animal",
+                            "0.00023376535397766782",
+                            304602.707
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3314 - Mantenimiento y reparación especializado de equipo eléctrico",
+                            "0.00023323783329997063",
+                            303915.333
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6312 - Portales web",
+                            "0.00023180281227117545",
+                            302045.461
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4512 - Comercio de vehículos automotores usados",
+                            "0.00022423003711470902",
+                            292177.926
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2816 - Fabricación de equipo de elevación y manipulación",
+                            "0.00021797291559943165",
+                            284024.724
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0729 - Extracción de otros minerales metalíferos no ferrosos n.c.p.",
+                            "0.00021145228162954176",
+                            275528.158
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2821 - Fabricación de maquinaria agropecuaria y forestal",
+                            "0.00021095727906593584",
+                            274883.156
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0820 - Extracción de esmeraldas, piedras preciosas y semipreciosas",
+                            "0.00020789758714909588",
+                            270896.293
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1630 - Fabricación de partes y piezas de madera, de carpintería y ebanistería para la construcción",
+                            "0.000207858380765291",
+                            270845.206
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1610 - Aserrado, acepillado e impregnación de la madera",
+                            "0.00020577511713349377",
+                            268130.656
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8699 - Otras actividades de atención de la salud humana",
+                            "0.00019947975084106108",
+                            259927.62
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0127 - Cultivo de plantas con las que se preparan bebidas",
+                            "0.0001993183597847254",
+                            259717.323
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2431 - Fundición de hierro y de acero",
+                            "0.00019748696035077498",
+                            257330.959
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5512 - Alojamiento en apartahoteles",
+                            "0.00019647310001119614",
+                            256009.871
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5621 - Catering para eventos",
+                            "0.00018948800082023331",
+                            246908.094
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9512 - Mantenimiento y reparación de equipos de comunicación",
+                            "0.00018877550324648625",
+                            245979.69
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3320 - Instalación especializada de maquinaria y equipo industrial",
+                            "0.00018417891755425386",
+                            239990.212
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5813 - Edición de periódicos, revistas y otras publicaciones periódicas",
+                            "0.00017933550746534617",
+                            233679.115
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9601 - Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel",
+                            "0.00017451885889717094",
+                            227402.889
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2212 - Reencauche de llantas usadas",
+                            "0.00017162946728774018",
+                            223637.932
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6422 - Actividades de las compañías de financiamiento",
+                            "0.00016973932005728056",
+                            221175.018
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7740 - Arrendamiento de propiedad intelectual y productos similares, excepto obras protegidas por derechos de autor",
+                            "0.0001646024841027566",
+                            214481.579
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7990 - Otros servicios de reserva y actividades relacionadas",
+                            "0.00016395644636480185",
+                            213639.774
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5914 - Actividades de exhibición de películas cinematográficas y videos",
+                            "0.00016057002690848644",
+                            209227.176
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4789 - Comercio al por menor de otros productos en puestos de venta móviles",
+                            "0.00016008099045030261",
+                            208589.948
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1072 - Elaboración de panela",
+                            "0.00015910738175251493",
+                            207321.309
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9329 - Otras actividades recreativas y de esparcimiento n.c.p.",
+                            "0.00015819426141299326",
+                            206131.488
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1523 - Fabricación de partes de calzado",
+                            "0.00015312933337535134",
+                            199531.747
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2591 - Forja, prensado, estampado y laminado de metal; pulvimetalurgia",
+                            "0.00014197964701784927",
+                            185003.398
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2030 - Fabricación de fibras sintéticas y artificiales",
+                            "0.00013984417344033924",
+                            182220.817
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8521 - Educación básica secundaria",
+                            "0.00013876175430711763",
+                            180810.395
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1063 - Otros derivados del café",
+                            "0.00013737391416707224",
+                            179002.001
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0812 - Extracción de arcillas de uso industrial, caliza, caolín y bentonitas",
+                            "0.0001364623064586011",
+                            177814.151
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0129 - Otros cultivos permanentes n.c.p.",
+                            "0.00013498604301851391",
+                            175890.539
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8559 - Otros tipos de educación n.c.p.",
+                            "0.00013440385120394246",
+                            175131.927
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4775 - Comercio al por menor de artículos de segunda mano",
+                            "0.000134321915103429",
+                            175025.162
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0311 - Pesca marítima",
+                            "0.00012994959557494453",
+                            169327.909
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5920 - Actividades de grabación de sonido y edición de música",
+                            "0.00012845108087931211",
+                            167375.303
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2825 - Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco",
+                            "0.00012614323336217645",
+                            164368.114
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2512 - Fabricación de tanques, depósitos y recipientes de metal, excepto los utilizados para el envase o el transporte de mercancías",
+                            "0.00012291316746335562",
+                            160159.249
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0230 - Recolección de productos forestales diferentes a la madera",
+                            "0.00012196552674976756",
+                            158924.447
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2822 - Fabricación de máquinas formadoras de metal y de máquinas herramienta",
+                            "0.000115609962192695",
+                            150642.971
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5820 - Edición de programas de informática (software)",
+                            "0.00011473149806473129",
+                            149498.308
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3319 - Mantenimiento y reparación de otros tipos de equipos y sus componentes n.c.p.",
+                            "0.00011263797294649222",
+                            146770.387
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1511 - Curtido y recurtido de cueros; recurtido y teñido de pieles",
+                            "0.00010915296002946433",
+                            142229.319
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0111 - Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas",
+                            "0.00010896277065746557",
+                            141981.497
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6621 - Actividades de agentes y corredores de seguros",
+                            "0.00010846650718426247",
+                            141334.852
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0162 - Actividades de apoyo a la ganadería",
+                            "0.00010715779737145766",
+                            139629.567
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0130 - Propagación de plantas (actividades de los viveros, excepto viveros forestales)",
+                            "0.00010586819306347449",
+                            137949.177
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0312 - Pesca de agua dulce",
+                            "0.00010579123229888224",
+                            137848.895
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1101 - Destilación, rectificación y mezcla de bebidas alcohólicas",
+                            "9.8713863381279259E-05",
+                            128626.888
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7410 - Actividades especializadas de diseño",
+                            "9.6015883681271666E-05",
+                            125111.346
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4792 - Comercio al por menor realizado a través de casas de venta o por correo",
+                            "9.5997298503112781E-05",
+                            125087.129
+                          ]
+                        },
+                        {
+                          "C": [
+                            "D3512 - Transmisión de energía eléctrica",
+                            "9.3584044162267827E-05",
+                            121942.592
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2620 - Fabricación de computadoras y de equipo periférico",
+                            "9.23532060694368E-05",
+                            120338.776
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8110 - Actividades combinadas de apoyo a instalaciones",
+                            "8.9344369560610945E-05",
+                            116418.179
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8513 - Educación básica primaria",
+                            "8.623648679943398E-05",
+                            112368.522
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7810 - Actividades de agencias de gestión y colocación de empleo",
+                            "8.0380496466631016E-05",
+                            104738.005
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5310 - Actividades postales nacionales",
+                            "7.9760181898413644E-05",
+                            103929.718
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7210 - Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería",
+                            "7.4886293560119045E-05",
+                            97578.907
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8512 - Educación preescolar",
+                            "7.3459894758545063E-05",
+                            95720.27
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3011 - Construcción de barcos y de estructuras flotantes",
+                            "7.30564458968354E-05",
+                            95194.565
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0128 - Cultivo de especias y de plantas aromáticas y medicinales",
+                            "6.9976549496145724E-05",
+                            91181.375
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2429 - Industrias básicas de otros metales no ferrosos",
+                            "6.9758900229870065E-05",
+                            90897.772
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8130 - Actividades de paisajismo y servicios de mantenimiento conexos",
+                            "6.8168224017124717E-05",
+                            88825.077
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2513 - Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central",
+                            "6.4866721411703431E-05",
+                            84523.128
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0123 - Cultivo de café",
+                            "6.3781378318916848E-05",
+                            83108.896
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3315 - Mantenimiento y reparación especializado de equipo de transporte, excepto los vehículos automotores, motocicletas y bicicletas",
+                            "6.3245286832709977E-05",
+                            82410.354
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6630 - Actividades de administración de fondos",
+                            "6.2116405137812864E-05",
+                            80939.39
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5590 - Otros tipos de alojamiento n.c.p.",
+                            "6.0644761707327059E-05",
+                            79021.798
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0240 - Servicios de apoyo a la silvicultura",
+                            "6.0614261202079957E-05",
+                            78982.055
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0164 - Tratamiento de semillas para propagación",
+                            "5.8483581843835667E-05",
+                            76205.721
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3900 - Actividades de saneamiento ambiental y otros servicios de gestión de desechos",
+                            "5.7452381119382565E-05",
+                            74862.038
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0163 - Actividades posteriores a la cosecha",
+                            "5.6259473151890163E-05",
+                            73307.646
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0899 - Extracción de otros minerales no metálicos n.c.p.",
+                            "5.5407551055830714E-05",
+                            72197.568
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7912 - Actividades de operadores turísticos",
+                            "5.4576307723676436E-05",
+                            71114.435
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3700 - Evacuación y tratamiento de aguas residuales",
+                            "5.16843513182178E-05",
+                            67346.136
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1420 - Fabricación de artículos de piel",
+                            "4.9798313747461727E-05",
+                            64888.577
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1391 - Fabricación de tejidos de punto y ganchillo",
+                            "4.9259542348708665E-05",
+                            64186.543
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0119 - Otros cultivos transitorios n.c.p.",
+                            "4.9111144110072526E-05",
+                            63993.176
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8523 - Educación media técnica",
+                            "4.8979273533691418E-05",
+                            63821.345
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2651 - Fabricación de equipo de medición, prueba, navegación y control",
+                            "4.835467970076686E-05",
+                            63007.482
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3220 - Fabricación de instrumentos musicales",
+                            "4.7136915774641656E-05",
+                            61420.702
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6615 - Actividades de los profesionales de compra y venta de divisas",
+                            "4.6354068194226989E-05",
+                            60400.63
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1512 - Fabricación de artículos de viaje, bolsos de mano y artículos similares elaborados en cuero, y fabricación de artículos de talabartería y guarnicionería",
+                            "4.4247366839302538E-05",
+                            57655.54
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2824 - Fabricación de maquinaria para explotación de minas y canteras y para obras de construcción",
+                            "4.3099685849522488E-05",
+                            56160.08
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2014 - Fabricación de caucho sintético en formas primarias",
+                            "4.292701337439273E-05",
+                            55935.083
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1102 - Elaboración de bebidas fermentadas no destiladas",
+                            "4.2034296286575736E-05",
+                            54771.848
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3240 - Fabricación de juegos, juguetes y rompecabezas",
+                            "4.1724222270081961E-05",
+                            54367.813
+                          ]
+                        },
+                        {
+                          "C": [
+                            "F4311 - Demolición",
+                            "4.0024822343013165E-05",
+                            52153.448
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3313 - Mantenimiento y reparación especializado de equipo electrónico y óptico",
+                            "3.9045262888672477E-05",
+                            50877.055
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6421 - Actividades de las corporaciones financieras",
+                            "3.8832889028709086E-05",
+                            50600.326
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1394 - Fabricación de cuerdas, cordeles, cables, bramantes y redes",
+                            "3.82087909642567E-05",
+                            49787.109
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0149 - Cría de otros animales n.c.p.",
+                            "3.8099081852536551E-05",
+                            49644.155
+                          ]
+                        },
+                        {
+                          "C": [
+                            "O8430 - Actividades de planes de seguridad social de afiliación obligatoria",
+                            "3.7383172225186895E-05",
+                            48711.305
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3012 - Construcción de embarcaciones de recreo y deporte",
+                            "3.6050738432845973E-05",
+                            46975.107
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2812 - Fabricación de equipos de potencia hidráulica y neumática",
+                            "3.5445907036340862E-05",
+                            46186.995
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0321 - Acuicultura marítima",
+                            "3.4918393265634752E-05",
+                            45499.63
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8511 - Educación de la primera infancia",
+                            "3.2699163211735088E-05",
+                            42607.912
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4769 - Comercio al por menor de otros artículos culturales y de entretenimiento n.c.p. en establecimientos especializados",
+                            "3.2364791168000577E-05",
+                            42172.216
+                          ]
+                        },
+                        {
+                          "C": [
+                            "D3514 - Comercialización de energía eléctrica",
+                            "3.1266348582874142E-05",
+                            40740.915
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9609 - Otras actividades de servicios personales n.c.p.",
+                            "3.0743708078109682E-05",
+                            40059.9
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2391 - Fabricación de productos refractarios",
+                            "3.0636177738359345E-05",
+                            39919.785
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6612 - Corretaje de valores y de contratos de productos básicos",
+                            "3.0348889885499207E-05",
+                            39545.441
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5012 - Transporte de carga marítimo y de cabotaje",
+                            "2.971210751561633E-05",
+                            38715.696
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9101 - Actividades de bibliotecas y archivos",
+                            "2.9161279580179277E-05",
+                            37997.952
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8522 - Educación media académica",
+                            "2.9032451917098743E-05",
+                            37830.086
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3812 - Recolección de desechos peligrosos",
+                            "2.8980581181393176E-05",
+                            37762.497
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0115 - Cultivo de plantas textiles",
+                            "2.8322680302505197E-05",
+                            36905.234
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1690 - Fabricación de otros productos de madera; fabricación de artículos de corcho, cestería y espartería",
+                            "2.816975721725615E-05",
+                            36705.971
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2610 - Fabricación de componentes y tableros electrónicos",
+                            "2.7191950603767541E-05",
+                            35431.862
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3822 - Tratamiento y disposición de desechos peligrosos",
+                            "2.670633003640362E-05",
+                            34799.085
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6511 - Seguros generales",
+                            "2.6406459948092553E-05",
+                            34408.346
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1393 - Fabricación de tapetes y alfombras para pisos",
+                            "2.6336994036285528E-05",
+                            34317.83
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0892 - Extracción de halita (sal)",
+                            "2.5527463981814271E-05",
+                            33262.99
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5122 - Transporte aéreo internacional de carga",
+                            "2.54085486184034E-05",
+                            33108.04
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7500 - Actividades veterinarias",
+                            "2.4951093225851862E-05",
+                            32511.963
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9001 - Creación literaria",
+                            "2.4223235271345417E-05",
+                            31563.544
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7420 - Actividades de fotografía",
+                            "2.415695655220858E-05",
+                            31477.181
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1820 - Producción de copias a partir de grabaciones originales",
+                            "2.4051326402453765E-05",
+                            31339.542
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4753 - Comercio al por menor de tapices, alfombras y recubrimientos para paredes y pisos en establecimientos especializados",
+                            "2.3112292567217782E-05",
+                            30115.955
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0220 - Extracción de madera",
+                            "2.2394961634588761E-05",
+                            29181.253
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1640 - Fabricación de recipientes de madera",
+                            "2.1484972464365026E-05",
+                            27995.512
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8020 - Actividades de servicios de sistemas de seguridad",
+                            "2.1468562220958671E-05",
+                            27974.129
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2630 - Fabricación de equipos de comunicación",
+                            "2.1309235587517944E-05",
+                            27766.522
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5530 - Servicio de estancia por horas",
+                            "2.0779021950735811E-05",
+                            27075.639
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6521 - Servicios de seguros sociales de salud",
+                            "2.0764566385810305E-05",
+                            27056.803
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9103 - Actividades de jardines botánicos, zoológicos y reservas naturales",
+                            "2.0453838507492544E-05",
+                            26651.916
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9004 - Creación audiovisual",
+                            "2.0175314858892826E-05",
+                            26288.992
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2670 - Fabricación de instrumentos ópticos y equipo fotográfico",
+                            "2.0089183145008806E-05",
+                            26176.76
+                          ]
+                        },
+                        {
+                          "C": [
+                            "D3530 - Suministro de vapor y aire acondicionado",
+                            "1.8851138758131781E-05",
+                            24563.554
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9499 - Actividades de otras asociaciones n.c.p.",
+                            "1.8776898580588848E-05",
+                            24466.817
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9006 - Actividades teatrales",
+                            "1.8075320959768378E-05",
+                            23552.642
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3811 - Recolección de desechos no peligrosos",
+                            "1.8055718151587652E-05",
+                            23527.099
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1200 - Elaboración de productos de tabaco",
+                            "1.7993970418611369E-05",
+                            23446.64
+                          ]
+                        },
+                        {
+                          "C": [
+                            "U9900 - Actividades de organizaciones y entidades extraterritoriales",
+                            "1.7234755491961621E-05",
+                            22457.362
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6629 - Evaluación de riesgos y daños, y otras actividades de servicios auxiliares",
+                            "1.7046323565475675E-05",
+                            22211.83
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3600 - Captación, tratamiento y distribución de agua",
+                            "1.669556276675156E-05",
+                            21754.779
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3020 - Fabricación de locomotoras y de material rodante para ferrocarriles",
+                            "1.6690689500809906E-05",
+                            21748.429
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5121 - Transporte aéreo nacional de carga",
+                            "1.5687071461586561E-05",
+                            20440.687
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2815 - Fabricación de hornos, hogares y quemadores industriales",
+                            "1.5411611447260711E-05",
+                            20081.755
+                          ]
+                        },
+                        {
+                          "C": [
+                            "M7220 - Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades",
+                            "1.4649090374205196E-05",
+                            19088.169
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9521 - Mantenimiento y reparación de aparatos electrónicos de consumo",
+                            "1.4585752498389369E-05",
+                            19005.638
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5519 - Otros tipos de alojamiento para visitantes",
+                            "1.4446864419052278E-05",
+                            18824.663
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5513 - Alojamiento en centros vacacionales",
+                            "1.428792380966961E-05",
+                            18617.559
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0114 - Cultivo de tabaco",
+                            "1.3778203215476442E-05",
+                            17953.379
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3030 - Fabricación de aeronaves, naves espaciales y de maquinaria conexa",
+                            "1.3420369657867561E-05",
+                            17487.112
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J6391 - Actividades de agencias de noticias",
+                            "1.3241145517959242E-05",
+                            17253.578
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0520 - Extracción de carbón lignito",
+                            "1.3198677499468973E-05",
+                            17198.241
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2823 - Fabricación de maquinaria para la metalurgia",
+                            "1.2716567218469951E-05",
+                            16570.038
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3099 - Fabricación de otros tipos de equipo de transporte n.c.p.",
+                            "1.2589283651621635E-05",
+                            16404.184
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2817 - Fabricación de maquinaria y equipo de oficina (excepto computadoras y equipo periférico)",
+                            "1.2483888339564165E-05",
+                            16266.851
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2396 - Corte, tallado y acabado de la piedra",
+                            "1.2232509933424633E-05",
+                            15939.298
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6495 - Instituciones especiales oficiales",
+                            "1.1731109961174677E-05",
+                            15285.96
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5913 - Actividades de distribución de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",
+                            "1.1715313672532625E-05",
+                            15265.377
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8692 - Actividades de apoyo terapéutico",
+                            "1.1491198695145407E-05",
+                            14973.349
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C1430 - Fabricación de artículos de punto y ganchillo",
+                            "9.352389040934836E-06",
+                            12186.421
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4781 - Comercio al por menor de alimentos, bebidas y tabaco, en puestos de venta móviles",
+                            "9.18037272995943E-06",
+                            11962.279
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2814 - Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión",
+                            "9.0051868775133125E-06",
+                            11734.007
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8541 - Educación técnica profesional",
+                            "8.7090365876304634E-06",
+                            11348.115
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H4922 - Transporte mixto",
+                            "8.2208136195093536E-06",
+                            10711.947
+                          ]
+                        },
+                        {
+                          "C": [
+                            "O8412 - Actividades ejecutivas de la administración pública",
+                            "7.80331133324481E-06",
+                            10167.93
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N7729 - Alquiler y arrendamiento de otros efectos personales y enseres domésticos n.c.p.",
+                            "7.7898772355584127E-06",
+                            10150.425
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9008 - Otras actividades de espectáculos en vivo n.c.p.",
+                            "7.5147894313084224E-06",
+                            9791.978
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3830 - Recuperación de materiales",
+                            "7.3376696213547508E-06",
+                            9561.186
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9602 - Peluquería y otros tratamientos de belleza",
+                            "7.2831895779009E-06",
+                            9490.197
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8622 - Actividades de la práctica odontológica",
+                            "7.0340920137107511E-06",
+                            9165.616
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6496 - Capitalización",
+                            "6.9826955580606106E-06",
+                            9098.645
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8560 - Actividades de apoyo a la educación",
+                            "6.7974469870275716E-06",
+                            8857.261
+                          ]
+                        },
+                        {
+                          "C": [
+                            "T9810 - Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio",
+                            "6.6324466441212346E-06",
+                            8642.261
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5112 - Transporte aéreo internacional de pasajeros",
+                            "6.5977996418847247E-06",
+                            8597.115
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6611 - Administración de mercados financieros",
+                            "6.1974596936128061E-06",
+                            8075.461
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9529 - Mantenimiento y reparación de otros efectos personales y enseres domésticos",
+                            "5.908066743354565E-06",
+                            7698.374
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9319 - Otras actividades deportivas",
+                            "5.8397765549211812E-06",
+                            7609.39
+                          ]
+                        },
+                        {
+                          "C": [
+                            "R9102 - Actividades y funcionamiento de museos, conservación de edificios y sitios históricos",
+                            "5.550002185265616E-06",
+                            7231.806
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6431 - Fideicomisos, fondos y entidades financieras similares",
+                            "5.3823909997240814E-06",
+                            7013.404
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H4912 - Transporte férreo de carga",
+                            "5.1557994823063577E-06",
+                            6718.149
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0142 - Cría de caballos y otros equinos",
+                            "5.0328834361626009E-06",
+                            6557.986
+                          ]
+                        },
+                        {
+                          "C": [
+                            "N8219 - Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo a oficina",
+                            "5.0130012785641154E-06",
+                            6532.079
+                          ]
+                        },
+                        {
+                          "C": [
+                            "G4782 - Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta móviles",
+                            "4.9342431613993713E-06",
+                            6429.455
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6614 - Actividades de las sociedades de intermediación cambiaria y de servicios financieros especiales",
+                            "4.8346550939687491E-06",
+                            6299.689
+                          ]
+                        },
+                        {
+                          "C": [
+                            "E3821 - Tratamiento y disposición de desechos no peligrosos",
+                            "4.7490767068160578E-06",
+                            6188.178
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0891 - Extracción de minerales para la fabricación de abonos y productos químicos",
+                            "4.7090008095762026E-06",
+                            6135.958
+                          ]
+                        },
+                        {
+                          "C": [
+                            "S9411 - Actividades de asociaciones empresariales y de empleadores",
+                            "4.3459494039142051E-06",
+                            5662.892
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C2826 - Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros",
+                            "3.3621429174914507E-06",
+                            4380.965
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5912 - Actividades de postproducción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",
+                            "3.0603948950450733E-06",
+                            3987.779
+                          ]
+                        },
+                        {
+                          "C": [
+                            "P8543 - Educación de instituciones universitarias o de escuelas tecnológicas",
+                            "3.0564540729017057E-06",
+                            3982.644
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8899 - Otras actividades de asistencia social sin alojamiento n.c.p.",
+                            "2.7547996785568845E-06",
+                            3589.58
+                          ]
+                        },
+                        {
+                          "C": [
+                            "J5819 - Otros trabajos de edición",
+                            "2.7212831205301476E-06",
+                            3545.907
+                          ]
+                        },
+                        {
+                          "C": [
+                            "D3520 - Producción de gas; distribución de combustibles gaseosos por tuberías",
+                            "2.7194051863948369E-06",
+                            3543.46
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6492 - Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario",
+                            "2.4781869641610578E-06",
+                            3229.146
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8730 - Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas",
+                            "2.4566340821602134E-06",
+                            3201.062
+                          ]
+                        },
+                        {
+                          "C": [
+                            "Q8710 - Actividades de atención residencial medicalizada de tipo general",
+                            "2.0377826303011144E-06",
+                            2655.287
+                          ]
+                        },
+                        {
+                          "C": [
+                            "B0710 - Extracción de minerales de hierro",
+                            "1.8145233523666432E-06",
+                            2364.374
+                          ]
+                        },
+                        {
+                          "C": [
+                            "C3230 - Fabricación de artículos y equipo para la práctica del deporte",
+                            "1.3760092317372968E-06",
+                            1792.978
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6515 - Seguros de salud",
+                            "1.322949726119351E-06",
+                            1723.84
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5514 - Alojamiento rural",
+                            "7.9135315623062427E-07",
+                            1031.155
+                          ]
+                        },
+                        {
+                          "C": [
+                            "O8411 - Actividades legislativas de la administración pública",
+                            "7.5071318805106576E-07",
+                            978.2
+                          ]
+                        },
+                        {
+                          "C": [
+                            "I5520 - Actividades de zonas de camping y parques para vehículos recreacionales",
+                            "6.9304288215320707E-07",
+                            903.054
+                          ]
+                        },
+                        {
+                          "C": [
+                            "A0143 - Cría de ovejas y cabras",
+                            "6.8775442930219507E-07",
+                            896.163
+                          ]
+                        },
+                        {
+                          "C": [
+                            "H5011 - Transporte de pasajeros marítimo y de cabotaje",
+                            "6.173729574529054E-07",
+                            804.454
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6491 - Leasing financiero (arrendamiento financiero)",
+                            "8.592527159452205E-08",
+                            111.963
+                          ]
+                        },
+                        {
+                          "C": [
+                            "K6532 - Régimen de ahorro individual con solidaridad (RAIS)",
+                            "5.5639650514927688E-09",
+                            7.25
+                          ]
+                        },
+                        {
+                          "C": [
+                            0,
+                            0.0
+                          ],
+                          "Ø": 1
+                        },
+                        {
+                          "C": [
+                            "C1030 - Elaboración de aceites y grasas de origen vegetal y animal"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "C1104 - Elaboración de bebidas no alcohólicas, producción de aguas minerales y de otras aguas embotelladas"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "C2512 - Fabricación de tanques, depósitos y recipientes de metal, excepto los utilizados para el envase o transporte de mercancías"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "D3513 - Distribución de energía eléctrica"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "G4542 - Mantenimiento y reparación de motocicletas y de sus partes y piezas"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "G4711 - Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "G4719 - Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (víveres en general), bebidas y tabaco"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "G4754 - Comercio al por menor de electrodomésticos y gasodomésticos de uso doméstico, muebles y equipos de iluminación"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "G4755 - Comercio al por menor de artículos y utensilios de uso doméstico"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "H5021 - Transporte fluvial de pasajeros"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "H5022 - Transporte fluvial de carga"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "H5111 - Transporte aéreo nacional de pasajeros"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "I5519 - Otros tipos de alojamientos para visitantes"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "I5530 - Servicio por horas"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "J6399 - Otras actividades de servicio de información n.c.p."
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "K6424 - Actividades de las cooperativas financieras"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "K6512 - Seguros de vida"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "K6513 - Reaseguros"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "K6514 - Capitalización"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "M7020 - Actividades de consultaría de gestión"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "M7110 - Actividades de arquitectura e ingeniería y otras actividades conexas de consultoría técnica"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "N7810 - Actividades de agencias de empleo"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "N7820 - Actividades de agencias de empleo temporal"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "N7830 - Otras actividades de suministro de recurso humano"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "N8030 - Actividades de detectives e investigadores privados"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "O8414 - Actividades reguladoras y facilitadoras de la actividad económica"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "P8542 - Educación tecnológica"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "P8551 - Formación académica no formal"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "S9412 - Actividades de asociaciones profesionales"
+                          ],
+                          "R": 6
+                        },
+                        {
+                          "C": [
+                            "S9524 - Reparación de muebles y accesorios para el hogar"
+                          ],
+                          "R": 6
+                        }
+                      ]
+                    }
+                  ],
+                  "IC": true,
+                  "HAD": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

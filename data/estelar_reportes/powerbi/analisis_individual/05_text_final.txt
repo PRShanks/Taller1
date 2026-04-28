@@ -1,0 +1,79 @@
+Permite mostrar los métodos abreviados de teclado.
+Mostrar consejos para el lector de pantalla
+Pasar al contenido principal
+Informe de Power BI
+
+Inicio - datos generales
+
+Cifras en COP millones
+
+Selección de empresa (Puede digitar el Nit o Razón social)
+800000090 - Ingenieros Servicios Constructivos SAS
+800000154 - CONSTRUCCIONES INDUSTRIALES Y SERVICIOS SUPER SAS
+800000241 - CERERIA EL SAGRADO CORAZON LTDA
+800000268 - Inversiones Schlegel Donado SAS
+
+Menú
+
+Contenido del informe
+
+Datos generales de la compañía
+
+Inicio
+Análisis por sector
+Análisis individual
+Resumen cifras principales
+Estado de resultados
+Capital de trabajo, Activos LP y OAOP
+Balance general
+Flujo de caja
+Glosario
+Resumen cifras principales
+Vista general de los indicadores financieros clave
+
+CREPES Y WAFFLES S.A.
+
+NIT 860.076.919
+Estado de resultados
+Análisis detallado de ingresos, costos y gastos
+Codigo CIIU
+
+I5611 - Expendio a la mesa de comidas preparadas
+
+Fecha constitución
+
+1986-08-05
+
+Capital de trabajo, Activos largo plazo y otros activos y pasivos
+(OAOP)
+Analisis detallado del capital de trabajo y los activos largo plazo
+Ciudad, departamento
+
+BOGOTA D.C. BOGOTA D.C.
+
+Estado actual
+
+ACTIVA
+
+Balance general completo
+Estado de situación financiera (Balance General) completo de la compañía
+Flujo de caja
+Análisis de flujos del flujo de la compañía divido entre operacional, financiero y no operativo
+Objeto social principal
+
+La sociedad tendrá por objeto la fabricación, transformación, explotación y distribución de toda clase de alimentos, bebidas y refrescos, sean unos u otros líquidos, sólidos, calientes, fríos, refrigerados y congelados, y cualesquiera otras actividades vinculadas de manera directa o indirecta con la explotación del negocio.
+
+Glosario
+Glosario para identificar las cuentas agrupadas de la base de datos en cada rubro
+
+Disclaimer: El presente informe ha sido elaborado por Estrategia en Acción con base en información pública disponible proveniente de la Superintendencia de Sociedades y otras fuentes consideradas confiables por regirse bajo principios de buena fe, transparencia, legalidad y prevalencia del interés común. No obstante, Estrategia en Acción no garantiza la exactitud, integridad ni actualidad de dicha información, pues esta es extraída de las entidades antes mencionadas y no se tiene injerencia o control sobre la misma.
+
+Este documento tiene fines exclusivamente informativos y no constituye una recomendación, asesoría legal, financiera, contable, de inversión o publicidad. Cualquier decisión tomada con base en el contenido de este informe es responsabilidad exclusiva del lector. Estrategia en Acción no asume responsabilidad alguna por los resultados derivados del uso de esta información o de las interpretaciones que se realicen frente a esta. Está prohibida la reproducción, copia o uso en cualquier medio de los gráficos, ilustraciones y cálculos elaborados por Estrategia en Acción, toda vez que representa una innovación específica en la organización de la información, por lo que cada vez que alguien desee realizar alusión a los informes que aquí se presentan, deberá citar la misma, reconociendo la autoría de Estrategia en Acción,  toda vez que está protegida por derechos de autor. 
+
+-
++
+68 %
+Microsoft Power BI
+6de12
+Informe ampliado a 68 %
+Página 2 de 12 Página siguiente Botón Presionado Entrar o Espacio

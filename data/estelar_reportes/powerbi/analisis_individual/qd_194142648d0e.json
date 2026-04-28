@@ -1,0 +1,109 @@
+{
+  "url": "https://wabi-paas-1-scus-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "response": {
+    "jobIds": [
+      "be319184-6fc3-4b15-9142-83be854116ef"
+    ],
+    "results": [
+      {
+        "jobId": "be319184-6fc3-4b15-9142-83be854116ef",
+        "result": {
+          "data": {
+            "timestamp": "2026-04-25T20:07:25.411Z",
+            "rootActivityId": "71ef90e7-9e4b-4703-9689-ba7f7702a9da",
+            "descriptor": {
+              "Select": [
+                {
+                  "Kind": 2,
+                  "Value": "M0",
+                  "Format": "0",
+                  "Name": "Medidas.Razon social"
+                },
+                {
+                  "Kind": 2,
+                  "Value": "M1",
+                  "Format": "#,0",
+                  "Name": "Medidas.NIT"
+                }
+              ],
+              "Version": 2
+            },
+            "metrics": {
+              "Version": "1.0.0",
+              "Events": [
+                {
+                  "Id": "375f3dd9-e04f-4c61-81a0-bb48d6308c2d",
+                  "Name": "Execute Semantic Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:25.4112791Z",
+                  "End": "2026-04-25T20:07:25.520667Z"
+                },
+                {
+                  "Id": "87dd0baa-2da9-42d5-a432-c5bbfee6945c",
+                  "ParentId": "375f3dd9-e04f-4c61-81a0-bb48d6308c2d",
+                  "Name": "Execute DAX Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:25.4112791Z",
+                  "End": "2026-04-25T20:07:25.520667Z",
+                  "Metrics": {
+                    "RowCount": 1
+                  }
+                },
+                {
+                  "Id": "EBD84AAC-EE18-4E3A-92D3-DF7BE4C26C94",
+                  "ParentId": "87dd0baa-2da9-42d5-a432-c5bbfee6945c",
+                  "Name": "Execute Query",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:25.507Z",
+                  "End": "2026-04-25T20:07:25.517Z"
+                },
+                {
+                  "Id": "656FFAFA-9681-4AFE-AA0C-666EF2B5721F",
+                  "ParentId": "EBD84AAC-EE18-4E3A-92D3-DF7BE4C26C94",
+                  "Name": "Serialize Rowset",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:25.517Z",
+                  "End": "2026-04-25T20:07:25.517Z"
+                }
+              ]
+            },
+            "fromCache": false,
+            "dsr": {
+              "Version": 2,
+              "MinorVersion": 1,
+              "DS": [
+                {
+                  "N": "DS0",
+                  "PH": [
+                    {
+                      "DM0": [
+                        {
+                          "S": [
+                            {
+                              "N": "M0",
+                              "T": 1
+                            },
+                            {
+                              "N": "M1",
+                              "T": 3
+                            }
+                          ],
+                          "C": [
+                            "CREPES Y WAFFLES S.A.",
+                            860076919
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "IC": true,
+                  "HAD": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

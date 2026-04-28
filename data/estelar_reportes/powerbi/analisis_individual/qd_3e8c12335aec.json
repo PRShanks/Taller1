@@ -1,0 +1,185 @@
+{
+  "url": "https://wabi-paas-1-scus-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "response": {
+    "jobIds": [
+      "f330b29e-bb84-4c21-a3fb-f802a8e52e9e"
+    ],
+    "results": [
+      {
+        "jobId": "f330b29e-bb84-4c21-a3fb-f802a8e52e9e",
+        "result": {
+          "data": {
+            "timestamp": "2026-04-25T20:07:15.32Z",
+            "rootActivityId": "d7a7215b-3d44-424a-ab85-be23f8d4545b",
+            "descriptor": {
+              "Select": [
+                null,
+                {
+                  "Kind": 1,
+                  "Depth": 0,
+                  "Value": "G0",
+                  "GroupKeys": [
+                    {
+                      "Source": {
+                        "Entity": "Sección CIIU",
+                        "Property": "Sección - Descripción"
+                      },
+                      "Calc": "G0",
+                      "IsSameAsSelect": true
+                    }
+                  ],
+                  "Name": "Sección CIIU.Sección - Descripción"
+                }
+              ],
+              "Expressions": {
+                "Primary": {
+                  "Groupings": [
+                    {
+                      "Keys": [
+                        {
+                          "Source": {
+                            "Entity": "Sección CIIU",
+                            "Property": "Sección - Descripción"
+                          },
+                          "Select": 1
+                        }
+                      ],
+                      "Member": "DM0"
+                    }
+                  ]
+                }
+              },
+              "Version": 2
+            },
+            "metrics": {
+              "Version": "1.0.0",
+              "Events": [
+                {
+                  "Id": "449d9f34-619c-4085-9490-fdb70303a0a8",
+                  "Name": "Execute Semantic Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:15.3208694Z",
+                  "End": "2026-04-25T20:07:15.3989828Z"
+                },
+                {
+                  "Id": "e6ad4dc1-30ba-4d45-9ebd-de77c1172f76",
+                  "ParentId": "449d9f34-619c-4085-9490-fdb70303a0a8",
+                  "Name": "Execute DAX Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:15.336485Z",
+                  "End": "2026-04-25T20:07:15.3989828Z",
+                  "Metrics": {
+                    "RowCount": 21
+                  }
+                },
+                {
+                  "Id": "D726B5AF-743A-4096-A4F9-D2F87B76E737",
+                  "ParentId": "e6ad4dc1-30ba-4d45-9ebd-de77c1172f76",
+                  "Name": "Execute Query",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:15.393Z",
+                  "End": "2026-04-25T20:07:15.4Z"
+                },
+                {
+                  "Id": "85EAA6A2-90AE-45A0-A862-EC9FE899AA59",
+                  "ParentId": "D726B5AF-743A-4096-A4F9-D2F87B76E737",
+                  "Name": "Serialize Rowset",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:15.4Z",
+                  "End": "2026-04-25T20:07:15.4Z"
+                }
+              ]
+            },
+            "fromCache": false,
+            "dsr": {
+              "Version": 2,
+              "MinorVersion": 1,
+              "DS": [
+                {
+                  "N": "DS0",
+                  "PH": [
+                    {
+                      "DM0": [
+                        {
+                          "S": [
+                            {
+                              "N": "G0",
+                              "T": 1
+                            }
+                          ],
+                          "G0": "A - Agricultura, ganadería, caza, silvicultura y pesca"
+                        },
+                        {
+                          "G0": "B - Explotación de minas y canteras"
+                        },
+                        {
+                          "G0": "C - Industrias manufactureras"
+                        },
+                        {
+                          "G0": "D - Suministro de electricidad, gas, vapor y aire acondicionado"
+                        },
+                        {
+                          "G0": "E - Distribución de agua; evacuación y tratamiento de aguas residuales, gestión de desechos y actividades de saneamiento ambiental"
+                        },
+                        {
+                          "G0": "F - Construcción"
+                        },
+                        {
+                          "G0": "G - Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas"
+                        },
+                        {
+                          "G0": "H - Transporte y almacenamiento"
+                        },
+                        {
+                          "G0": "I - Alojamiento y servicios de comida"
+                        },
+                        {
+                          "G0": "J - Información y comunicaciones"
+                        },
+                        {
+                          "G0": "K - Actividades financieras y de seguros"
+                        },
+                        {
+                          "G0": "L - Actividades inmobiliarias"
+                        },
+                        {
+                          "G0": "M - Actividades profesionales, científicas y técnicas"
+                        },
+                        {
+                          "G0": "N - Actividades de servicios administrativos y de apoyo"
+                        },
+                        {
+                          "G0": "O - Administración pública y defensa; planes de seguridad social de afiliación obligatoria"
+                        },
+                        {
+                          "G0": "P - Educación"
+                        },
+                        {
+                          "G0": "Q - Actividades de atención de la salud humana y de asistencia social"
+                        },
+                        {
+                          "G0": "R - Actividades artísticas, de entretenimiento y recreación"
+                        },
+                        {
+                          "G0": "S - Otras actividades de servicios"
+                        },
+                        {
+                          "G0": "T - Actividades de los hogares individuales en calidad de empleadores; actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio"
+                        },
+                        {
+                          "G0": "U - Actividades de organizaciones y entidades extraterritoriales"
+                        }
+                      ]
+                    }
+                  ],
+                  "IC": true,
+                  "HAD": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

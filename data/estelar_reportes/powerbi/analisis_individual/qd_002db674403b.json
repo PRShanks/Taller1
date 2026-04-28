@@ -1,0 +1,95 @@
+{
+  "url": "https://wabi-paas-1-scus-api.analysis.windows.net/public/reports/querydata?synchronous=true",
+  "response": {
+    "jobIds": [
+      "6a168a1c-69df-4f15-9255-2673ae3c80bf"
+    ],
+    "results": [
+      {
+        "jobId": "6a168a1c-69df-4f15-9255-2673ae3c80bf",
+        "result": {
+          "data": {
+            "timestamp": "2026-04-25T20:07:25.38Z",
+            "rootActivityId": "7639af55-2749-4869-8362-efd6a56f7a1c",
+            "descriptor": {
+              "Select": [
+                {
+                  "Kind": 2,
+                  "Value": "M0",
+                  "Name": "Medidas.Ciudad, departamento"
+                }
+              ],
+              "Version": 2
+            },
+            "metrics": {
+              "Version": "1.0.0",
+              "Events": [
+                {
+                  "Id": "698fd18e-5964-48fb-b39f-94ca8ea4daec",
+                  "Name": "Execute Semantic Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:25.3800191Z",
+                  "End": "2026-04-25T20:07:25.5050333Z"
+                },
+                {
+                  "Id": "e98f4e47-d8df-454a-880c-3f528534c646",
+                  "ParentId": "698fd18e-5964-48fb-b39f-94ca8ea4daec",
+                  "Name": "Execute DAX Query",
+                  "Component": "DSE",
+                  "Start": "2026-04-25T20:07:25.3800191Z",
+                  "End": "2026-04-25T20:07:25.5050333Z",
+                  "Metrics": {
+                    "RowCount": 1
+                  }
+                },
+                {
+                  "Id": "A7C8EC39-9596-4A91-B86E-986DFF3982BE",
+                  "ParentId": "e98f4e47-d8df-454a-880c-3f528534c646",
+                  "Name": "Execute Query",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:25.46Z",
+                  "End": "2026-04-25T20:07:25.483Z"
+                },
+                {
+                  "Id": "A1D66090-9072-4349-AAD0-C367012C31CE",
+                  "ParentId": "A7C8EC39-9596-4A91-B86E-986DFF3982BE",
+                  "Name": "Serialize Rowset",
+                  "Component": "AS",
+                  "Start": "2026-04-25T20:07:25.48Z",
+                  "End": "2026-04-25T20:07:25.483Z"
+                }
+              ]
+            },
+            "fromCache": false,
+            "dsr": {
+              "Version": 2,
+              "MinorVersion": 1,
+              "DS": [
+                {
+                  "N": "DS0",
+                  "PH": [
+                    {
+                      "DM0": [
+                        {
+                          "S": [
+                            {
+                              "N": "M0",
+                              "T": 1
+                            }
+                          ],
+                          "M0": "BOGOTA D.C. BOGOTA D.C."
+                        }
+                      ]
+                    }
+                  ],
+                  "IC": true,
+                  "HAD": true
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
