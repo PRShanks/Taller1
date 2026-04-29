@@ -1,138 +1,102 @@
 """
 qa_chain.py
 -----------
-Tarea 3 del taller: sistema de preguntas y respuestas (Q&A) sobre
-el reporte financiero usando RAG (Retrieval-Augmented Generation).
+Sistema de preguntas y respuestas (Q&A) sobre el reporte financiero.
 
-Arquitectura:
-  1. El texto consolidado se divide en chunks.
-  2. Cada chunk se convierte en un embedding (sentence-transformers).
-  3. Los embeddings se indexan en FAISS (vector store local).
-  4. Para cada pregunta del usuario:
-     a. Se buscan los chunks más relevantes (top-k).
-     b. Se le pasan al LLM como contexto junto con la pregunta.
-     c. El LLM responde basándose SOLO en ese contexto.
+Modos disponibles:
+  - BM25 (default): divide el texto en ventanas de N palabras, recupera
+    las más relevantes con búsqueda léxica y se las pasa al LLM.
+  - Contexto completo: pasa todo el texto consolidado al LLM directamente.
 """
 
 import os
-from pathlib import Path
 from dotenv import load_dotenv
-
-from langchain_anthropic import ChatAnthropic
-from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from rank_bm25 import BM25Okapi
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.documents import Document
 
 from llm.prompts import PROMPT_QA
 from llm.data_loader import cargar_contexto
+from llm.factory import crear_llm
 
 load_dotenv()
 
-ROOT = Path(__file__).resolve().parent.parent
-VECTOR_STORE_DIR = ROOT / "data" / "vector_store"
 
-# Modelo de embeddings multilingüe (bueno con español)
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-
-
-def _crear_llm() -> ChatAnthropic:
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise EnvironmentError(
-            "Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env"
-        )
-    return ChatAnthropic(
-        model="claude-haiku-4-5-20251001",
-        temperature=0.0,   # Cero para máxima fidelidad al contexto
-        max_tokens=512,
-        api_key=api_key,
-    )
-
-
-def _crear_embeddings() -> HuggingFaceEmbeddings:
-    """Modelo de embeddings local (no requiere API)."""
-    return HuggingFaceEmbeddings(
-        model_name=EMBEDDING_MODEL,
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": True},
-    )
-
-
-def construir_vector_store(forzar_reconstruccion: bool = False) -> FAISS:
+def _construir_bm25(texto: str, tam_chunk: int = 150, solapamiento: int = 30) -> tuple[BM25Okapi, list[str]]:
     """
-    Construye (o carga) el vector store FAISS a partir del texto consolidado.
+    Divide el texto en ventanas de palabras de tamaño fijo con solapamiento.
+
+    - tam_chunk: número de palabras por chunk
+    - solapamiento: palabras compartidas entre chunks consecutivos
+
+    Devuelve (índice BM25, lista de chunks).
     """
-    embeddings = _crear_embeddings()
+    palabras = texto.split()
+    paso = tam_chunk - solapamiento
+    chunks = [
+        " ".join(palabras[i : i + tam_chunk])
+        for i in range(0, len(palabras), paso)
+        if palabras[i : i + tam_chunk]
+    ]
+    tokenized = [chunk.lower().split() for chunk in chunks]
+    return BM25Okapi(tokenized), chunks
 
-    # Si ya existe el índice, lo cargamos.
-    if VECTOR_STORE_DIR.exists() and not forzar_reconstruccion:
-        return FAISS.load_local(
-            str(VECTOR_STORE_DIR),
-            embeddings,
-            allow_dangerous_deserialization=True,
-        )
 
-    # Construir desde cero
-    texto = cargar_contexto()
-
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=400,
-        chunk_overlap=80,
-        separators=["\n\n", "\n", ". ", " ", ""],
-    )
-    chunks = splitter.split_text(texto)
-    documentos = [Document(page_content=c) for c in chunks]
-
-    vector_store = FAISS.from_documents(documentos, embeddings)
-    VECTOR_STORE_DIR.mkdir(parents=True, exist_ok=True)
-    vector_store.save_local(str(VECTOR_STORE_DIR))
-    return vector_store
+def _recuperar_chunks(pregunta: str, bm25: BM25Okapi, chunks: list[str], top_k: int) -> list[str]:
+    """Devuelve los top_k chunks más relevantes para la pregunta."""
+    tokens = pregunta.lower().split()
+    scores = bm25.get_scores(tokens)
+    indices_top = scores.argsort()[-top_k:][::-1]
+    return [chunks[i] for i in indices_top]
 
 
 def responder_pregunta(
     pregunta: str,
-    top_k: int = 4,
-    vector_store: FAISS | None = None,
+    top_k: int = 5,
+    contexto_completo: bool = False,
+    llm: BaseChatModel | None = None,
 ) -> dict:
     """
-    Responde una pregunta usando RAG.
+    Responde una pregunta sobre el reporte.
+
+    Parámetros:
+      - top_k: número de chunks BM25 a recuperar (ignorado si contexto_completo=True)
+      - contexto_completo: si True, pasa todo el texto al LLM en lugar de usar BM25
+      - llm: instancia del LLM a usar (usa Claude Haiku por defecto)
 
     Devuelve un dict con:
-      - 'respuesta': texto de la respuesta del LLM
-      - 'fuentes': lista de chunks usados como contexto (para transparencia)
+      - 'respuesta': texto del LLM
+      - 'fuentes': chunks usados (vacío si contexto_completo=True)
     """
-    if vector_store is None:
-        vector_store = construir_vector_store()
+    if llm is None:
+        llm = crear_llm(temperature=0.0, max_tokens=512)
+    texto = cargar_contexto()
 
-    # 1. Recuperar chunks relevantes
-    docs_relevantes = vector_store.similarity_search(pregunta, k=top_k)
-    contexto = "\n\n---\n\n".join(d.page_content for d in docs_relevantes)
+    if contexto_completo:
+        contexto = texto
+        fuentes: list[str] = []
+    else:
+        bm25, chunks = _construir_bm25(texto)
+        fuentes = _recuperar_chunks(pregunta, bm25, chunks, top_k)
+        contexto = "\n\n---\n\n".join(fuentes)
 
-    # 2. Pasar al LLM
-    llm = _crear_llm()
     cadena = PROMPT_QA | llm | StrOutputParser()
     respuesta = cadena.invoke({"contexto": contexto, "pregunta": pregunta})
 
     return {
         "respuesta": respuesta,
-        "fuentes": [d.page_content for d in docs_relevantes],
+        "fuentes": fuentes,
     }
 
 
 if __name__ == "__main__":
-    print("Construyendo vector store...")
-    vs = construir_vector_store(forzar_reconstruccion=True)
-    print("✓ Vector store listo.\n")
-
     preguntas_demo = [
         "¿Cuáles fueron los ingresos de Hoteles Estelar en 2024?",
         "¿Cuál es el nivel de apalancamiento de la empresa?",
         "¿Qué CIIU tiene asignado?",
-        "¿Quién es el CEO de la empresa?",  # No está en el contexto -> debe decir que no sabe
+        "¿Quién es el CEO de la empresa?",
     ]
     for p in preguntas_demo:
         print(f"P: {p}")
-        r = responder_pregunta(p, vector_store=vs)
+        r = responder_pregunta(p)
         print(f"R: {r['respuesta']}\n")
