@@ -1,5 +1,5 @@
 # Hoteles Estelar — Análisis con LLM (Taller 1)
-
+cd scraper-main
 Sistema que extrae información financiera de **Hoteles Estelar S.A.** mediante
 scraping y la procesa con técnicas de IA generativa: **resumen automático**,
 **generación de FAQ** y **Q&A con RAG**, todo accesible desde un dashboard
