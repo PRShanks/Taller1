@@ -1,50 +1,58 @@
 """
 faq_generator.py
 ----------------
-Tarea 2 del taller: generación automática de preguntas frecuentes (FAQ)
-sobre el reporte financiero usando LangChain + Claude.
+Tarea 2 del taller: responde un set de preguntas frecuentes fijas
+sobre el reporte financiero usando LangChain + Claude/Ollama.
+
+Las preguntas son siempre las mismas; el LLM genera las respuestas
+basándose en el contexto corporativo cargado.
 """
 
-import os
-from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
 from llm.prompts import PROMPT_FAQ
 from llm.data_loader import cargar_contexto
+from llm.factory import crear_llm
 
-load_dotenv()
-
-
-def _crear_llm() -> ChatAnthropic:
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise EnvironmentError(
-            "Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env"
-        )
-    return ChatAnthropic(
-        model="claude-haiku-4-5-20251001",
-        temperature=0.5,   # Algo más alto para variedad en las preguntas
-        max_tokens=2048,
-        api_key=api_key,
-    )
+# Preguntas fijas — siempre las mismas, el modelo solo genera las respuestas
+PREGUNTAS_FAQ: list[str] = [
+    "¿Cuál es el nombre completo y el NIT de la empresa?",
+    "¿Cuáles fueron los ingresos operacionales del período reportado?",
+    "¿Cuál fue la utilidad neta del período y cómo varía respecto al período anterior?",
+    "¿Cuántos hoteles opera la cadena y en qué ciudades están ubicados?",
+    "¿Cuál es el nivel de endeudamiento o apalancamiento financiero de la empresa?",
+    "¿Cuál fue el EBITDA o resultado operacional del período?",
+    "¿Qué activos totales registra la empresa en su balance general?",
+    "¿Cuál es la actividad económica principal de la empresa según el reporte?",
+]
 
 
-def generar_faq(num_preguntas: int = 8, contexto: str | None = None) -> str:
+def generar_faq(
+    contexto: str | None = None,
+    llm: BaseChatModel | None = None,
+) -> str:
     """
-    Genera un bloque de FAQ con N preguntas y respuestas.
+    Genera respuestas para las preguntas fijas de PREGUNTAS_FAQ.
+    Si no se pasa contexto, lo carga desde el archivo consolidado.
+    Si no se pasa llm, usa Claude Haiku.
     """
     if contexto is None:
         contexto = cargar_contexto()
+    if llm is None:
+        llm = crear_llm(temperature=0.3, max_tokens=2048)
 
-    llm = _crear_llm()
+    preguntas_formateadas = "\n".join(
+        f"{i + 1}. {q}" for i, q in enumerate(PREGUNTAS_FAQ)
+    )
+
     cadena = PROMPT_FAQ | llm | StrOutputParser()
     return cadena.invoke({
         "contexto": contexto,
-        "num_preguntas": num_preguntas,
+        "preguntas": preguntas_formateadas,
     })
 
 
 if __name__ == "__main__":
     print("Generando FAQ...\n")
-    print(generar_faq(num_preguntas=8))
+    print(generar_faq())

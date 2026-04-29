@@ -2,46 +2,30 @@
 summarizer.py
 -------------
 Tarea 1 del taller: generación de un resumen ejecutivo del reporte
-financiero usando LangChain + Claude.
+financiero usando LangChain + Claude/Ollama.
 """
 
-import os
-from dotenv import load_dotenv
-from langchain_anthropic import ChatAnthropic
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
 from llm.prompts import PROMPT_RESUMEN
 from llm.data_loader import cargar_contexto
-
-load_dotenv()
-
-
-def _crear_llm() -> ChatAnthropic:
-    """Inicializa el modelo de Claude."""
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise EnvironmentError(
-            "Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env"
-        )
-    # Modelo económico y suficientemente capaz para esta tarea.
-    # Puedes cambiarlo por "claude-opus-4-5" si quieres más calidad.
-    return ChatAnthropic(
-        model="claude-haiku-4-5-20251001",
-        temperature=0.3,   # Bajo para que las cifras no varíen
-        max_tokens=1024,
-        api_key=api_key,
-    )
+from llm.factory import crear_llm
 
 
-def generar_resumen(contexto: str | None = None) -> str:
+def generar_resumen(
+    contexto: str | None = None,
+    llm: BaseChatModel | None = None,
+) -> str:
     """
     Genera el resumen ejecutivo. Si no se pasa contexto, lo carga
-    desde el archivo consolidado.
+    desde el archivo consolidado. Si no se pasa llm, usa Claude Haiku.
     """
     if contexto is None:
         contexto = cargar_contexto()
+    if llm is None:
+        llm = crear_llm(temperature=0.3, max_tokens=1024)
 
-    llm = _crear_llm()
     cadena = PROMPT_RESUMEN | llm | StrOutputParser()
     return cadena.invoke({"contexto": contexto})
 
