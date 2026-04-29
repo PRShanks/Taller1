@@ -1,2 +1,2 @@
 run:
-	uv run streamlit run main.py
+	uv run streamlit run app/dashboard.py
