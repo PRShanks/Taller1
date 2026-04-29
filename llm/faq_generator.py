@@ -63,7 +63,7 @@ def generar_faq(
     if contexto is None:
         contexto = cargar_contexto()
     if llm is None:
-        llm = crear_llm(temperature=0.3, max_tokens=2048)
+        llm = crear_llm(temperature=0.3, max_tokens=3072)
 
     preguntas_formateadas = "\n".join(
         f"{i + 1}. {q}" for i, q in enumerate(PREGUNTAS_FAQ)
