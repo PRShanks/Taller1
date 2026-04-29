@@ -1,75 +1,50 @@
 """
 data_loader.py
 --------------
-Toma el archivo .md generado por el scraper y lo transforma en un archivo
-de texto limpio (.txt) que servirá de contexto para las tareas de LLM.
+Lee DOS archivos .md del scraper:
+  1. HOTELES_ESTELAR_890304099.md  -> datos financieros
+  2. hoteles_estelar.md            -> información corporativa completa
 
-También enriquece el contenido con información estática de contexto
-(descripción de la empresa, glosario de indicadores) para que el Q&A
-tenga más material para trabajar.
+Los combina y limpia en un solo .txt para alimentar al LLM.
 """
 
 from pathlib import Path
 import re
 
-# Rutas del proyecto
 ROOT = Path(__file__).resolve().parent.parent
-RAW_MD = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
+RAW_MD_FINANCIERO  = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
+RAW_MD_CORPORATIVO = ROOT / "data" / "estelar_reportes" / "hoteles_estelar.md"
 PROCESSED_TXT = ROOT / "data" / "processed" / "estelar_consolidado.txt"
 
-
-# Contexto adicional para enriquecer el Q&A.
-# Estos son hechos públicos y conocidos sobre la empresa que ayudan al LLM
-# a contestar preguntas que no estarían en el .md crudo.
-CONTEXTO_EMPRESA = """
-INFORMACIÓN GENERAL DE LA EMPRESA
----------------------------------
-Hoteles Estelar S.A. es una de las cadenas hoteleras más importantes de Colombia.
-Opera bajo la marca "Estelar" y tiene presencia en las principales ciudades del país
-y en algunos destinos internacionales. Su actividad económica principal está
-clasificada bajo el código CIIU H5510 (Alojamiento en hoteles).
-
+GLOSARIO = """
 GLOSARIO DE INDICADORES FINANCIEROS
 -----------------------------------
 - Ingresos: Total de ventas o facturación de la empresa en el período.
 - EBITDA: Utilidad antes de intereses, impuestos, depreciación y amortización.
-  Mide la generación de caja operativa.
-- Utilidad operativa: Resultado del negocio antes de gastos financieros e impuestos.
+- Utilidad operativa: Resultado antes de gastos financieros e impuestos.
 - Margen bruto: (Utilidad bruta / Ingresos) x 100. Indica eficiencia productiva.
-- Margen EBITDA: (EBITDA / Ingresos) x 100. Indica rentabilidad operativa.
+- Margen EBITDA: (EBITDA / Ingresos) x 100. Rentabilidad operativa.
 - Margen operativo: (Utilidad operativa / Ingresos) x 100.
-- Deuda/EBITDA: Veces que la deuda total cubre el EBITDA. Mide apalancamiento.
-  Valores superiores a 4x se consideran altos en sectores no apalancados.
-- Capital de trabajo / Ingresos: Mide la liquidez relativa al volumen de ventas.
-  Valores negativos pueden indicar dependencia de financiamiento de proveedores.
-
-NOTAS METODOLÓGICAS
--------------------
-Los datos provienen del reporte de Supersociedades de Colombia, accesibles
-mediante la plataforma Estrategia en Acción. Las cifras monetarias están
-expresadas en pesos colombianos (COP) en millones.
+- Deuda/EBITDA: Veces que la deuda cubre el EBITDA. Mide apalancamiento.
+- Capital de trabajo / Ingresos: Mide liquidez relativa al volumen de ventas.
+Cifras en COP millones. Fuente: Supersociedades / Estrategia en Acción.
 """
 
 
 def limpiar_markdown(texto: str) -> str:
-    """Quita marcadores de Markdown sin perder la información."""
-    # Tablas Markdown -> formato "Campo: Valor"
+    """Quita marcadores Markdown sin perder la información."""
     lineas_limpias = []
     for linea in texto.split("\n"):
-        # Saltar líneas separadoras de tabla (|---|---|)
         if re.match(r"^\s*\|[\s\-:|]+\|\s*$", linea):
             continue
-        # Convertir filas de tabla "| x | y |" a "x: y"
         if linea.strip().startswith("|") and linea.strip().endswith("|"):
             celdas = [c.strip() for c in linea.strip("|").split("|")]
-            # Saltar header si dice "Campo | Valor"
             if len(celdas) == 2 and celdas[0].lower() == "campo" and celdas[1].lower() == "valor":
                 continue
             if len(celdas) == 2:
                 linea = f"  - {celdas[0]}: {celdas[1]}"
             else:
                 linea = "  - " + " | ".join(celdas)
-        # Quitar #, >, * de Markdown manteniendo el contenido
         linea = re.sub(r"^#+\s*", "", linea)
         linea = re.sub(r"^>\s*", "", linea)
         lineas_limpias.append(linea)
@@ -78,27 +53,32 @@ def limpiar_markdown(texto: str) -> str:
 
 def consolidar_datos() -> Path:
     """
-    Lee el .md crudo, lo limpia, le agrega contexto y guarda un .txt
-    listo para alimentar al LLM.
+    Lee ambos .md, los limpia y los combina en un solo .txt.
+    Si alguno no existe, lanza error indicando cuál falta.
     """
-    if not RAW_MD.exists():
-        raise FileNotFoundError(
-            f"No se encontró el archivo de datos: {RAW_MD}\n"
-            "Ejecuta primero el scraper para generarlo."
-        )
+    for ruta in [RAW_MD_FINANCIERO, RAW_MD_CORPORATIVO]:
+        if not ruta.exists():
+            raise FileNotFoundError(
+                f"No se encontró: {ruta}\n"
+                "Asegúrate de que el archivo esté en data/estelar_reportes/"
+            )
 
-    texto_crudo = RAW_MD.read_text(encoding="utf-8")
-    texto_limpio = limpiar_markdown(texto_crudo)
+    texto_financiero  = limpiar_markdown(RAW_MD_FINANCIERO.read_text(encoding="utf-8"))
+    texto_corporativo = limpiar_markdown(RAW_MD_CORPORATIVO.read_text(encoding="utf-8"))
 
     contenido_final = (
         "==============================================\n"
         "DATOS FINANCIEROS - HOTELES ESTELAR S.A.\n"
         "==============================================\n\n"
-        f"{texto_limpio}\n\n"
+        f"{texto_financiero}\n\n"
         "==============================================\n"
-        "CONTEXTO ADICIONAL\n"
+        "INFORMACIÓN CORPORATIVA - HOTELES ESTELAR S.A.\n"
+        "==============================================\n\n"
+        f"{texto_corporativo}\n\n"
         "==============================================\n"
-        f"{CONTEXTO_EMPRESA}"
+        "GLOSARIO\n"
+        "==============================================\n"
+        f"{GLOSARIO}"
     )
 
     PROCESSED_TXT.parent.mkdir(parents=True, exist_ok=True)
@@ -115,5 +95,5 @@ def cargar_contexto() -> str:
 
 if __name__ == "__main__":
     ruta = consolidar_datos()
-    print(f"✓ Archivo consolidado generado en: {ruta}")
+    print(f"✓ Archivo consolidado: {ruta}")
     print(f"  Tamaño: {ruta.stat().st_size} bytes")
