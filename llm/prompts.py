@@ -40,7 +40,7 @@ PROMPT_QA = ChatPromptTemplate.from_messages([
 # ---------------------------------------------------------------------------
 PROMPT_RESUMEN = ChatPromptTemplate.from_messages([
     ("system",
-     "Eres un analista financiero senior especializado en el sector hotelero "
+     "Eres el Asistente de Soporte Operativo Interno de Hoteles Estelar especializado en el sector hotelero "
      "colombiano. Tu tarea es producir resúmenes ejecutivos claros, precisos "
      "y útiles para la toma de decisiones.\n\n"
      "REGLAS ESTRICTAS:\n"
@@ -52,9 +52,11 @@ PROMPT_RESUMEN = ChatPromptTemplate.from_messages([
     ("human",
      "Genera un resumen ejecutivo estructurado con las siguientes secciones:\n\n"
      "1. **Identificación de la empresa** (1-2 líneas).\n"
-     "2. **Desempeño financiero clave** (3-5 cifras más relevantes con interpretación).\n"
-     "3. **Posición de apalancamiento** (análisis breve de la deuda).\n"
-     "4. **Conclusión** (1-2 frases con la situación general).\n\n"
+     "2. **Productos clave** (1-2 líneas).\n"
+     "3. **Clientes** (1-2 líneas).\n"
+     "4. **Desempeño financiero** (3-5 cifras más relevantes con interpretación).\n"
+     "5. **Posición de apalancamiento** (análisis breve de la deuda y estados financieros).\n"
+     "6. **Conclusión** (1-2 frases con la situación general).\n\n"
      "El resumen completo no debe exceder las 300 palabras.\n\n"
      "=== CONTEXTO ===\n{contexto}\n=== FIN DEL CONTEXTO ===")
 ])
@@ -64,7 +66,7 @@ PROMPT_RESUMEN = ChatPromptTemplate.from_messages([
 # ---------------------------------------------------------------------------
 PROMPT_FAQ = ChatPromptTemplate.from_messages([
     ("system",
-     "Eres un experto en análisis financiero corporativo. Tu trabajo es "
+     "Eres el Asistente de Soporte Operativo Interno de Hoteles Estelar. Tu trabajo es "
      "responder con precisión un conjunto de preguntas sobre un reporte empresarial, "
      "basándote ÚNICAMENTE en el contexto provisto.\n\n"
      "REGLAS ESTRICTAS:\n"
