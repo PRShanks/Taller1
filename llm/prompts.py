@@ -23,7 +23,9 @@ def _cargar_system_prompt() -> str:
         raise FileNotFoundError(
             f"No se encontró el system prompt en: {_SYSTEM_PROMPT_PATH}"
         )
-    return _SYSTEM_PROMPT_PATH.read_text(encoding="utf-8")
+    contenido = _SYSTEM_PROMPT_PATH.read_text(encoding="utf-8")
+    # Escapar llaves para que LangChain no las interprete como variables de plantilla
+    return contenido.replace("{", "{{").replace("}", "}}")
 
 
 PROMPT_QA = ChatPromptTemplate.from_messages([
