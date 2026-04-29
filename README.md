@@ -1,11 +1,8 @@
 # Hoteles Estelar — Análisis con LLM (Taller 1)
-cd scraper-main
-Sistema que extrae información financiera de **Hoteles Estelar S.A.** mediante
-scraping y la procesa con técnicas de IA generativa: **resumen automático**,
-**generación de FAQ** y **Q&A con RAG**, todo accesible desde un dashboard
-de Streamlit.
 
-> Stack: **LangChain · Claude (Anthropic) · FAISS · Streamlit**
+Sistema de análisis empresarial que combina **web scraping**, **procesamiento con LLM** y **generación aumentada por recuperación (RAG)** sobre datos públicos de **Hoteles Estelar S.A.** (NIT 890304099).
+
+> **Stack:** Python 3.12 · uv · LangChain · Claude (Anthropic) · FAISS · Streamlit
 
 ---
 
@@ -14,25 +11,29 @@ de Streamlit.
 ```
 scraper-main/
 ├── data/
-│   ├── estelar_reportes/       # salida del scraper (.md)
-│   ├── processed/              # texto consolidado para el LLM
-│   └── vector_store/           # índice FAISS (se crea solo)
-├── scripts/                    # scraper preexistente
+│   ├── estelar_reportes/
+│   │   ├── HOTELES_ESTELAR_890304099.md   # datos financieros (scraper)
+│   │   └── hoteles_estelar.md              # info corporativa
+│   ├── processed/                          # texto consolidado (auto)
+│   └── vector_store/                       # índice FAISS (auto)
+├── scripts/
 │   ├── capture_analisis_individual.py
 │   └── extract_estelar_report.py
-├── llm/                        # módulos de IA
-│   ├── data_loader.py
-│   ├── prompts.py
-│   ├── summarizer.py
-│   ├── faq_generator.py
-│   └── qa_chain.py
+├── llm/
+│   ├── data_loader.py        # carga y consolida los 2 .md
+│   ├── prompts.py            # prompts de las 3 tareas
+│   ├── summarizer.py         # tarea 1: Resumen
+│   ├── faq_generator.py      # tarea 2: FAQ
+│   └── qa_chain.py           # tarea 3: Q&A con RAG
 ├── app/
-│   └── dashboard.py            # interfaz Streamlit
+│   └── dashboard.py          # interfaz Streamlit
 ├── docs/
 │   ├── informe.md
 │   └── prompts_experimentacion.md
 ├── .env.example
 ├── .gitignore
+├── .python-version
+├── pyproject.toml
 ├── requirements.txt
 ├── main.py
 └── README.md
@@ -42,56 +43,72 @@ scraper-main/
 
 ## 🚀 Instalación
 
-### 1. Clonar y entrar al proyecto
+Este proyecto usa **[uv](https://github.com/astral-sh/uv)** como gestor de paquetes y entornos.
+
+### 1. Clonar el repositorio
 ```bash
-git clone <tu-repo-url>
-cd scraper-main
+git clone https://github.com/PRShanks/Taller1.git
+cd Taller1
 ```
 
-### 2. Crear entorno virtual
+### 2. Crear entorno virtual con Python 3.12
 ```bash
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# Linux / Mac
+uv venv --python 3.12
+```
+
+> ⚠️ Es importante usar Python 3.12. La librería `faiss-cpu` no tiene soporte aún para Python 3.13/3.14.
+
+### 3. Activar el entorno
+```powershell
+# Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+```
+```bash
+# Mac/Linux
 source .venv/bin/activate
 ```
 
-### 3. Instalar dependencias
+### 4. Instalar dependencias
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
-### 4. Configurar la API key de Anthropic
-1. Consigue una API key en https://console.anthropic.com/settings/keys
-2. Copia el archivo de ejemplo:
-```bash
+### 5. Configurar la API key de Anthropic
+```powershell
 # Windows
 copy .env.example .env
-# Linux / Mac
+```
+```bash
+# Mac/Linux
 cp .env.example .env
 ```
-3. Abre `.env` y reemplaza `sk-ant-api03-xxxxx` por tu key real.
+
+Edita el archivo `.env` y reemplaza el valor placeholder por tu API key real:
+```
+ANTHROPIC_API_KEY=sk-ant-api03-...
+```
+
+> Consigue tu key gratis en: https://console.anthropic.com/settings/keys
 
 ---
 
 ## ▶️ Uso
 
-### Opción A — Dashboard interactivo (recomendado)
+### Lanzar el dashboard interactivo (recomendado)
 ```bash
 streamlit run app/dashboard.py
 ```
-Se abre automáticamente en `http://localhost:8501`. Tiene 3 tabs:
+Se abre automáticamente en `http://localhost:8501`. El dashboard tiene 3 pestañas:
 
-| Tab | Funcionalidad |
+| Pestaña | Funcionalidad |
 |---|---|
-| 📋 Resumen | Genera un resumen ejecutivo del reporte |
-| ❓ FAQ | Crea N preguntas frecuentes con respuesta |
-| 💬 Q&A | Conversa con el reporte (RAG con FAISS) |
+| 📋 **Resumen** | Resumen ejecutivo del reporte financiero |
+| ❓ **FAQ** | Genera N preguntas frecuentes con respuesta |
+| 💬 **Q&A** | Conversa con el reporte usando RAG |
 
-### Opción B — Scripts individuales
+### Ejecutar scripts individuales
 ```bash
-# Generar el contexto consolidado a partir del .md del scraper
+# Generar el contexto consolidado a partir de los 2 archivos .md
 python -m llm.data_loader
 
 # Probar el resumen
@@ -100,7 +117,7 @@ python -m llm.summarizer
 # Probar el FAQ
 python -m llm.faq_generator
 
-# Probar el Q&A (incluye preguntas de demo)
+# Probar el Q&A (incluye preguntas demo)
 python -m llm.qa_chain
 ```
 
@@ -108,10 +125,11 @@ python -m llm.qa_chain
 
 ## 🧪 Cómo funciona el RAG (Q&A)
 
-1. El texto consolidado se divide en chunks de 400 caracteres con overlap de 80.
-2. Cada chunk se convierte en un vector (embedding) usando `sentence-transformers`.
-3. Los vectores se indexan localmente con FAISS.
-4. Cuando haces una pregunta:
+1. Los dos archivos `.md` (financiero + corporativo) se consolidan en un solo `.txt`.
+2. El texto se divide en chunks de 400 caracteres con overlap de 80.
+3. Cada chunk se transforma en un vector con `sentence-transformers` (modelo multilingüe).
+4. Los vectores se indexan localmente con FAISS.
+5. Cuando se hace una pregunta:
    - Se buscan los 4 chunks más similares semánticamente.
    - Se le pasan a Claude como contexto.
    - Claude responde **únicamente** con esa información.
@@ -119,17 +137,18 @@ python -m llm.qa_chain
 
 ---
 
-## 📚 Documentación adicional
+## 📚 Documentación
 
-- **Informe técnico completo:** [`docs/informe.md`](docs/informe.md)
-- **Documentación de prompt engineering:** [`docs/prompts_experimentacion.md`](docs/prompts_experimentacion.md)
+- **Informe técnico:** [`docs/informe.md`](docs/informe.md)
+- **Prompt engineering:** [`docs/prompts_experimentacion.md`](docs/prompts_experimentacion.md)
 
 ---
 
-## 🔒 Notas de seguridad
+## 🔒 Seguridad
 
-- El archivo `.env` está en `.gitignore` y **nunca debe subirse a GitHub**.
+- El archivo `.env` está en `.gitignore` y **nunca se sube a GitHub**.
 - El `vector_store/` también está ignorado — se regenera automáticamente.
+- La API key debe ser personal de cada usuario.
 
 ---
 
