@@ -90,18 +90,17 @@ _bcol1, _bcol2, _bcol3 = st.columns([1, 1, 4])
 with _bcol1:
     if st.button("📋 /resumen", use_container_width=True):
         st.session_state["ejecutar_cmd"] = "/resumen"
-        st.rerun()
 with _bcol2:
     if st.button("❓ /faq", use_container_width=True):
         st.session_state["ejecutar_cmd"] = "/faq"
-        st.rerun()
 
 # Recuperar comando disparado por botón (si existe)
-_cmd_btn = st.session_state.get("ejecutar_cmd")
-if _cmd_btn:
-    del st.session_state["ejecutar_cmd"]
+_cmd_btn = st.session_state.pop("ejecutar_cmd", None)
 
-pregunta = _cmd_btn or st.chat_input("Escribe tu pregunta o un comando /...")
+# chat_input SIEMPRE se llama para que el widget esté siempre visible
+_input_usuario = st.chat_input("Escribe tu pregunta o un comando /...")
+
+pregunta = _cmd_btn or _input_usuario
 
 if pregunta:
     st.session_state["mensajes"].append({"role": "user", "content": pregunta})
