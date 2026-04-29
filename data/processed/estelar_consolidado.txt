@@ -1,84 +1,22 @@
-==============================================
-DATOS FINANCIEROS - HOTELES ESTELAR S.A.
-==============================================
-
-HOTELES ESTELAR S.A.
-
-**Nota:** Las cifras monetarias están expresadas en **COP millones** según la fuente (Estrategia en Acción / Supersociedades).
-
-  - **NIT**: 890304099
-  - **Razón social**: HOTELES ESTELAR SA
-  - **Sector**: Turismo / Hoteles (CIIU H5510)
-  - **Fuente**: Supersociedades (vía Estrategia en Acción)
-  - **Reporte**: https://www.estrategiaenaccion.com/es/reportes
-  - **Dataset actualizado**: 2024
-  - **Extracción**: 2026-04-25
-  - **Unidades**: COP millones
-
----
-
-2024
-
-Identificación
-
-  - Nit - Razón social: 890304099 - HOTELES ESTELAR SA
-
-Estado de Resultados
-
-  - Ingresos: 501,762.39
-  - EBITDA: 70,147.14
-  - Utilidad operativa: 59,312.15
-  - Margen bruto: 61.70 %
-  - Margen EBITDA: 13.98 %
-  - Margen operativo: 11.82 %
-  - Deuda/EBITDA: 4.38
-  - Capital de trabajo/Ingresos: -10.16 %
-
-Balance General
-
-  - Deuda: 307,021.17
-
----
-
-Contexto del sector (datos agrupados — fuente: reporte Power BI)
-
-_Valores agregados del sector visible en el reporte (no filtrados por empresa)_
-
-  - Indicador: Valor
-  - Cantidad de CIIU seleccionados: 473
-  - Cantidad empresas: 28.259
-  - Ingresos (COP millones): 1.303.027.595
-  - Año del reporte: 2024
-
----
-
-Metadata de extracción
-
-  - Filas querydata capturadas: 1259
-  - Pares KV de card visuals: 0
-  - Páginas con menciones de empresa: 0
-  - Años identificados: 2024
-  - Fuente API: https://wabi-paas-1-scus-api.analysis.windows.net
-  - Report ID: 9ff26bf1-19f7-4998-856d-a37146e06753
 
 
-==============================================
-INFORMACIÓN CORPORATIVA - HOTELES ESTELAR S.A.
-==============================================
+============================================================
+FUENTE: informacion general.md
+============================================================
 
-Hoteles Estelar Colombia
+# Hoteles Estelar Colombia
 
-Introducción
+## Introducción
 
 Hoteles Estelar es una cadena hotelera con más de 50 años de experiencia en la industria, enfocada en ofrecer servicios de hospedaje, recreación y eventos corporativos. Su promesa de valor se resume en **“El Placer de Descubrir”**, con una propuesta de hospitalidad auténtica y 100% colombiana. Además de su operación en Colombia, la cadena también tiene presencia en Perú.
 
 ---
 
-1. Presencia en ciudades y países
+## 1. Presencia en ciudades y países
 
 Hoteles Estelar tiene presencia en **dos países: Colombia y Perú**. En su sitio oficial reporta **22 hoteles en Colombia** y **2 hoteles en Perú**, lo que la posiciona como una de las cadenas hoteleras de mayor cobertura regional dentro del mercado colombiano.
 
-Presencia en Colombia
+### Presencia en Colombia
 
 En Colombia, Hoteles Estelar tiene operación en las siguientes ciudades y destinos:
 
@@ -97,7 +35,7 @@ En Colombia, Hoteles Estelar tiene operación en las siguientes ciudades y desti
 
 Además, dentro de estas ciudades la marca opera diferentes tipos de establecimientos, como hoteles urbanos, hoteles vacacionales, centros de convenciones y apartamentos turísticos. Por ejemplo, en Bogotá aparecen hoteles como **Estelar La Fontana**, **Estelar Parque de la 93**, **Estelar Suites Jones**, **Estelar Calle 100** y **Estelar Apartamentos Bogotá**; en Barranquilla también incluye **Estelar en Alto Prado** y **Estelar Apartamentos Barranquilla**.
 
-Presencia internacional
+### Presencia internacional
 
 Fuera de Colombia, la cadena también opera en:
 
@@ -107,23 +45,23 @@ La presencia en Perú confirma que la marca no solo se enfoca en el mercado naci
 
 ---
 
-2. Alianzas
+## 2. Alianzas
 
 Hoteles Estelar muestra en su ecosistema digital varias alianzas y relaciones estratégicas visibles, tanto comerciales como institucionales.
 
-Alianzas corporativas e institucionales
+### Alianzas corporativas e institucionales
 
 - Relación con **Corficolombiana** y **Grupo Aval**, visibles en sus enlaces institucionales y línea ética.
 - Publicación de políticas de transparencia, ética, buen gobierno y sostenibilidad, lo que refleja una estructura corporativa formal y orientada a la confianza empresarial.
 
-Alianzas comerciales
+### Alianzas comerciales
 
 - Integración con la plataforma de experiencias turísticas **Civitatis**, que complementa la estadía del huésped con actividades y recorridos.
 - Plataforma **B2B**, orientada a empresas y clientes corporativos.
 - Producto **Vuelo + Hotel**, que integra alojamiento con servicios de viaje.
 - Promociones y convenios visibles como **Alianza Compensar** y **Alianza Bancos Aval**, orientadas a descuentos y beneficios especiales.
 
-Alianzas de fidelización
+### Alianzas de fidelización
 
 - Programa de lealtad **Huésped Siempre Estelar**, creado para premiar la fidelidad de los clientes.
 - Entre sus beneficios se encuentran:
@@ -133,24 +71,24 @@ Alianzas de fidelización
   - Beneficios especiales en restaurantes y eventos.
   - Hasta **21% de descuento adicional**.
 
-Alianzas con grupos de interés
+### Alianzas con grupos de interés
 
 La empresa también refleja articulación con **proveedores, clientes, huéspedes, colaboradores y aliados comerciales**, especialmente dentro de su política de sostenibilidad y en documentos relacionados con derechos y deberes de proveedores. Esto muestra que la relación con terceros también forma parte de su estrategia organizacional.
 
 ---
 
-3. Segmentación
+## 3. Segmentación
 
 Hoteles Estelar maneja una segmentación clara de mercado, orientada a distintos tipos de huéspedes y necesidades.
 
-Segmentación por tipo de viaje
+### Segmentación por tipo de viaje
 
 - **Viajeros de negocios:** hoteles urbanos, business center, salones de reuniones, centros de convenciones y espacios corporativos.
 - **Turistas de descanso y vacaciones:** hoteles vacacionales, hoteles frente al mar y destinos turísticos.
 - **Viajeros familiares:** espacios amplios, actividades recreativas y servicios orientados al descanso.
 - **Clientes de larga estancia:** apartamentos turísticos y opciones más flexibles de alojamiento.
 
-Segmentación por necesidades del cliente
+### Segmentación por necesidades del cliente
 
 - Clientes que buscan **eventos sociales y corporativos**.
 - Usuarios que valoran experiencias **pet friendly**.
@@ -160,7 +98,7 @@ Segmentación por necesidades del cliente
 - Empresas y organizaciones que requieren **salones y centros de convenciones**.
 - Clientes interesados en experiencias gastronómicas, ya que la marca impulsa una **ruta de restaurantes y bares** en varias ciudades.
 
-Segmentación geográfica
+### Segmentación geográfica
 
 La cadena segmenta su operación por ciudades estratégicas de Colombia, cubriendo:
 
@@ -170,7 +108,7 @@ La cadena segmenta su operación por ciudades estratégicas de Colombia, cubrien
 
 Esto le permite atender tanto la demanda **corporativa** como la **vacacional**, ampliando su alcance de mercado.
 
-Segmentación por estilo de experiencia
+### Segmentación por estilo de experiencia
 
 También puede observarse una segmentación por estilo de experiencia:
 
@@ -183,7 +121,7 @@ También puede observarse una segmentación por estilo de experiencia:
 
 ---
 
-4. Propuesta de valor
+## 4. Propuesta de valor
 
 La propuesta de valor de Hoteles Estelar gira alrededor de la idea de ofrecer una experiencia integral de hospitalidad basada en:
 
@@ -199,25 +137,25 @@ Su lema **“El Placer de Descubrir”** comunica una experiencia que no se limi
 
 ---
 
-5. Visión
+## 5. Visión
 
-**Visión propuesta con base en la información oficial:**  
-Ser una de las cadenas hoteleras líderes en Colombia y la región, reconocida por su hospitalidad auténtica, su excelencia en el servicio, su innovación en experiencias de hospedaje y eventos, y su compromiso con el desarrollo sostenible.
+> **Visión propuesta con base en la información oficial:**  
+> Ser una de las cadenas hoteleras líderes en Colombia y la región, reconocida por su hospitalidad auténtica, su excelencia en el servicio, su innovación en experiencias de hospedaje y eventos, y su compromiso con el desarrollo sostenible.
 
 Esta formulación se basa en su promesa de valor, su enfoque en la excelencia, su presencia en Colombia y Perú, su infraestructura para negocios y turismo, y su compromiso institucional con la sostenibilidad y la mejora continua. En las páginas oficiales revisadas no aparece una visión corporativa expresada literalmente en una sola frase, por lo que esta redacción es una **síntesis académica basada en la información oficial**.
 
 ---
 
-6. Misión
+## 6. Misión
 
-**Misión propuesta con base en la información oficial:**  
-Ofrecer experiencias de hospedaje, recreación y eventos corporativos de alta calidad, adaptadas a las necesidades de viajeros de negocios, turistas y familias, a través de una hospitalidad 100% colombiana, instalaciones modernas y un servicio orientado a la satisfacción integral del huésped.
+> **Misión propuesta con base en la información oficial:**  
+> Ofrecer experiencias de hospedaje, recreación y eventos corporativos de alta calidad, adaptadas a las necesidades de viajeros de negocios, turistas y familias, a través de una hospitalidad 100% colombiana, instalaciones modernas y un servicio orientado a la satisfacción integral del huésped.
 
 Esta redacción recoge el enfoque oficial de la cadena en hoteles urbanos, vacacionales, apartamentos turísticos, gastronomía, centros de convenciones y servicio integral. Al igual que la visión, esta formulación es **propuesta**, ya que no se encontró una misión redactada de forma textual y única en el sitio consultado.
 
 ---
 
-7. Líneas de negocio y servicios complementarios
+## 7. Líneas de negocio y servicios complementarios
 
 Además del hospedaje, Hoteles Estelar desarrolla otras líneas que fortalecen su posicionamiento:
 
@@ -234,7 +172,7 @@ Esto muestra que la empresa no solo compite como hotelera, sino como una marca d
 
 ---
 
-8. Enfoque sostenible
+## 8. Enfoque sostenible
 
 Hoteles Estelar manifiesta un compromiso con el desarrollo sostenible en los aspectos **ambientales, socioculturales y económicos**, a través del mejoramiento continuo de sus procesos. También indica medidas para proteger la integridad física y moral de niños, niñas, adolescentes y población vulnerable.
 
@@ -253,7 +191,7 @@ Además, en su ecosistema digital aparecen identificadores como **EcoEstelar** y
 
 ---
 
-9. Inclusión y experiencia del cliente
+## 9. Inclusión y experiencia del cliente
 
 Hoteles Estelar también comunica atributos de marca relacionados con inclusión y cercanía con distintos perfiles de cliente. En sus preguntas frecuentes indica que cuentan con certificación **Friendly Biz**, señalando que todos son bienvenidos, y en varias de sus ofertas y destinos resalta opciones **pet friendly**.
 
@@ -261,31 +199,1889 @@ Esto refuerza una imagen de marca orientada a la diversidad, la hospitalidad y l
 
 ---
 
-10. Conclusión
+## 10. Conclusión
 
 Hoteles Estelar Colombia es una cadena con amplia presencia nacional e internacional, orientada a diferentes segmentos del mercado hotelero. Su propuesta combina turismo, negocios, gastronomía, eventos, fidelización y sostenibilidad, lo que le permite posicionarse como una marca sólida dentro del sector. Además, sus alianzas corporativas, comerciales y de fidelización fortalecen su competitividad y su relación con distintos públicos.
 
 ---
 
-Referencias
+## Referencias
 
 - Sitio oficial de Hoteles Estelar.
 - Sección de destinos de Hoteles Estelar.
 - Sección de preguntas frecuentes y sostenibilidad.
 - Información sobre convenios, programas y gobierno corporativo.
 
-==============================================
-GLOSARIO
-==============================================
+============================================================
+FUENTE: inteligencia empresarial.md
+============================================================
 
-GLOSARIO DE INDICADORES FINANCIEROS
------------------------------------
-- Ingresos: Total de ventas o facturación de la empresa en el período.
-- EBITDA: Utilidad antes de intereses, impuestos, depreciación y amortización.
-- Utilidad operativa: Resultado antes de gastos financieros e impuestos.
-- Margen bruto: (Utilidad bruta / Ingresos) x 100. Indica eficiencia productiva.
-- Margen EBITDA: (EBITDA / Ingresos) x 100. Rentabilidad operativa.
-- Margen operativo: (Utilidad operativa / Ingresos) x 100.
-- Deuda/EBITDA: Veces que la deuda cubre el EBITDA. Mide apalancamiento.
-- Capital de trabajo / Ingresos: Mide liquidez relativa al volumen de ventas.
-Cifras en COP millones. Fuente: Supersociedades / Estrategia en Acción.
+# 🏨 Reporte de Inteligencia Empresarial: Hoteles Estelar S.A.
+
+> **Fuente:** Web scraping y búsqueda en fuentes públicas (Semana, Las2Orillas, La República, Supersociedades, EMIS, sitio oficial)  
+> **Fecha de consulta:** Abril 2026
+
+---
+
+## 1. Ficha Jurídica y Corporativa
+
+| Campo | Detalle |
+|---|---|
+| **Razón social** | Hoteles Estelar S.A. |
+| **NIT** | 890304099-3 |
+| **Tipo de organización** | Sociedad Anónima |
+| **Fecha de matrícula** | 30 de abril de 1968 |
+| **N° de matrícula** | 0000007674 |
+| **Cámara de Comercio** | Cali |
+| **Estado de la matrícula** | Activa |
+| **Código CIIU principal** | 5511 – Alojamiento en Hoteles |
+| **Actividades secundarias** | Arrendadores de Bienes Inmuebles / Grupos Musicales y Artistas |
+| **Dirección casa matriz** | Avenida Colombia No. 2-72, Cali, Valle del Cauca, Colombia |
+| **Teléfono registrado** | (2) 892-0470 |
+
+---
+
+## 2. Estructura de Propiedad y Accionistas
+
+### Propietario último (beneficiario final)
+**Luis Carlos Sarmiento Angulo** — fundador del Grupo Aval y considerado históricamente el hombre más rico de Colombia. La cadena Estelar pertenece al **Grupo Aval** a través de su brazo en el sector real: **Corficolombiana S.A.**
+
+### Cadena de control
+```
+Luis Carlos Sarmiento Angulo
+        │
+   Grupo Aval Acciones y Valores S.A.
+   (BVC: GRUPOAVAL | NYSE: AVAL)
+        │
+   Corficolombiana S.A.
+   (Corporación Financiera más grande de Colombia)
+        │
+   Hoteles Estelar S.A.
+```
+
+### Hito clave de propiedad
+En 2005, **Corficolombiana se fusionó con Corfivalle** (entidad que ya poseía participación en Estelar), incorporando así definitivamente la cadena al portafolio del Grupo Aval. Antes de eso, la cadena operaba bajo el nombre **Prohoteles S.A.** (hasta 1986) y luego **Hoteles Estelar de Colombia**.
+
+### Presidente ejecutivo
+**Miguel Enrique Díez Trujillo** — lleva más de una década al frente de la presidencia de Hoteles Estelar S.A.
+
+---
+
+## 3. Páginas Web Oficiales
+
+| Recurso | URL |
+|---|---|
+| Sitio oficial corporativo | https://www.hotelesestelar.com |
+| Programa de fidelización | https://siempreestelar.com |
+| Corficolombiana (matriz) | https://www.corfi.com |
+| Grupo Aval (holding) | https://www.grupoaval.com |
+
+Cada hotel de la cadena además tiene su propio micrositio web, por ejemplo:
+- https://www.estelarlafontana.com
+- https://www.estelarparquedela93.com
+- https://www.estelarcartagenadeindias.com
+
+---
+
+## 4. Portafolio de Hoteles — Ubicaciones Exactas
+
+### 🇨🇴 Colombia
+
+#### Bogotá
+| Hotel | Dirección |
+|---|---|
+| ESTELAR Parque de la 93 | Calle 93 No. 11-19, Bogotá |
+| ESTELAR Suites Jones | Calle 61 No. 5-39, Bogotá |
+| ESTELAR La Fontana | Av. Calle 127 No. 15a-10, Bogotá |
+| ESTELAR Apartamentos Bogotá | Bogotá (zona norte) |
+| ESTELAR Calle 100 | Calle 100 No. 14-46, Bogotá |
+
+#### Barranquilla
+| Hotel | Dirección |
+|---|---|
+| ESTELAR en Alto Prado | Calle 76 No. 56-29, Barranquilla |
+| ESTELAR Apartamentos Barranquilla | Barranquilla |
+
+#### Cali
+| Hotel | Dirección |
+|---|---|
+| Hotel Intercontinental Cali *(franquicia Estelar)* | Av. Colombia No. 2-72, Cali |
+
+#### Cartagena de Indias
+| Hotel | Dirección |
+|---|---|
+| ESTELAR Cartagena de Indias Hotel & Centro de Convenciones | Cra. 1 No. 11-116, Bocagrande, Cartagena |
+| ESTELAR Playa Manzanillo | Cartagena (zona costera) |
+
+#### Medellín
+| Hotel | Dirección |
+|---|---|
+| ESTELAR Square | Carrera 43 No. 9 sur-105, Medellín |
+| ESTELAR Milla de Oro | Calle 3 sur No. 43a-64, Medellín |
+| ESTELAR Apartamentos Medellín | Medellín |
+| ESTELAR La Torre Suites | Carrera 20 No. 1-33, Medellín |
+| ESTELAR Blue | Carrera 42 No. 1 sur-74, Medellín |
+
+#### Manizales
+| Hotel | Dirección |
+|---|---|
+| ESTELAR El Cable | Carrera 23c No. 64a-60, Manizales |
+| ESTELAR Recinto del Pensamiento Hotel & Centro de Convenciones | Km 11 Vía al Magdalena, Manizales |
+
+#### Otras ciudades de Colombia
+| Hotel | Ciudad | Dirección |
+|---|---|---|
+| ESTELAR Paipa Hotel & Centro de Convenciones | Paipa, Boyacá | A orillas del Lago Sochagota |
+| ESTELAR Santamar Hotel & Centro de Convenciones | Santa Marta | Km 8 Pozos Colorados |
+| ESTELAR Villavicencio Hotel & Centro de Convenciones | Villavicencio | Av. 40 con Calle 11, costado norte de Metrokia |
+| ESTELAR Yopal | Yopal, Casanare | Yopal |
+| ESTELAR Altamira | Ibagué, Tolima | Carrera 1 No. 45-50, Ibagué |
+
+### 🇵🇪 Perú (Lima)
+| Hotel | Ubicación |
+|---|---|
+| ESTELAR Apartamentos Bellavista | Bellavista, Lima |
+| ESTELAR San Isidro | San Isidro, Lima |
+| Hotel en Miraflores | Miraflores, Lima |
+
+---
+
+## 5. Cifras Clave del Negocio (2024–2025)
+
+| Indicador | Valor |
+|---|---|
+| Número de hoteles | ~25 propiedades (Colombia + Perú) |
+| Número de habitaciones | +3.000 |
+| Huéspedes atendidos (2024) | 1,17 millones |
+| Ocupación promedio (2024) | 63,6% (vs. 56% promedio nacional) |
+| Crecimiento ventas (2024 vs 2023) | +4,9% |
+| EBITDA (2024) | >$82.000 millones COP |
+| Utilidad neta (2024) | $35.413 millones COP (+23%) |
+| Empleos directos | ~2.300 |
+| Empleados empresa (aprox.) | +5.000 (incluyendo indirectos) |
+| Año de fundación | 1968 |
+
+---
+
+## 6. Empresas del Ecosistema Estelar y Grupo Aval
+
+### Filiales y relacionadas directas (Corficolombiana / Grupo Aval)
+
+| Empresa | Sector |
+|---|---|
+| **Corficolombiana S.A.** | Holding financiero e industrial (propietaria de Estelar) |
+| **Grupo Aval Acciones y Valores S.A.** | Conglomerado financiero (controlante final) |
+| **Banco de Bogotá** | Sector bancario |
+| **Banco de Occidente** | Sector bancario |
+| **Banco AV Villas** | Sector bancario |
+| **Banco Popular** | Sector bancario |
+| **AFP Porvenir** | Fondos de pensiones y cesantías |
+| **BAC Credomatic** | Banca Centroamérica |
+| **Promigas** | Energía y gas |
+| Agroindustria (palma y caucho) | Tolima y Llanos Orientales |
+
+### Alianzas y franquicias operadas por Estelar
+
+| Empresa/Marca | Relación |
+|---|---|
+| **InterContinental Hotels Group (IHG)** | Estelar opera el Hotel Intercontinental Cali bajo franquicia de IHG |
+| **Hilton Hotels** | Estelar es accionista mayoritario (89%) del Hilton Cartagena |
+| **VISA / Bancos Aval** | Alianza comercial para programa de beneficios a huéspedes |
+
+### Proveedores/contratistas registrados (fuente pública: lasempresas.com.co)
+- Agrícola Santamaría SAS
+- Conectar TV SAS
+- Vigilancia Acosta Ltda.
+- Telemática Ltda.
+- Sociedad Médica de Ortopedia y Accidentes Laborales S.A.
+- Empresa de Conducciones Las Arrieritas S.A.
+
+---
+
+## 7. Modelo de Negocio y Operación
+
+Hoteles Estelar opera bajo **múltiples modelos de propiedad y gestión**:
+
+- **Propiedad absoluta:** La cadena es dueña total del inmueble y lo opera directamente.
+- **Participación accionaria minoritaria:** En algunos hoteles (como el Hilton Cartagena) Estelar es accionista mayoritaria con 89% del inmueble.
+- **Franquicia:** El Hotel Intercontinental Cali opera bajo licencia de IHG pero es gestionado por Estelar.
+- **Derechos fiduciarios:** Algunos inmuebles (e.g., Estelar Cartagena) tienen estructuras de inversión fiduciaria, donde terceros inversionistas poseen participaciones del patrimonio autónomo del inmueble.
+
+---
+
+## 8. Contexto Histórico
+
+- **1968:** Fundación como Sociedad Prohoteles S.A., con el Hotel Intercontinental de Cali como primer activo (inaugurado con presencia del presidente Misael Pastrana Borrero).
+- **1986:** Cambio de razón social a **Hoteles Estelar de Colombia**.
+- **1986:** Adquisición del ESTELAR Paipa Hotel & Centro de Convenciones.
+- **1987:** Incorporación del Hotel Estelar La Fontana (Bogotá).
+- **2005:** Fusión de Corficolombiana con Corfivalle → Estelar pasa a ser parte oficial del Grupo Aval / Sarmiento Angulo.
+- **2009:** Se posiciona como la cadena hotelera #1 de Colombia (~22% de participación de mercado).
+- **2014–presente:** Expansión internacional a Perú (Lima).
+- **2025–2026:** Planes de construcción de Torre Suites en Pereira y exploración de La Guajira, Villa de Leyva y Eje Cafetero.
+
+---
+
+## 9. Programa de Fidelización
+
+**Huésped Siempre Estelar (HSE)** y **Siempre Estelar Corporativo (SEC)**
+
+- Programa por puntos/estrellas para huéspedes frecuentes y empresas.
+- Los accionistas, miembros de junta directiva y propietarios de inmuebles de la cadena acceden automáticamente a la categoría **ORO Propietarios**.
+- Aplica en todos los hoteles de Colombia y Perú.
+- Web: https://siempreestelar.com
+
+---
+
+## 10. Redes Sociales y Contacto
+
+| Canal | Información |
+|---|---|
+| Sitio web | www.hotelesestelar.com |
+| Email programa corporativo | programas@hotelesestelar.com |
+| Teléfono sede Cali | (2) 892-0470 |
+| LinkedIn / Instagram | Disponibles bajo el nombre "Hoteles Estelar" |
+
+---
+
+*Reporte generado con base en información pública disponible a abril de 2026. Los datos financieros exactos de accionistas requieren consulta directa a la Superintendencia de Sociedades o compra de informe en EMIS / Datacreditoempresas.*
+
+
+============================================================
+FUENTE: reporte-financiero-completo.md
+============================================================
+
+# Reporte Financiero Completo — Hoteles Estelar
+
+## 1. Cifras principales
+
+### Ingresos
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Ingresos</th>
+        <th>Crecimiento (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>303.068</td>
+        <td>14.2</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>114.930</td>
+        <td>-62.1</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>235.079</td>
+        <td>104.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>419.714</td>
+        <td>78.5</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>475.618</td>
+        <td>13.3</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>501.762</td>
+        <td>5.5</td>
+    </tr>
+  </tbody>
+</table>
+
+### Utilidad bruta
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Utilidad bruta</th>
+        <th>Margen bruto (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>196.015</td>
+        <td>64.7</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>59.955</td>
+        <td>52.2</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>140.488</td>
+        <td>59.8</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>267.039</td>
+        <td>63.6</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>297.155</td>
+        <td>62.5</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>309.606</td>
+        <td>61.7</td>
+    </tr>
+  </tbody>
+</table>
+
+### Gastos operacionales
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Gastos operacionales</th>
+        <th>Gastos operacionales/Ingresos (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>176.823</td>
+        <td>58.3</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>99.481</td>
+        <td>86.6</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>144.497</td>
+        <td>61.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>229.624</td>
+        <td>54.7</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>259.457</td>
+        <td>54.6</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>268.765</td>
+        <td>53.6</td>
+    </tr>
+  </tbody>
+</table>
+
+### EBITDA
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>EBITDA</th>
+        <th>Margen EBITDA (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>30.986</td>
+        <td>10.2</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-9.364</td>
+        <td>-8.1</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>15.363</td>
+        <td>6.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>58.882</td>
+        <td>14.0</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>65.595</td>
+        <td>13.8</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>70.147</td>
+        <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+
+### Capital de trabajo neto
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Capital de trabajo neto</th>
+        <th>Capital de trabajo/Ingresos (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>-44.875</td>
+        <td>-14.8</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-18.960</td>
+        <td>-16.5</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>-27.837</td>
+        <td>-11.8</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>-30.379</td>
+        <td>-7.2</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>-60.099</td>
+        <td>-12.6</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>-50.958</td>
+        <td>-10.2</td>
+    </tr>
+  </tbody>
+</table>
+
+### Deuda
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Deuda</th>
+        <th>Deuda/EBITDA (x)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>158.186</td>
+        <td>5.1</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>267.971</td>
+        <td>-28.6</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>280.150</td>
+        <td>18.2</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>305.998</td>
+        <td>5.2</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>306.915</td>
+        <td>4.7</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>307.021</td>
+        <td>4.4</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 2. Balance general
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Caja y bancos</td>
+        <td>10.760</td>
+        <td>7.299</td>
+        <td>19.992</td>
+        <td>26.507</td>
+        <td>22.089</td>
+        <td>14.143</td>
+    </tr>
+    <tr>
+        <td>Inversiones</td>
+        <td>27.562</td>
+        <td>23.705</td>
+        <td>18.294</td>
+        <td>60.639</td>
+        <td>58.541</td>
+        <td>103.978</td>
+    </tr>
+    <tr>
+        <td>Cuentas por cobrar</td>
+        <td>63.690</td>
+        <td>74.694</td>
+        <td>49.573</td>
+        <td>51.802</td>
+        <td>58.409</td>
+        <td>57.103</td>
+    </tr>
+    <tr>
+        <td>Inventario</td>
+        <td>7.493</td>
+        <td>6.575</td>
+        <td>8.900</td>
+        <td>10.943</td>
+        <td>11.447</td>
+        <td>12.208</td>
+    </tr>
+    <tr>
+        <td>Activos biológicos CP</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Impuestos a favor</td>
+        <td>2.881</td>
+        <td>1.338</td>
+        <td>3.339</td>
+        <td>5.861</td>
+        <td>7.364</td>
+        <td>11.199</td>
+    </tr>
+    <tr>
+        <td>Otros activos corrientes</td>
+        <td>1.285</td>
+        <td>19.921</td>
+        <td>24.880</td>
+        <td>32.930</td>
+        <td>2.445</td>
+        <td>10.340</td>
+    </tr>
+    <tr>
+        <td>**Total activos corrientes**</td>
+        <td>**113.671**</td>
+        <td>**133.533**</td>
+        <td>**124.978**</td>
+        <td>**188.683**</td>
+        <td>**160.294**</td>
+        <td>**208.971**</td>
+    </tr>
+    <tr>
+        <td>PPyE</td>
+        <td>425.599</td>
+        <td>472.745</td>
+        <td>464.831</td>
+        <td>467.270</td>
+        <td>487.686</td>
+        <td>491.052</td>
+    </tr>
+    <tr>
+        <td>Intangibles</td>
+        <td>1.140</td>
+        <td>1.617</td>
+        <td>1.136</td>
+        <td>2.576</td>
+        <td>2.649</td>
+        <td>1.846</td>
+    </tr>
+    <tr>
+        <td>Activos biológicos LP</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Intercompanies</td>
+        <td>95.178</td>
+        <td>80.907</td>
+        <td>81.513</td>
+        <td>105.915</td>
+        <td>110.631</td>
+        <td>119.719</td>
+    </tr>
+    <tr>
+        <td>Otras CxC no corrientes</td>
+        <td>8.123</td>
+        <td>16.287</td>
+        <td>27.160</td>
+        <td>18.267</td>
+        <td>16.713</td>
+        <td>22.102</td>
+    </tr>
+    <tr>
+        <td>Otros activos no corrientes</td>
+        <td>602</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>34.876</td>
+        <td>884</td>
+    </tr>
+    <tr>
+        <td>**Total activos no corrientes**</td>
+        <td>**530.641**</td>
+        <td>**571.556**</td>
+        <td>**574.641**</td>
+        <td>**594.028**</td>
+        <td>**652.554**</td>
+        <td>**635.603**</td>
+    </tr>
+    <tr>
+        <td>**Total activos**</td>
+        <td>**644.313**</td>
+        <td>**705.089**</td>
+        <td>**699.619**</td>
+        <td>**782.711**</td>
+        <td>**812.849**</td>
+        <td>**844.574**</td>
+    </tr>
+    <tr>
+        <td>Deuda</td>
+        <td>158.186</td>
+        <td>267.971</td>
+        <td>280.150</td>
+        <td>305.998</td>
+        <td>306.915</td>
+        <td>307.021</td>
+    </tr>
+    <tr>
+        <td>Proveedores</td>
+        <td>110.595</td>
+        <td>116.904</td>
+        <td>107.901</td>
+        <td>121.908</td>
+        <td>126.581</td>
+        <td>126.777</td>
+    </tr>
+    <tr>
+        <td>Obligaciones laborales</td>
+        <td>9.630</td>
+        <td>4.584</td>
+        <td>6.628</td>
+        <td>10.008</td>
+        <td>13.182</td>
+        <td>14.465</td>
+    </tr>
+    <tr>
+        <td>Impuestos por pagar</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Provisiones</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>566</td>
+    </tr>
+    <tr>
+        <td>Otros pasivos</td>
+        <td>5.724</td>
+        <td>345</td>
+        <td>0</td>
+        <td>8.433</td>
+        <td>10.211</td>
+        <td>11.110</td>
+    </tr>
+    <tr>
+        <td>**Total pasivos**</td>
+        <td>**284.134**</td>
+        <td>**389.804**</td>
+        <td>**394.679**</td>
+        <td>**446.346**</td>
+        <td>**456.889**</td>
+        <td>**459.940**</td>
+    </tr>
+    <tr>
+        <td>Capitales</td>
+        <td>251.776</td>
+        <td>250.219</td>
+        <td>250.251</td>
+        <td>251.056</td>
+        <td>250.918</td>
+        <td>264.206</td>
+    </tr>
+    <tr>
+        <td>Reservas</td>
+        <td>34.226</td>
+        <td>35.645</td>
+        <td>16.087</td>
+        <td>16.087</td>
+        <td>18.511</td>
+        <td>21.393</td>
+    </tr>
+    <tr>
+        <td>Resultado de Ej. Ant.</td>
+        <td>62.976</td>
+        <td>19.328</td>
+        <td>26.682</td>
+        <td>48.040</td>
+        <td>74.549</td>
+        <td>81.195</td>
+    </tr>
+    <tr>
+        <td>Superavit</td>
+        <td>11.200</td>
+        <td>10.093</td>
+        <td>11.920</td>
+        <td>21.182</td>
+        <td>11.980</td>
+        <td>17.841</td>
+    </tr>
+    <tr>
+        <td>**Total patrimonio**</td>
+        <td>**360.178**</td>
+        <td>**315.285**</td>
+        <td>**304.939**</td>
+        <td>**336.364**</td>
+        <td>**355.960**</td>
+        <td>**384.634**</td>
+    </tr>
+    <tr>
+        <td>Check ecuación contable</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+### Capital de trabajo
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Capital de trabajo neto</th>
+        <th>Deuda/Capital de trabajo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>-44.875</td>
+        <td>-3,5</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-18.960</td>
+        <td>-14,1</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>-27.837</td>
+        <td>-10,1</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>-30.379</td>
+        <td>-10,1</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>-60.099</td>
+        <td>-5,1</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>-50.958</td>
+        <td>-6,0</td>
+    </tr>
+  </tbody>
+</table>
+
+### Deuda
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Deuda</th>
+        <th>Deuda/EBITDA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>158.186</td>
+        <td>5,1x</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>267.971</td>
+        <td>-28,6x</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>280.150</td>
+        <td>18,2x</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>305.998</td>
+        <td>5,2x</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>306.915</td>
+        <td>4,7x</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>307.021</td>
+        <td>4,4x</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 3. Estado de resultados
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Ingresos</td>
+        <td>303.068</td>
+        <td>114.930</td>
+        <td>235.079</td>
+        <td>419.714</td>
+        <td>475.618</td>
+        <td>501.762</td>
+    </tr>
+    <tr>
+        <td>Costos</td>
+        <td>107.053</td>
+        <td>54.974</td>
+        <td>94.591</td>
+        <td>152.674</td>
+        <td>178.463</td>
+        <td>192.156</td>
+    </tr>
+    <tr>
+        <td>Utilidad bruta</td>
+        <td>196.015</td>
+        <td>59.955</td>
+        <td>140.488</td>
+        <td>267.039</td>
+        <td>297.155</td>
+        <td>309.606</td>
+    </tr>
+    <tr>
+        <td>Gastos de administración</td>
+        <td>89.976</td>
+        <td>76.035</td>
+        <td>85.125</td>
+        <td>110.109</td>
+        <td>125.167</td>
+        <td>133.786</td>
+    </tr>
+    <tr>
+        <td>Gastos de ventas</td>
+        <td>14.653</td>
+        <td>9.195</td>
+        <td>12.170</td>
+        <td>22.272</td>
+        <td>25.969</td>
+        <td>28.369</td>
+    </tr>
+    <tr>
+        <td>Otros gastos operacionales</td>
+        <td>72.193</td>
+        <td>14.252</td>
+        <td>47.202</td>
+        <td>97.243</td>
+        <td>108.321</td>
+        <td>106.611</td>
+    </tr>
+    <tr>
+        <td>**Total gastos operacionales**</td>
+        <td>**176.823**</td>
+        <td>**99.481**</td>
+        <td>**144.497**</td>
+        <td>**229.624**</td>
+        <td>**259.457**</td>
+        <td>**268.765**</td>
+    </tr>
+    <tr>
+        <td>Otras ganancias/perdidas</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Otros ingresos operacionales</td>
+        <td>5.612</td>
+        <td>15.861</td>
+        <td>9.122</td>
+        <td>11.985</td>
+        <td>18.159</td>
+        <td>18.471</td>
+    </tr>
+    <tr>
+        <td>Utilidad operativa</td>
+        <td>24.804</td>
+        <td>-23.665</td>
+        <td>5.113</td>
+        <td>49.401</td>
+        <td>55.857</td>
+        <td>59.312</td>
+    </tr>
+    <tr>
+        <td>D&amp;A</td>
+        <td>6.182</td>
+        <td>14.301</td>
+        <td>10.251</td>
+        <td>9.481</td>
+        <td>9.738</td>
+        <td>10.835</td>
+    </tr>
+    <tr>
+        <td>EBITDA</td>
+        <td>30.986</td>
+        <td>-9.364</td>
+        <td>15.363</td>
+        <td>58.882</td>
+        <td>65.595</td>
+        <td>70.147</td>
+    </tr>
+    <tr>
+        <td>Ingresos financieros</td>
+        <td>782</td>
+        <td>1.332</td>
+        <td>722</td>
+        <td>4.282</td>
+        <td>13.088</td>
+        <td>13.278</td>
+    </tr>
+    <tr>
+        <td>Costos financieros</td>
+        <td>14.992</td>
+        <td>15.739</td>
+        <td>18.725</td>
+        <td>32.614</td>
+        <td>52.343</td>
+        <td>50.197</td>
+    </tr>
+    <tr>
+        <td>Otros financieros (neto)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Coberturas</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Utilidades en subsidiarias</td>
+        <td>5.401</td>
+        <td>-10.001</td>
+        <td>-101</td>
+        <td>11.554</td>
+        <td>13.880</td>
+        <td>13.871</td>
+    </tr>
+    <tr>
+        <td>Otros ingresos no operacionales</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Otros egresos no operacionales</td>
+        <td>374</td>
+        <td>501</td>
+        <td>447</td>
+        <td>-126</td>
+        <td>-106</td>
+        <td>-51</td>
+    </tr>
+    <tr>
+        <td>UAI</td>
+        <td>15.620</td>
+        <td>-48.573</td>
+        <td>-13.437</td>
+        <td>32.748</td>
+        <td>30.588</td>
+        <td>36.315</td>
+    </tr>
+    <tr>
+        <td>Impuestos</td>
+        <td>1.429</td>
+        <td>-4.786</td>
+        <td>-2.385</td>
+        <td>8.504</td>
+        <td>1.791</td>
+        <td>902</td>
+    </tr>
+    <tr>
+        <td>Utilidad neta</td>
+        <td>14.192</td>
+        <td>-43.786</td>
+        <td>-11.053</td>
+        <td>24.245</td>
+        <td>28.796</td>
+        <td>35.413</td>
+    </tr>
+    <tr>
+        <td>Δ Ingresos</td>
+        <td>14,2 %</td>
+        <td>-62,1 %</td>
+        <td>104,5 %</td>
+        <td>78,5 %</td>
+        <td>13,3 %</td>
+        <td>5,5 %</td>
+    </tr>
+    <tr>
+        <td>Margen bruto</td>
+        <td>64,7 %</td>
+        <td>52,2 %</td>
+        <td>59,8 %</td>
+        <td>63,6 %</td>
+        <td>62,5 %</td>
+        <td>61,7 %</td>
+    </tr>
+    <tr>
+        <td>Margen EBITDA</td>
+        <td>10,2 %</td>
+        <td>-8,1 %</td>
+        <td>6,5 %</td>
+        <td>14,0 %</td>
+        <td>13,8 %</td>
+        <td>14,0 %</td>
+    </tr>
+    <tr>
+        <td>Gastos operacionales/Ingresos</td>
+        <td>58,3 %</td>
+        <td>86,6 %</td>
+        <td>61,5 %</td>
+        <td>54,7 %</td>
+        <td>54,6 %</td>
+        <td>53,6 %</td>
+    </tr>
+    <tr>
+        <td>Margen Neto</td>
+        <td>4,7 %</td>
+        <td>-38,1 %</td>
+        <td>-4,7 %</td>
+        <td>5,8 %</td>
+        <td>6,1 %</td>
+        <td>7,1 %</td>
+    </tr>
+    <tr>
+        <td>Deuda/EBITDA</td>
+        <td>5,1x</td>
+        <td>-28,6x</td>
+        <td>18,2x</td>
+        <td>5,2x</td>
+        <td>4,7x</td>
+        <td>4,4x</td>
+    </tr>
+    <tr>
+        <td>EBITDA/Costos financieros</td>
+        <td>2,1x</td>
+        <td>-0,6x</td>
+        <td>0,8x</td>
+        <td>1,8x</td>
+        <td>1,3x</td>
+        <td>1,4x</td>
+    </tr>
+  </tbody>
+</table>
+
+### Ingresos
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Ingresos</th>
+        <th>Crecimiento (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>303.068</td>
+        <td>14.2</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>114.930</td>
+        <td>-62.1</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>235.079</td>
+        <td>104.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>419.714</td>
+        <td>78.5</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>475.618</td>
+        <td>13.3</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>501.762</td>
+        <td>5.5</td>
+    </tr>
+  </tbody>
+</table>
+
+### EBITDA
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>EBITDA</th>
+        <th>Margen EBITDA (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>30.986</td>
+        <td>10.2</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-9.364</td>
+        <td>-8.1</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>15.363</td>
+        <td>6.5</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>58.882</td>
+        <td>14.0</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>65.595</td>
+        <td>13.8</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>70.147</td>
+        <td>14.0</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 4. Flujo de caja
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>(+) EBITDA</td>
+        <td>30.986</td>
+        <td>-9.364</td>
+        <td>15.363</td>
+        <td>58.882</td>
+        <td>65.595</td>
+        <td>70.147</td>
+    </tr>
+    <tr>
+        <td>(-) Impuestos</td>
+        <td>-1.429</td>
+        <td>4.786</td>
+        <td>2.385</td>
+        <td>-8.504</td>
+        <td>-1.791</td>
+        <td>-902</td>
+    </tr>
+    <tr>
+        <td>(-) Δ Capital de trabajo neto</td>
+        <td>-1.961</td>
+        <td>-25.915</td>
+        <td>8.878</td>
+        <td>2.542</td>
+        <td>29.720</td>
+        <td>-9.141</td>
+    </tr>
+    <tr>
+        <td>(-) Δ CapEx</td>
+        <td>-24.421</td>
+        <td>-61.926</td>
+        <td>-1.855</td>
+        <td>-13.360</td>
+        <td>-30.226</td>
+        <td>-13.399</td>
+    </tr>
+    <tr>
+        <td>**(1) Flujo de caja operativo**</td>
+        <td>**3.176**</td>
+        <td>**-92.418**</td>
+        <td>**24.770**</td>
+        <td>**39.560**</td>
+        <td>**63.298**</td>
+        <td>**46.705**</td>
+    </tr>
+    <tr>
+        <td>(+) Δ Deuda</td>
+        <td>11.487</td>
+        <td>109.785</td>
+        <td>12.179</td>
+        <td>25.848</td>
+        <td>917</td>
+        <td>106</td>
+    </tr>
+    <tr>
+        <td>(-) Costos financieros</td>
+        <td>-14.992</td>
+        <td>-15.739</td>
+        <td>-18.725</td>
+        <td>-32.614</td>
+        <td>-52.343</td>
+        <td>-50.197</td>
+    </tr>
+    <tr>
+        <td>**(2) Flujo financiero**</td>
+        <td>**-3.505**</td>
+        <td>**94.047**</td>
+        <td>**-6.546**</td>
+        <td>**-6.766**</td>
+        <td>**-51.425**</td>
+        <td>**-50.091**</td>
+    </tr>
+    <tr>
+        <td>(-) Δ OAOP, neto</td>
+        <td>-4.566</td>
+        <td>5.187</td>
+        <td>-6.413</td>
+        <td>-49.421</td>
+        <td>-34.162</td>
+        <td>-25.023</td>
+    </tr>
+    <tr>
+        <td>(+) Δ Patrimonio</td>
+        <td>895</td>
+        <td>-1.107</td>
+        <td>707</td>
+        <td>7.180</td>
+        <td>-9.201</td>
+        <td>-6.738</td>
+    </tr>
+    <tr>
+        <td>(+) Ingresos financieros</td>
+        <td>782</td>
+        <td>1.332</td>
+        <td>722</td>
+        <td>4.282</td>
+        <td>13.088</td>
+        <td>13.278</td>
+    </tr>
+    <tr>
+        <td>(+) Otros Ingresos/Egresos no operacionales</td>
+        <td>5.026</td>
+        <td>-10.502</td>
+        <td>-547</td>
+        <td>11.680</td>
+        <td>13.985</td>
+        <td>13.922</td>
+    </tr>
+    <tr>
+        <td>**(3) Flujo no operativo**</td>
+        <td>**2.137**</td>
+        <td>**-5.089**</td>
+        <td>**-5.531**</td>
+        <td>**-26.279**</td>
+        <td>**-16.290**</td>
+        <td>**-4.561**</td>
+    </tr>
+    <tr>
+        <td>**(1+2+3) Flujo del periodo**</td>
+        <td>**1.808**</td>
+        <td>**-3.461**</td>
+        <td>**12.694**</td>
+        <td>**6.515**</td>
+        <td>**-4.418**</td>
+        <td>**-7.947**</td>
+    </tr>
+    <tr>
+        <td>Caja inicial</td>
+        <td>8.952</td>
+        <td>10.760</td>
+        <td>7.299</td>
+        <td>19.992</td>
+        <td>26.507</td>
+        <td>22.089</td>
+    </tr>
+    <tr>
+        <td>Caja final</td>
+        <td>10.760</td>
+        <td>7.299</td>
+        <td>19.992</td>
+        <td>26.507</td>
+        <td>22.089</td>
+        <td>14.143</td>
+    </tr>
+    <tr>
+        <td>Check caja</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+### EBITDA vs Flujo operativo
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>EBITDA</th>
+        <th>Flujo de caja operativo</th>
+        <th>Flujo operativo/EBITDA (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>30.986</td>
+        <td>3.176</td>
+        <td>10.2</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-9.364</td>
+        <td>-92.418</td>
+        <td>987.0</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>15.363</td>
+        <td>24.770</td>
+        <td>161.2</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>58.882</td>
+        <td>39.560</td>
+        <td>67.2</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>65.595</td>
+        <td>63.298</td>
+        <td>96.5</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>70.147</td>
+        <td>46.705</td>
+        <td>66.6</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## 5. Capital de trabajo, activos de largo plazo y otros
+
+### Capital de trabajo neto
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Cuentas por cobrar</td>
+        <td>63.690</td>
+        <td>74.694</td>
+        <td>49.573</td>
+        <td>51.802</td>
+        <td>58.409</td>
+        <td>57.103</td>
+    </tr>
+    <tr>
+        <td>Inventario</td>
+        <td>7.493</td>
+        <td>6.575</td>
+        <td>8.900</td>
+        <td>10.943</td>
+        <td>11.447</td>
+        <td>12.208</td>
+    </tr>
+    <tr>
+        <td>Activos biológicos CP</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Impuestos a favor</td>
+        <td>2.881</td>
+        <td>1.338</td>
+        <td>3.339</td>
+        <td>5.861</td>
+        <td>7.364</td>
+        <td>11.199</td>
+    </tr>
+    <tr>
+        <td>Otros activos corrientes</td>
+        <td>1.285</td>
+        <td>19.921</td>
+        <td>24.880</td>
+        <td>32.930</td>
+        <td>2.445</td>
+        <td>10.340</td>
+    </tr>
+    <tr>
+        <td>**Activos Wk**</td>
+        <td>**75.350**</td>
+        <td>**102.529**</td>
+        <td>**86.692**</td>
+        <td>**101.537**</td>
+        <td>**79.664**</td>
+        <td>**90.851**</td>
+    </tr>
+    <tr>
+        <td>Proveedores</td>
+        <td>110.595</td>
+        <td>116.904</td>
+        <td>107.901</td>
+        <td>121.908</td>
+        <td>126.581</td>
+        <td>126.777</td>
+    </tr>
+    <tr>
+        <td>Obligaciones laborales</td>
+        <td>9.630</td>
+        <td>4.584</td>
+        <td>6.628</td>
+        <td>10.008</td>
+        <td>13.182</td>
+        <td>14.465</td>
+    </tr>
+    <tr>
+        <td>Impuestos por pagar</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Provisiones</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>566</td>
+    </tr>
+    <tr>
+        <td>**Pasivos Wk**</td>
+        <td>**120.225**</td>
+        <td>**121.488**</td>
+        <td>**114.530**</td>
+        <td>**131.916**</td>
+        <td>**139.763**</td>
+        <td>**141.809**</td>
+    </tr>
+    <tr>
+        <td>**Capital de trabajo neto**</td>
+        <td>**-44.875**</td>
+        <td>**-18.960**</td>
+        <td>**-27.837**</td>
+        <td>**-30.379**</td>
+        <td>**-60.099**</td>
+        <td>**-50.958**</td>
+    </tr>
+    <tr>
+        <td>Δ Capital de trabajo neto</td>
+        <td>1.961</td>
+        <td>25.915</td>
+        <td>-8.878</td>
+        <td>-2.542</td>
+        <td>-29.720</td>
+        <td>9.141</td>
+    </tr>
+  </tbody>
+</table>
+
+### Días de capital de trabajo
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>Dias cuentas por cobrar</th>
+        <th>Dias inventario</th>
+        <th>Dias proveedores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>372</td>
+        <td>43</td>
+        <td>76</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>766</td>
+        <td>234</td>
+        <td>76</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>411</td>
+        <td>76</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>287</td>
+        <td>44</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>255</td>
+        <td>44</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>238</td>
+        <td>41</td>
+        <td>21</td>
+    </tr>
+  </tbody>
+</table>
+
+### Activos de largo plazo
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>PPyE</td>
+        <td>425.599</td>
+        <td>472.745</td>
+        <td>464.831</td>
+        <td>467.270</td>
+        <td>487.686</td>
+        <td>491.052</td>
+    </tr>
+    <tr>
+        <td>Intangibles</td>
+        <td>1.140</td>
+        <td>1.617</td>
+        <td>1.136</td>
+        <td>2.576</td>
+        <td>2.649</td>
+        <td>1.846</td>
+    </tr>
+    <tr>
+        <td>Activos biológicos LP</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>**Activos fijos y CapEx**</td>
+        <td>**426.738**</td>
+        <td>**474.363**</td>
+        <td>**465.968**</td>
+        <td>**469.846**</td>
+        <td>**490.334**</td>
+        <td>**492.898**</td>
+    </tr>
+    <tr>
+        <td>**Δ CapEx**</td>
+        <td>**24.421**</td>
+        <td>**61.926**</td>
+        <td>**1.855**</td>
+        <td>**13.360**</td>
+        <td>**30.226**</td>
+        <td>**13.399**</td>
+    </tr>
+    <tr>
+        <td>D&amp;A</td>
+        <td>6.182</td>
+        <td>14.301</td>
+        <td>10.251</td>
+        <td>9.481</td>
+        <td>9.738</td>
+        <td>10.835</td>
+    </tr>
+  </tbody>
+</table>
+
+### CapEx y Capital de trabajo / Ingresos
+
+<table>
+  <thead>
+    <tr>
+        <th>Año</th>
+        <th>% Capital de trabajo/Ingresos</th>
+        <th>% CapEx/Ingresos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>2019</td>
+        <td>-14.8</td>
+        <td>8.1</td>
+    </tr>
+    <tr>
+        <td>2020</td>
+        <td>-16.5</td>
+        <td>53.9</td>
+    </tr>
+    <tr>
+        <td>2021</td>
+        <td>-11.8</td>
+        <td>0.8</td>
+    </tr>
+    <tr>
+        <td>2022</td>
+        <td>-7.2</td>
+        <td>3.2</td>
+    </tr>
+    <tr>
+        <td>2023</td>
+        <td>-12.6</td>
+        <td>6.4</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>-10.2</td>
+        <td>2.7</td>
+    </tr>
+  </tbody>
+</table>
+
+### Otros activos y otros pasivos no operacionales
+
+<table>
+  <thead>
+    <tr>
+        <th> </th>
+        <th>2019</th>
+        <th>2020</th>
+        <th>2021</th>
+        <th>2022</th>
+        <th>2023</th>
+        <th>2024</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Inversiones</td>
+        <td>27.562</td>
+        <td>23.705</td>
+        <td>18.294</td>
+        <td>60.639</td>
+        <td>58.541</td>
+        <td>103.978</td>
+    </tr>
+    <tr>
+        <td>Intercompanies</td>
+        <td>95.178</td>
+        <td>80.907</td>
+        <td>81.513</td>
+        <td>105.915</td>
+        <td>110.631</td>
+        <td>119.719</td>
+    </tr>
+    <tr>
+        <td>Otras CxC no corrientes</td>
+        <td>8.123</td>
+        <td>16.287</td>
+        <td>27.160</td>
+        <td>18.267</td>
+        <td>16.713</td>
+        <td>22.102</td>
+    </tr>
+    <tr>
+        <td>Otros activos no corrientes</td>
+        <td>602</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>34.876</td>
+        <td>884</td>
+    </tr>
+    <tr>
+        <td>**Otros activos no operacionales**</td>
+        <td>**131.465**</td>
+        <td>**120.898**</td>
+        <td>**126.967**</td>
+        <td>**184.821**</td>
+        <td>**220.761**</td>
+        <td>**246.683**</td>
+    </tr>
+    <tr>
+        <td>Otros pasivos</td>
+        <td>5.724</td>
+        <td>345</td>
+        <td>0</td>
+        <td>8.433</td>
+        <td>10.211</td>
+        <td>11.110</td>
+    </tr>
+    <tr>
+        <td>**Otros pasivos no operacionales**</td>
+        <td>**5.724**</td>
+        <td>**345**</td>
+        <td>**0**</td>
+        <td>**8.433**</td>
+        <td>**10.211**</td>
+        <td>**11.110**</td>
+    </tr>
+    <tr>
+        <td>**OAOP, neto**</td>
+        <td>**125.741**</td>
+        <td>**120.554**</td>
+        <td>**126.967**</td>
+        <td>**176.388**</td>
+        <td>**210.550**</td>
+        <td>**235.573**</td>
+    </tr>
+    <tr>
+        <td>Δ OAOP, neto</td>
+        <td>4.566</td>
+        <td>-5.187</td>
+        <td>6.413</td>
+        <td>49.421</td>
+        <td>34.162</td>
+        <td>25.023</td>
+    </tr>
+  </tbody>
+</table>
