@@ -55,7 +55,7 @@ PROMPT_RESUMEN = ChatPromptTemplate.from_messages([
      "2. **Productos clave** (1-2 líneas).\n"
      "3. **Clientes** (1-2 líneas).\n"
      "4. **Desempeño financiero** (3-5 cifras más relevantes con interpretación).\n"
-     "5. **Posición de apalancamiento** (análisis breve de la deuda y estados financieros).\n"
+     "5. **Posición de apalancamiento** (análisis breve de la deuda y estados financieros sin usar ecuaciones).\n"
      "6. **Conclusión** (1-2 frases con la situación general).\n\n"
      "El resumen completo no debe exceder las 300 palabras.\n\n"
      "=== CONTEXTO ===\n{contexto}\n=== FIN DEL CONTEXTO ===")

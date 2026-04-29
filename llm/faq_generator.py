@@ -43,6 +43,11 @@ PREGUNTAS_FAQ: list[str] = [
     "Comparando el margen EBITDA de 2024 (14,0 %) con el de 2019 (10,2 %), ¿qué conclusión se puede extraer sobre la eficiencia operativa de la empresa?",
     "El capital de trabajo neto ha sido negativo en todos los años del reporte. ¿Qué implica esto para la liquidez de corto plazo y cómo lo mitiga la empresa?",
     "Dado que los costos financieros en 2024 fueron COP 50.197 millones y el EBITDA fue COP 70.147 millones (cobertura 1,4x), ¿qué riesgo financiero representa esta situación y cómo ha evolucionado desde 2019?",
+    "¿Quién es el dueño o beneficiario final de Hoteles Estelar S.A. y cómo está estructurada la cadena de control accionario?",
+    "¿Cuáles son las ubicaciones exactas (direcciones) de todos los hoteles Estelar en Medellín y Bogotá?",
+    "¿Qué alianzas o franquicias internacionales tiene Hoteles Estelar y bajo qué modalidad opera cada una?",
+    "¿Cuáles fueron los resultados financieros de Hoteles Estelar en 2024 y cómo se comparan con el promedio del sector hotelero colombiano?",
+    "¿Qué empresas del Grupo Aval están relacionadas con Hoteles Estelar y en qué sectores operan?"
 ]
 
 
