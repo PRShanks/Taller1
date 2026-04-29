@@ -10,6 +10,8 @@ Modos disponibles:
 """
 
 import os
+import json
+import re
 from dotenv import load_dotenv
 from rank_bm25 import BM25Okapi
 from langchain_core.language_models.chat_models import BaseChatModel
@@ -20,6 +22,34 @@ from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm
 
 load_dotenv()
+
+
+def _parsear_respuesta(texto: str) -> dict:
+    """
+    Extrae el JSON devuelto por el LLM.
+    Si el LLM envuelve el JSON en un bloque ```json ... ```, lo limpia.
+    Si el parseo falla, devuelve la respuesta cruda para no crashear.
+    """
+    # Quitar bloque ```json ... ``` si existe
+    match = re.search(r"```(?:json)?\s*({.*?})\s*```", texto, re.DOTALL)
+    limpio = match.group(1) if match else texto.strip()
+
+    try:
+        datos = json.loads(limpio)
+        # Garantizar claves mínimas
+        return {
+            "respuesta": datos.get("respuesta", texto),
+            "encontrado": datos.get("encontrado", True),
+            "confianza": datos.get("confianza", "media"),
+            "nota": datos.get("nota", ""),
+        }
+    except json.JSONDecodeError:
+        return {
+            "respuesta": texto,
+            "encontrado": True,
+            "confianza": "baja",
+            "nota": "La respuesta no pudo ser estructurada en formato JSON.",
+        }
 
 
 def _construir_bm25(texto: str, tam_chunk: int = 150, solapamiento: int = 30) -> tuple[BM25Okapi, list[str]]:
@@ -81,10 +111,11 @@ def responder_pregunta(
         contexto = "\n\n---\n\n".join(fuentes)
 
     cadena = PROMPT_QA | llm | StrOutputParser()
-    respuesta = cadena.invoke({"contexto": contexto, "pregunta": pregunta})
+    texto_crudo = cadena.invoke({"contexto": contexto, "pregunta": pregunta})
+    resultado_llm = _parsear_respuesta(texto_crudo)
 
     return {
-        "respuesta": respuesta,
+        **resultado_llm,
         "fuentes": fuentes,
     }
 

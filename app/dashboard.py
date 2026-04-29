@@ -90,14 +90,32 @@ if pregunta := st.chat_input("Haz una pregunta sobre el reporte..."):
                     contexto_completo=usar_completo,
                     llm=crear_llm(proveedor, modelo, temperature=0.0, max_tokens=512),
                 )
-                respuesta = resultado["respuesta"]
-                st.markdown(respuesta)
 
-                if not usar_completo and resultado["fuentes"]:
+                # Badge de confianza
+                badge = {"alta": "🟢 Alta", "media": "🟡 Media", "baja": "🔴 Baja"}.get(
+                    resultado.get("confianza", "media"), "🟡 Media"
+                )
+
+                if resultado.get("encontrado", True):
+                    st.markdown(resultado["respuesta"])
+                else:
+                    st.warning(resultado["respuesta"])
+
+                col1, col2 = st.columns([1, 5])
+                with col1:
+                    st.caption(f"Confianza: {badge}")
+                if resultado.get("nota"):
+                    with col2:
+                        st.caption(f"ℹ️ {resultado['nota']}")
+
+                if not usar_completo and resultado.get("fuentes"):
                     with st.expander("📄 Fragmentos usados como fuente"):
                         for i, fuente in enumerate(resultado["fuentes"], 1):
                             st.markdown(f"**Fragmento {i}:**")
                             st.code(fuente, language="text")
+
+                respuesta = resultado["respuesta"]
+
             except Exception as e:
                 respuesta = f"❌ Error: {e}"
                 st.error(respuesta)
