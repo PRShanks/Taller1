@@ -7,6 +7,8 @@ Modos disponibles:
   - BM25 (default): divide el texto en ventanas de N palabras, recupera
     las más relevantes con búsqueda léxica y se las pasa al LLM.
   - Contexto completo: pasa todo el texto consolidado al LLM directamente.
+
+Soporta historial de conversación para preguntas de seguimiento.
 """
 
 import os
@@ -15,9 +17,10 @@ import re
 from dotenv import load_dotenv
 from rank_bm25 import BM25Okapi
 from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_core.messages import BaseMessage
 from langchain_core.output_parsers import StrOutputParser
 
-from llm.prompts import PROMPT_QA
+from llm.prompts import PROMPT_QA, PROMPT_QA_CON_MEMORIA
 from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm
 
@@ -85,18 +88,26 @@ def responder_pregunta(
     top_k: int = 5,
     contexto_completo: bool = False,
     llm: BaseChatModel | None = None,
+    historial: list[BaseMessage] | None = None,
 ) -> dict:
     """
     Responde una pregunta sobre el reporte.
 
     Parámetros:
+      - pregunta: la consulta del colaborador
       - top_k: número de chunks BM25 a recuperar (ignorado si contexto_completo=True)
       - contexto_completo: si True, pasa todo el texto al LLM en lugar de usar BM25
       - llm: instancia del LLM a usar (usa Claude Haiku por defecto)
+      - historial: mensajes previos de la conversación para contexto de seguimiento.
+                   Si es None o vacío, se usa el prompt sin memoria (PROMPT_QA).
+                   Si tiene mensajes, se usa PROMPT_QA_CON_MEMORIA.
 
     Devuelve un dict con:
       - 'respuesta': texto del LLM
       - 'fuentes': chunks usados (vacío si contexto_completo=True)
+      - 'encontrado': si se encontró información relevante
+      - 'confianza': nivel de confianza (alta, media, baja)
+      - 'nota': nota adicional del LLM
     """
     if llm is None:
         llm = crear_llm(temperature=0.0, max_tokens=512)
@@ -110,8 +121,21 @@ def responder_pregunta(
         fuentes = _recuperar_chunks(pregunta, bm25, chunks, top_k)
         contexto = "\n\n---\n\n".join(fuentes)
 
-    cadena = PROMPT_QA | llm | StrOutputParser()
-    texto_crudo = cadena.invoke({"contexto": contexto, "pregunta": pregunta})
+    # Elegir prompt según si hay historial de conversación
+    if historial:
+        cadena = PROMPT_QA_CON_MEMORIA | llm | StrOutputParser()
+        texto_crudo = cadena.invoke({
+            "contexto": contexto,
+            "pregunta": pregunta,
+            "historial": historial,
+        })
+    else:
+        cadena = PROMPT_QA | llm | StrOutputParser()
+        texto_crudo = cadena.invoke({
+            "contexto": contexto,
+            "pregunta": pregunta,
+        })
+
     resultado_llm = _parsear_respuesta(texto_crudo)
 
     return {

@@ -26,9 +26,10 @@ Taller1/
 │   ├── __init__.py
 │   ├── data_loader.py         # Carga y consolidación de datos
 │   ├── factory.py             # Factory pattern para crear LLMs
-│   ├── faq_generator.py       # Generación de FAQ
+│   ├── faq_generator.py      # Generación de FAQ
+│   ├── memory.py              # Memoria de sesión (InMemoryStore)
 │   ├── prompts.py             # Todos los prompts (separación de lógica)
-│   ├── qa_chain.py            # Q&A con BM25 + LLM
+│   ├── qa_chain.py            # Q&A con BM25 + LLM + memoria
 │   └── summarizer.py          # Resumen ejecutivo
 ├── scripts/
 │   ├── consolidar_estelar.py  # Consolida .md en .txt
@@ -56,7 +57,28 @@ Taller1/
 - **Bajo acoplamiento**: inyección de dependencias (`llm=None` con default via factory).
   - Las funciones del dominio reciben `llm: BaseChatModel | None` en vez de importar el LLM globalmente.
   - Los prompts se inyectan desde `prompts.py`, no están hardcodeados en la lógica.
+  - La memoria se inyecta: `historial: list[BaseMessage] | None` permite Q&A con o sin contexto previo.
 - **Separación de capas**: UI (`app/`) → Dominio (`llm/`) → Datos (`data/`). Nunca cruzar capas saltando niveles.
+
+## Memoria de Sesión
+
+El módulo `llm/memory.py` gestiona la memoria de conversación usando `InMemoryStore` de LangGraph.
+
+Arquitectura de namespaces:
+- **Historial**: `("sessions", session_id, "messages")` — mensajes de la conversación
+- **Datos de usuario**: `("users", user_id, "profile")` — preferencias y contexto personalizado
+
+Flujo actual:
+1. `SessionMemory` se crea como singleton en Streamlit via `@st.cache_resource`
+2. Cada sesión de Streamlit tiene un `session_id` único
+3. Se guarda cada mensaje (humano + AI) en el store
+4. Al hacer una pregunta, se recupera el historial y se pasa al LLM via `MessagesPlaceholder`
+5. El botón "Limpiar historial" en el sidebar elimina la sesión del store
+
+Objetivo futuro:
+- Reemplazar `InMemoryStore` por un store persistente (Postgres, Redis, etc.)
+- La interfaz `SessionMemory` se mantiene, solo se cambia el store subyacente
+- Agregar datos personalizados por usuario via `save_user_data` / `get_user_data`
 
 ## Reglas Obligatorias
 

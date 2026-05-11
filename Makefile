@@ -6,7 +6,7 @@
 # =============================================================================
 
 .PHONY: help setup venv sync lock dev \
-       run run-qa run-summary run-faq run-data \
+       run run-qa run-summary run-faq run-data run-memory \
        lint format typecheck \
        test test-verbose test-cov \
        clean clean-data clean-cache clean-all \
@@ -76,6 +76,9 @@ run-faq: ## Ejecutar generador de FAQ standalone
 
 run-data: ## Regenerar archivo consolidado de datos
 	$(UV) run $(PYTHON) -m llm.data_loader
+
+run-memory: ## Ejecutar demo de memoria de sesión
+	$(UV) run $(PYTHON) -m llm.memory
 
 # ---------------------------------------------------------------------------
 # Scraping y extracción de datos

@@ -2,13 +2,14 @@
 prompts.py
 ----------
 Prompts para el chat de Hoteles Estelar S.A.:
-  - PROMPT_QA:      Chat Q&A con comandos /pregunta (usa system_prompt.txt)
-  - PROMPT_RESUMEN: Generación de resumen ejecutivo (/resumen)
-  - PROMPT_FAQ:     Generación de preguntas frecuentes (/faq)
+  - PROMPT_QA:               Chat Q&A sin historial (usa system_prompt.txt)
+  - PROMPT_QA_CON_MEMORIA:   Chat Q&A con historial de conversación
+  - PROMPT_RESUMEN:          Generación de resumen ejecutivo (/resumen)
+  - PROMPT_FAQ:              Generación de preguntas frecuentes (/faq)
 """
 
 from pathlib import Path
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -30,6 +31,22 @@ def _cargar_system_prompt() -> str:
 
 PROMPT_QA = ChatPromptTemplate.from_messages([
     ("system", _cargar_system_prompt()),
+    ("human",
+     "=== DOCUMENTACIÓN CORPORATIVA ===\n"
+     "{contexto}\n"
+     "=== FIN DE LA DOCUMENTACIÓN ===\n\n"
+     "Consulta del colaborador: {pregunta}")
+])
+
+# ---------------------------------------------------------------------------
+# Q&A con memoria — incluye historial de conversación previa
+# ---------------------------------------------------------------------------
+# El MessagesPlaceholder permite pasar mensajes anteriores para que el LLM
+# pueda responder preguntas de seguimiento. Si el historial está vacío,
+# el placeholder se omite y el prompt es idéntico a PROMPT_QA.
+PROMPT_QA_CON_MEMORIA = ChatPromptTemplate.from_messages([
+    ("system", _cargar_system_prompt()),
+    MessagesPlaceholder(variable_name="historial", optional=True),
     ("human",
      "=== DOCUMENTACIÓN CORPORATIVA ===\n"
      "{contexto}\n"

@@ -3,10 +3,16 @@ dashboard.py
 ------------
 Chat Q&A sobre el reporte financiero de Hoteles Estelar S.A.
 
+Incluye memoria de conversación por sesión usando InMemoryStore de LangGraph.
+El agente recuerda preguntas y respuestas previas dentro de la sesión,
+lo que permite hacer preguntas de seguimiento sobre lo ya consultado.
+
 Cómo ejecutar:
+    make dev
     streamlit run app/dashboard.py
 """
 
+import uuid
 import sys
 from pathlib import Path
 
@@ -19,6 +25,7 @@ import streamlit as st
 from llm.qa_chain import responder_pregunta
 from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm, MODELOS_CLAUDE, MODELOS_OLLAMA_SUGERIDOS
+from llm.memory import SessionMemory
 from llm.summarizer import generar_resumen
 from llm.faq_generator import generar_faq
 
@@ -38,6 +45,23 @@ st.caption("Taller 1 · Aplicación de Técnicas Avanzadas de IA Generativa")
 @st.cache_data
 def _contexto_completo() -> str:
     return cargar_contexto()
+
+
+# -------------------- Memoria de sesión --------------------
+# InMemoryStore se crea una vez como recurso global (persiste entre reruns).
+# Cada sesión de Streamlit usa su propio session_id para namespacear los datos.
+@st.cache_resource
+def _crear_memoria() -> SessionMemory:
+    """Crea una única instancia de SessionMemory compartida entre sesiones."""
+    return SessionMemory()
+
+
+memoria = _crear_memoria()
+
+if "session_id" not in st.session_state:
+    st.session_state["session_id"] = str(uuid.uuid4())
+
+session_id = st.session_state["session_id"]
 
 
 # -------------------- Sidebar --------------------
@@ -70,6 +94,16 @@ with st.sidebar:
         value=5,
         disabled=usar_completo,
     )
+
+    st.divider()
+    st.header("💾 Memoria de sesión")
+    mensajes_en_memoria = len(memoria.get_history(session_id))
+    st.caption(f"Mensajes en historial: {mensajes_en_memoria}")
+
+    if st.button("🗑️ Limpiar historial"):
+        memoria.clear_session(session_id)
+        st.session_state["mensajes"] = []
+        st.rerun()
 
     st.divider()
     if st.button("📂 Ver contexto crudo"):
@@ -107,6 +141,9 @@ if pregunta:
     with st.chat_message("user"):
         st.markdown(pregunta)
 
+    # Guardar mensaje del usuario en memoria
+    memoria.save_message(session_id, "human", pregunta)
+
     cmd = pregunta.strip().lower()
 
     # ---- Comando /resumen ----
@@ -122,6 +159,7 @@ if pregunta:
                     respuesta = f"❌ Error al generar resumen: {e}"
                     st.error(respuesta)
         st.session_state["mensajes"].append({"role": "assistant", "content": respuesta})
+        memoria.save_message(session_id, "ai", respuesta)
 
     # ---- Comando /faq ----
     elif cmd.startswith("/faq"):
@@ -136,6 +174,7 @@ if pregunta:
                     respuesta = f"❌ Error al generar FAQ: {e}"
                     st.error(respuesta)
         st.session_state["mensajes"].append({"role": "assistant", "content": respuesta})
+        memoria.save_message(session_id, "ai", respuesta)
 
     # ---- Comando desconocido que empieza con / ----
     elif cmd.startswith("/"):
@@ -148,17 +187,22 @@ if pregunta:
         with st.chat_message("assistant"):
             st.info(ayuda)
         st.session_state["mensajes"].append({"role": "assistant", "content": ayuda})
+        memoria.save_message(session_id, "ai", ayuda)
 
-    # ---- Pregunta libre ----
+    # ---- Pregunta libre (con memoria de conversación) ----
     else:
         with st.chat_message("assistant"):
             with st.spinner("Buscando respuesta..."):
                 try:
+                    # Recuperar historial de la sesión para contexto de seguimiento
+                    historial = memoria.get_history(session_id)
+
                     resultado = responder_pregunta(
                         pregunta,
                         top_k=top_k,
                         contexto_completo=usar_completo,
                         llm=crear_llm(proveedor, modelo, temperature=0.0, max_tokens=512),
+                        historial=historial,
                     )
 
                     # Badge de confianza
@@ -191,6 +235,8 @@ if pregunta:
                     st.error(respuesta)
 
         st.session_state["mensajes"].append({"role": "assistant", "content": respuesta})
+        # Guardar respuesta en memoria (solo el texto legible, no el JSON crudo)
+        memoria.save_message(session_id, "ai", respuesta)
 
 
 # -------------------- Modal de contexto crudo --------------------
@@ -200,4 +246,3 @@ if st.session_state.get("mostrar_contexto"):
         if st.button("Cerrar"):
             st.session_state["mostrar_contexto"] = False
             st.rerun()
-
