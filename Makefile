@@ -10,7 +10,7 @@
        lint format typecheck \
        test test-verbose test-cov \
        clean clean-data clean-cache clean-all \
-       check install-scraping
+       check install-scraping install-hooks pre-commit pre-commit-autoupdate
 
 # ---------------------------------------------------------------------------
 # Configuración
@@ -42,7 +42,7 @@ help: ## Mostrar este mensaje de ayuda
 # ---------------------------------------------------------------------------
 # Setup e Instalación
 # ---------------------------------------------------------------------------
-setup: venv sync ## Setup completo: crear venv + instalar dependencias
+setup: venv sync install-hooks ## Setup completo: crear venv + instalar dependencias + hooks
 	@echo "✓ Proyecto listo. Ejecuta 'make dev' para iniciar."
 
 venv: ## Crear entorno virtual con Python 3.12
@@ -115,6 +115,20 @@ typecheck: ## Verificar tipos con mypy
 	$(UV) run $(MYPY) $(SRC_DIRS) --ignore-missing-imports
 
 check: lint format-check ## Lint + formato (sin modificar archivos)
+
+# ---------------------------------------------------------------------------
+# Pre-commit hooks
+# ---------------------------------------------------------------------------
+install-hooks: ## Instalar pre-commit hooks (requiere dependencias de dev)
+	$(UV) run pre-commit install
+	@echo "✓ Pre-commit hooks instalados. Se ejecutarán antes de cada commit."
+
+pre-commit: ## Ejecutar todos los pre-commit hooks manualmente
+	$(UV) run pre-commit run --all-files
+
+pre-commit-autoupdate: ## Actualizar versiones de los hooks
+	$(UV) run pre-commit autoupdate
+	@echo "✓ Hooks actualizados a las últimas versiones."
 
 # ---------------------------------------------------------------------------
 # Testing

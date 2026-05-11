@@ -1,0 +1,47 @@
+# Pre-commit hooks para Hoteles Estelar Chat Assistant
+# Instalar: make install-hooks
+# Ejecutar manualmente: make pre-commit
+# Autoupdate: make pre-commit-autoupdate
+repos:
+  # Ruff: lint + format en un solo paso
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.11.10
+    hooks:
+      # Linter — equivalente a `make lint`
+      - id: ruff
+        name: ruff lint
+        args: [--fix, --exit-non-zero-on-fix]
+        types_or: [python, pyi]
+      # Formatter — equivalente a `make format`
+      - id: ruff-format
+        name: ruff format
+        types_or: [python, pyi]
+
+  # Verificar que no hay archivos YAML enormes o corruptos
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      # Trailing whitespace
+      - id: trailing-whitespace
+        name: trim trailing whitespace
+        exclude: ^.git/
+      # Archivos con fin de línea inconsistente
+      - id: end-of-file-fixer
+        name: fix end of file (newline)
+      # YAML syntax check (para pyproject.toml y configs)
+      - id: check-yaml
+        name: check yaml syntax
+        args: [--unsafe]
+      # Merge conflict markers
+      - id: check-merge-conflict
+        name: check merge conflicts
+      # Archivos grandes (>500KB)
+      - id: check-added-large-files
+        name: check large files
+        args: [--maxkb=500]
+      # Tipo shebang correcto
+      - id: check-executables-have-shebangs
+        name: check executables have shebangs
+      # TOML syntax
+      - id: check-toml
+        name: check toml syntax
