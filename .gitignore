@@ -27,5 +27,15 @@ data/vector_store/
 .DS_Store
 Thumbs.db
 
+# Testing and linting
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
 # Streamlit
 .streamlit/secrets.toml
+
+# Power BI extraction artifacts (auto-generated)
+data/estelar_reportes/powerbi/
