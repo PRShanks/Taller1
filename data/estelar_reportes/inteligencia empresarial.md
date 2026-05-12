@@ -1,6 +1,6 @@
 # 🏨 Reporte de Inteligencia Empresarial: Hoteles Estelar S.A.
 
-> **Fuente:** Web scraping y búsqueda en fuentes públicas (Semana, Las2Orillas, La República, Supersociedades, EMIS, sitio oficial)  
+> **Fuente:** Web scraping y búsqueda en fuentes públicas (Semana, Las2Orillas, La República, Supersociedades, EMIS, sitio oficial)
 > **Fecha de consulta:** Abril 2026
 
 ---

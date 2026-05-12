@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW_MD_FINANCIERO  = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
+RAW_MD_FINANCIERO = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
 RAW_MD_CORPORATIVO = ROOT / "data" / "estelar_reportes" / "hoteles_estelar.md"
 PROCESSED_TXT = ROOT / "data" / "processed" / "estelar_consolidado.txt"
 
@@ -63,7 +63,7 @@ def consolidar_datos() -> Path:
                 "Asegúrate de que el archivo esté en data/estelar_reportes/"
             )
 
-    texto_financiero  = limpiar_markdown(RAW_MD_FINANCIERO.read_text(encoding="utf-8"))
+    texto_financiero = limpiar_markdown(RAW_MD_FINANCIERO.read_text(encoding="utf-8"))
     texto_corporativo = limpiar_markdown(RAW_MD_CORPORATIVO.read_text(encoding="utf-8"))
 
     contenido_final = (

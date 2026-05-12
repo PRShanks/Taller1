@@ -150,13 +150,15 @@ def scrapear_hoteles() -> list[dict]:
         print(f"  [{contador}/{total}] {nombre} ({ciudad})")
         soup = fetch(url)
         descripcion = extraer_descripcion_hotel(soup) if soup else ""
-        todos.append({
-            "nombre": nombre,
-            "ciudad": ciudad,
-            "pais": "Colombia",
-            "url": url,
-            "descripcion": descripcion,
-        })
+        todos.append(
+            {
+                "nombre": nombre,
+                "ciudad": ciudad,
+                "pais": "Colombia",
+                "url": url,
+                "descripcion": descripcion,
+            }
+        )
         time.sleep(DELAY_SEG)
 
     for nombre, ciudad, ruta in HOTELES_PERU:
@@ -165,13 +167,15 @@ def scrapear_hoteles() -> list[dict]:
         print(f"  [{contador}/{total}] {nombre} ({ciudad})")
         soup = fetch(url)
         descripcion = extraer_descripcion_hotel(soup) if soup else ""
-        todos.append({
-            "nombre": nombre,
-            "ciudad": ciudad,
-            "pais": "Perú",
-            "url": url,
-            "descripcion": descripcion,
-        })
+        todos.append(
+            {
+                "nombre": nombre,
+                "ciudad": ciudad,
+                "pais": "Perú",
+                "url": url,
+                "descripcion": descripcion,
+            }
+        )
         time.sleep(DELAY_SEG)
 
     return todos

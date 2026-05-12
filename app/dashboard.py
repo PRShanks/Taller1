@@ -151,28 +151,28 @@ if pregunta:
             st.chat_message("assistant"),
             st.spinner("Generando resumen ejecutivo con el contexto completo..."),
         ):
-                try:
-                    llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=1024)
-                    # Contexto completo explícito — no BM25
-                    respuesta = generar_resumen(contexto=_contexto_completo(), llm=llm)
-                    st.markdown(respuesta)
-                except Exception as e:
-                    respuesta = f"❌ Error al generar resumen: {e}"
-                    st.error(respuesta)
+            try:
+                llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=1024)
+                # Contexto completo explícito — no BM25
+                respuesta = generar_resumen(contexto=_contexto_completo(), llm=llm)
+                st.markdown(respuesta)
+            except Exception as e:
+                respuesta = f"❌ Error al generar resumen: {e}"
+                st.error(respuesta)
         st.session_state["mensajes"].append({"role": "assistant", "content": respuesta})
         memoria.save_message(session_id, "ai", respuesta)
 
     # ---- Comando /faq ----
     elif cmd.startswith("/faq"):
         with st.chat_message("assistant"), st.spinner("Generando FAQ con el contexto completo..."):
-                try:
-                    llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=2048)
-                    # Contexto completo explícito — no BM25
-                    respuesta = generar_faq(contexto=_contexto_completo(), llm=llm)
-                    st.markdown(respuesta)
-                except Exception as e:
-                    respuesta = f"❌ Error al generar FAQ: {e}"
-                    st.error(respuesta)
+            try:
+                llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=2048)
+                # Contexto completo explícito — no BM25
+                respuesta = generar_faq(contexto=_contexto_completo(), llm=llm)
+                st.markdown(respuesta)
+            except Exception as e:
+                respuesta = f"❌ Error al generar FAQ: {e}"
+                st.error(respuesta)
         st.session_state["mensajes"].append({"role": "assistant", "content": respuesta})
         memoria.save_message(session_id, "ai", respuesta)
 

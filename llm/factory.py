@@ -50,9 +50,7 @@ def crear_llm(
 
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key:
-            raise OSError(
-                "Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env"
-            )
+            raise OSError("Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env")
         return ChatAnthropic(
             model=modelo or MODELOS_CLAUDE[0],
             temperature=temperature,

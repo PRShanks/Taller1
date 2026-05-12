@@ -50,27 +50,71 @@ UA = (
 
 FINANCIAL_CATEGORIES: dict[str, list[str]] = {
     "identificacion": [
-        "nit", "razon social", "razón social", "empresa", "sociedad",
-        "ciiu", "codigo", "código", "sector", "razon", "nombre",
+        "nit",
+        "razon social",
+        "razón social",
+        "empresa",
+        "sociedad",
+        "ciiu",
+        "codigo",
+        "código",
+        "sector",
+        "razon",
+        "nombre",
     ],
     "estado_resultados": [
-        "ingreso", "venta", "utilidad", "pérdida", "perdida",
-        "ebitda", "ganancia", "gasto", "costo", "resultado",
-        "margen", "operacion", "operación", "revenue", "income",
+        "ingreso",
+        "venta",
+        "utilidad",
+        "pérdida",
+        "perdida",
+        "ebitda",
+        "ganancia",
+        "gasto",
+        "costo",
+        "resultado",
+        "margen",
+        "operacion",
+        "operación",
+        "revenue",
+        "income",
     ],
     "balance": [
-        "activo", "pasivo", "patrimonio", "capital", "deuda",
-        "inventario", "cartera", "caja", "efectivo",
-        "obligacion", "obligación", "total asset", "liability",
+        "activo",
+        "pasivo",
+        "patrimonio",
+        "capital",
+        "deuda",
+        "inventario",
+        "cartera",
+        "caja",
+        "efectivo",
+        "obligacion",
+        "obligación",
+        "total asset",
+        "liability",
     ],
     "indicadores": [
-        "liquidez", "endeudamiento", "rentabilidad", "rotacion", "rotación",
-        "dias", "días", "cobertura", "ratio", "índice", "indice",
-        "roe", "roa", "roi", "corriente",
+        "liquidez",
+        "endeudamiento",
+        "rentabilidad",
+        "rotacion",
+        "rotación",
+        "dias",
+        "días",
+        "cobertura",
+        "ratio",
+        "índice",
+        "indice",
+        "roe",
+        "roa",
+        "roi",
+        "corriente",
     ],
 }
 
 # ── Utilidades ─────────────────────────────────────────────────────────────────
+
 
 def now_iso() -> str:
     """Retorna el timestamp actual en formato ISO 8601."""
@@ -128,12 +172,18 @@ def fmt_value(v: Any, col_name: str = "") -> str:
         f = float(v)
         col_lower = col_name.lower()
         # Columnas de margen/ratio con valores entre -5 y 5 → tratar como porcentaje
-        is_pct = (
-            abs(f) <= 5
-            and any(kw in col_lower for kw in [
-                "margen", "margin", "%", "tasa", "rate",
-                "rendimiento", "cobertura", "capital de trabajo",
-            ])
+        is_pct = abs(f) <= 5 and any(
+            kw in col_lower
+            for kw in [
+                "margen",
+                "margin",
+                "%",
+                "tasa",
+                "rate",
+                "rendimiento",
+                "cobertura",
+                "capital de trabajo",
+            ]
         )
         if is_pct:
             return f"{f * 100:.2f} %"
@@ -144,6 +194,7 @@ def fmt_value(v: Any, col_name: str = "") -> str:
 
 
 # ── FASE 1: Discovery HTTP ─────────────────────────────────────────────────────
+
 
 def phase1_discovery(out: Path) -> dict[str, Any]:
     """Descarga metadatos del modelo Power BI vía API pública sin autenticación.
@@ -177,11 +228,13 @@ def phase1_discovery(out: Path) -> dict[str, Any]:
         model_exp = data.get("exploration", {}).get("modelExploration", {})
         sections = model_exp.get("Sections") or model_exp.get("sections") or []
         for s in sections:
-            result["pages"].append({
-                "id": s.get("Id") or s.get("id"),
-                "name": s.get("DisplayName") or s.get("displayName", ""),
-                "ordinal": s.get("Ordinal") or s.get("ordinal", 0),
-            })
+            result["pages"].append(
+                {
+                    "id": s.get("Id") or s.get("id"),
+                    "name": s.get("DisplayName") or s.get("displayName", ""),
+                    "ordinal": s.get("Ordinal") or s.get("ordinal", 0),
+                }
+            )
         result["pages"].sort(key=lambda x: x.get("ordinal", 0))
 
         print(f"  → Model ID: {result['model_id']} | Páginas: {len(result['pages'])}")
@@ -226,6 +279,7 @@ def phase1_discovery(out: Path) -> dict[str, Any]:
 
 
 # ── FASE 2: Helpers Playwright ─────────────────────────────────────────────────
+
 
 def wait_visuals(page: Any, timeout_ms: int = 30_000) -> None:
     """Espera a que los card visuals de Power BI terminen de renderizar."""
@@ -371,6 +425,7 @@ def try_select_company(page: Any) -> bool:
 
 # ── FASE 2+3: Captura Playwright ───────────────────────────────────────────────
 
+
 def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
     """Abre el embed de Power BI con Playwright y captura todos los datos disponibles.
 
@@ -413,12 +468,14 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
         # ── Interceptor de red ──────────────────────────────────────────────
         def on_resp(resp: Any) -> None:
             url = resp.url
-            req_log.append({
-                "ts": now_iso(),
-                "method": resp.request.method,
-                "url": url,
-                "status": resp.status,
-            })
+            req_log.append(
+                {
+                    "ts": now_iso(),
+                    "method": resp.request.method,
+                    "url": url,
+                    "status": resp.status,
+                }
+            )
 
             # querydata → datos financieros reales por empresa/visual
             if "querydata" in url.lower() and resp.status == 200:
@@ -457,18 +514,16 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
         # Hacemos clic en 'Página siguiente' para llegar al menú de navegación.
         pg.wait_for_timeout(3_000)
         try:
-            pg.get_by_role(
-                "button", name=re.compile("Página siguiente", re.IGNORECASE)
-            ).click(timeout=5_000)
+            pg.get_by_role("button", name=re.compile("Página siguiente", re.IGNORECASE)).click(
+                timeout=5_000
+            )
             pg.wait_for_timeout(5_000)
         except Exception:
             pass
 
         # ── 4. Navegar a 'Análisis individual' con botón del menú ─────────
         print("  [PBI] Navegando a 'Análisis individual'…")
-        nav_ok = (
-            navigate_pbi_page(pg, "Análisis individual") or navigate_pbi_page(pg, "individual")
-        )
+        nav_ok = navigate_pbi_page(pg, "Análisis individual") or navigate_pbi_page(pg, "individual")
         nav_msg = "✓ OK" if nav_ok else "✗ no encontrado — se recorren páginas en orden"
         print(f"  [PBI] Navegación: {nav_msg}")
         pg.wait_for_timeout(6_000)
@@ -544,12 +599,16 @@ def parse_aria_kv(aria_text: str) -> list[dict[str, str]]:
     for line in aria_text.splitlines():
         stripped = line.strip()
         # Remover prefijos de YAML: '- ', '* ', decoradores de tipo, etc.
-        stripped = re.sub(
-            r"^[-*>|]+\s*|^(paragraph|text|generic|document|group|heading|listitem|link|button)[:\s]*",
-            "",
-            stripped,
-            flags=re.IGNORECASE,
-        ).strip().strip("\"'")
+        stripped = (
+            re.sub(
+                r"^[-*>|]+\s*|^(paragraph|text|generic|document|group|heading|listitem|link|button)[:\s]*",
+                "",
+                stripped,
+                flags=re.IGNORECASE,
+            )
+            .strip()
+            .strip("\"'")
+        )
         if stripped:
             clean_lines.append(stripped)
 
@@ -692,11 +751,13 @@ def phase3_parse(out: Path) -> dict[str, Any]:
                 text = f.read_text(encoding="utf-8")
                 hits = find_company_hits(text)
                 if hits:
-                    text_company.append({
-                        "page": f.stem,
-                        "hits": hits,
-                        "sample": text[:3000],
-                    })
+                    text_company.append(
+                        {
+                            "page": f.stem,
+                            "hits": hits,
+                            "sample": text[:3000],
+                        }
+                    )
             except Exception:
                 pass
 
@@ -765,6 +826,7 @@ def phase3_parse(out: Path) -> dict[str, Any]:
 
 
 # ── FASE 4: Generación de Markdown ────────────────────────────────────────────
+
 
 def _table_rows_by_category(
     lines: list[str], rows: list[dict], category: str, cat_title: str
@@ -895,9 +957,7 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
                     continue
                 label = m_label.group(1).replace(" tarjeta", "").strip()
                 # Tomar solo el PRIMER paragraph del bloque (sin DOTALL agresivo)
-                m_val = re.search(
-                    r'paragraph:\s+"?([0-9][0-9.,\s]*[0-9])"?', block[:300]
-                )
+                m_val = re.search(r'paragraph:\s+"?([0-9][0-9.,\s]*[0-9])"?', block[:300])
                 if m_val:
                     val = m_val.group(1).strip()
                     aria_sector.append((label, val))
@@ -978,15 +1038,14 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
+
 def parse_args() -> argparse.Namespace:
     """Parsea los argumentos de línea de comandos."""
     p = argparse.ArgumentParser(
         description="Extractor exhaustivo HOTELES ESTELAR — Power BI Estrategia en Acción"
     )
     p.add_argument("--output-dir", default="data/estelar_reportes", help="Directorio de salida")
-    p.add_argument(
-        "--max-pages", type=int, default=14, help="Máximo páginas Power BI a recorrer"
-    )
+    p.add_argument("--max-pages", type=int, default=14, help="Máximo páginas Power BI a recorrer")
     p.add_argument("--skip-discovery", action="store_true", help="Reusar discovery existente")
     p.add_argument(
         "--skip-capture", action="store_true", help="Reusar captura Playwright existente"

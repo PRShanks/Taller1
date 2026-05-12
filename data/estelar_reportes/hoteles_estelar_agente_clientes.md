@@ -1,8 +1,8 @@
 # 🏨 HOTELES ESTELAR S.A. — BASE DE CONOCIMIENTO PARA AGENTE DE ATENCIÓN AL CLIENTE
 
-> **Versión:** 2.0 — Mayo 2026  
-> **Fuentes:** Web scraping sobre sitios oficiales, Booking.com, Expedia, IHG, KAYAK, Momondo, TripAdvisor, Hotels.com  
-> **Propósito:** Contexto exhaustivo orientado a responder preguntas de huéspedes potenciales y actuales  
+> **Versión:** 2.0 — Mayo 2026
+> **Fuentes:** Web scraping sobre sitios oficiales, Booking.com, Expedia, IHG, KAYAK, Momondo, TripAdvisor, Hotels.com
+> **Propósito:** Contexto exhaustivo orientado a responder preguntas de huéspedes potenciales y actuales
 > **Cobertura:** 14 hoteles con información detallada de habitaciones, precios, gastronomía, políticas y contacto
 
 ---
@@ -53,7 +53,7 @@
 | **Business King** | 30 m², cama King, escritorio, caja fuerte, TV cable, baño con ducha lluvia | Desde COP 455.808 (excl. imp.) |
 | **Junior Suite** | Mayor espacio, sala de estar, decoración premium, minibar | Desde COP 644.105 (excl. imp.) |
 
-**Total de habitaciones:** 109  
+**Total de habitaciones:** 109
 **Equipamiento estándar de todas las habitaciones:**
 - WiFi gratuito
 - TV pantalla plana con cable
@@ -133,7 +133,7 @@
 | **Junior Suite** | Minisala con mesa redonda, ideal para encuentros románticos | Rango alto |
 | **Suite Premium** | Check-in en habitación, desayuno especial, minibar incluido 1ª noche, amenities de lujo | Desde COP 487.600 (excl. imp.) |
 
-**Total de habitaciones:** 215  
+**Total de habitaciones:** 215
 **Equipamiento estándar:**
 - WiFi gratuito
 - TV LCD 32" con canales digitales
@@ -390,7 +390,7 @@ Todas las habitaciones tienen vista al mar Caribe y balcón.
 | **Junior Suite** | Sala de estar independiente, terraza, cama King | Precio alto |
 | **Suite Premium** | Espacio amplio, múltiples ambientes, vista panorámica | Precio bajo consulta |
 
-> Temporada baja: mayo y septiembre son los meses más económicos  
+> Temporada baja: mayo y septiembre son los meses más económicos
 > Mejor día para reservar: viernes o sábado
 
 **Equipamiento estándar:**
@@ -870,5 +870,5 @@ Los siguientes datos **no son accesibles mediante scraping** y deben verificarse
 
 ---
 
-*Base de conocimiento generada mediante web scraping de fuentes públicas — Mayo 2026*  
+*Base de conocimiento generada mediante web scraping de fuentes públicas — Mayo 2026*
 *Para información actualizada: www.hotelesestelar.com | +57 (2) 892-0470 (Sede Cali)*

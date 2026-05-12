@@ -124,17 +124,21 @@ def responder_pregunta(
     # Elegir prompt según si hay historial de conversación
     if historial:
         cadena = PROMPT_QA_CON_MEMORIA | llm | StrOutputParser()
-        texto_crudo = cadena.invoke({
-            "contexto": contexto,
-            "pregunta": pregunta,
-            "historial": historial,
-        })
+        texto_crudo = cadena.invoke(
+            {
+                "contexto": contexto,
+                "pregunta": pregunta,
+                "historial": historial,
+            }
+        )
     else:
         cadena = PROMPT_QA | llm | StrOutputParser()
-        texto_crudo = cadena.invoke({
-            "contexto": contexto,
-            "pregunta": pregunta,
-        })
+        texto_crudo = cadena.invoke(
+            {
+                "contexto": contexto,
+                "pregunta": pregunta,
+            }
+        )
 
     resultado_llm = _parsear_respuesta(texto_crudo)
 

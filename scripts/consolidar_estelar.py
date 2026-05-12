@@ -18,8 +18,7 @@ EXTENSIONES = {".txt", ".md"}
 def consolidar() -> None:
     """Une todos los .md/.txt de estelar_reportes/ en un único archivo consolidado."""
     archivos = sorted(
-        f for f in FUENTE.iterdir()
-        if f.is_file() and f.suffix.lower() in EXTENSIONES
+        f for f in FUENTE.iterdir() if f.is_file() and f.suffix.lower() in EXTENSIONES
     )
 
     if not archivos:

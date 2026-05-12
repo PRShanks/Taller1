@@ -78,7 +78,7 @@ PREGUNTAS_FAQ: list[str] = [
         "¿Cuáles fueron los resultados financieros de Hoteles Estelar en 2024"
         " y cómo se comparan con el promedio del sector hotelero colombiano?"
     ),
-    "¿Qué empresas del Grupo Aval están relacionadas con Hoteles Estelar y en qué sectores operan?"
+    "¿Qué empresas del Grupo Aval están relacionadas con Hoteles Estelar y en qué sectores operan?",
 ]
 
 
@@ -96,15 +96,15 @@ def generar_faq(
     if llm is None:
         llm = crear_llm(temperature=0.3, max_tokens=3072)
 
-    preguntas_formateadas = "\n".join(
-        f"{i + 1}. {q}" for i, q in enumerate(PREGUNTAS_FAQ)
-    )
+    preguntas_formateadas = "\n".join(f"{i + 1}. {q}" for i, q in enumerate(PREGUNTAS_FAQ))
 
     cadena = PROMPT_FAQ | llm | StrOutputParser()
-    return cadena.invoke({
-        "contexto": contexto,
-        "preguntas": preguntas_formateadas,
-    })
+    return cadena.invoke(
+        {
+            "contexto": contexto,
+            "preguntas": preguntas_formateadas,
+        }
+    )
 
 
 if __name__ == "__main__":

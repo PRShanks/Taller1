@@ -133,7 +133,7 @@ Su lema **“El Placer de Descubrir”** comunica una experiencia que no se limi
 
 ## 5. Visión
 
-> **Visión propuesta con base en la información oficial:**  
+> **Visión propuesta con base en la información oficial:**
 > Ser una de las cadenas hoteleras líderes en Colombia y la región, reconocida por su hospitalidad auténtica, su excelencia en el servicio, su innovación en experiencias de hospedaje y eventos, y su compromiso con el desarrollo sostenible.
 
 Esta formulación se basa en su promesa de valor, su enfoque en la excelencia, su presencia en Colombia y Perú, su infraestructura para negocios y turismo, y su compromiso institucional con la sostenibilidad y la mejora continua. En las páginas oficiales revisadas no aparece una visión corporativa expresada literalmente en una sola frase, por lo que esta redacción es una **síntesis académica basada en la información oficial**.
@@ -142,7 +142,7 @@ Esta formulación se basa en su promesa de valor, su enfoque en la excelencia, s
 
 ## 6. Misión
 
-> **Misión propuesta con base en la información oficial:**  
+> **Misión propuesta con base en la información oficial:**
 > Ofrecer experiencias de hospedaje, recreación y eventos corporativos de alta calidad, adaptadas a las necesidades de viajeros de negocios, turistas y familias, a través de una hospitalidad 100% colombiana, instalaciones modernas y un servicio orientado a la satisfacción integral del huésped.
 
 Esta redacción recoge el enfoque oficial de la cadena en hoteles urbanos, vacacionales, apartamentos turísticos, gastronomía, centros de convenciones y servicio integral. Al igual que la visión, esta formulación es **propuesta**, ya que no se encontró una misión redactada de forma textual y única en el sitio consultado.

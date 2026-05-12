@@ -6,6 +6,7 @@ para HOTELES ESTELAR (NIT 890304099).
 Uso:
   uv run python scripts/capture_analisis_individual.py
 """
+
 from __future__ import annotations
 
 import hashlib
