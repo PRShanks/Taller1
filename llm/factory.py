@@ -1,5 +1,5 @@
-"""
-factory.py
+"""factory.py.
+
 ----------
 Crea instancias del LLM según el proveedor elegido.
 
@@ -9,6 +9,7 @@ Proveedores soportados:
 """
 
 import os
+
 from dotenv import load_dotenv
 from langchain_core.language_models.chat_models import BaseChatModel
 
@@ -36,8 +37,7 @@ def crear_llm(
     temperature: float = 0.0,
     max_tokens: int = 1024,
 ) -> BaseChatModel:
-    """
-    Devuelve un LLM de LangChain listo para usar en una cadena.
+    """Devuelve un LLM de LangChain listo para usar en una cadena.
 
     Parámetros:
       - proveedor:   "claude" | "ollama"
@@ -50,7 +50,7 @@ def crear_llm(
 
         api_key = os.getenv("ANTHROPIC_API_KEY")
         if not api_key:
-            raise EnvironmentError(
+            raise OSError(
                 "Falta ANTHROPIC_API_KEY. Configúrala en el archivo .env"
             )
         return ChatAnthropic(

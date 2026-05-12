@@ -1,5 +1,4 @@
-"""
-scripts/extract_estelar_report.py
+"""scripts/extract_estelar_report.py.
 
 Extracción exhaustiva de HOTELES ESTELAR (NIT 890304099)
 desde el reporte Power BI embebido en:
@@ -23,7 +22,7 @@ import hashlib
 import json
 import re
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from threading import Lock
 from typing import Any
@@ -74,25 +73,30 @@ FINANCIAL_CATEGORIES: dict[str, list[str]] = {
 # ── Utilidades ─────────────────────────────────────────────────────────────────
 
 def now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+    """Retorna el timestamp actual en formato ISO 8601."""
+    return datetime.now(UTC).isoformat()
 
 
 def mkdirs(p: Path) -> Path:
+    """Crea el directorio p y sus padres; retorna p."""
     p.mkdir(parents=True, exist_ok=True)
     return p
 
 
 def dump_json(p: Path, obj: Any) -> None:
+    """Serializa obj como JSON y lo escribe en p."""
     mkdirs(p.parent)
     p.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def dump_text(p: Path, text: str) -> None:
+    """Escribe text en p con encoding UTF-8."""
     mkdirs(p.parent)
     p.write_text(text, encoding="utf-8")
 
 
 def find_company_hits(text: str) -> list[dict[str, Any]]:
+    """Retorna las líneas del texto que mencionan algún término de COMPANY_TERMS."""
     hits = []
     for i, line in enumerate(text.splitlines(), 1):
         for t in COMPANY_TERMS:
@@ -102,6 +106,7 @@ def find_company_hits(text: str) -> list[dict[str, Any]]:
 
 
 def categorize_field(name: str) -> str:
+    """Clasifica el nombre de un campo en una de las categorías financieras."""
     name_lower = name.lower()
     for category, keywords in FINANCIAL_CATEGORIES.items():
         if any(kw in name_lower for kw in keywords):
@@ -141,8 +146,8 @@ def fmt_value(v: Any, col_name: str = "") -> str:
 # ── FASE 1: Discovery HTTP ─────────────────────────────────────────────────────
 
 def phase1_discovery(out: Path) -> dict[str, Any]:
-    """
-    Descarga metadatos del modelo Power BI vía API pública sin autenticación.
+    """Descarga metadatos del modelo Power BI vía API pública sin autenticación.
+
     Obtiene: páginas, entidades, medidas y esquema conceptual.
     """
     disc_dir = mkdirs(out / "discovery")
@@ -157,7 +162,7 @@ def phase1_discovery(out: Path) -> dict[str, Any]:
 
     # ── modelsAndExploration ──
     url = f"{API_BASE}/public/reports/{REPORT_ID}/modelsAndExploration?preferReadOnlySession=true"
-    print(f"  [1/2] GET modelsAndExploration…")
+    print("  [1/2] GET modelsAndExploration…")
     try:
         resp = requests.get(url, headers={"User-Agent": UA}, timeout=60)
         resp.raise_for_status()
@@ -187,7 +192,7 @@ def phase1_discovery(out: Path) -> dict[str, Any]:
 
     # ── Conceptual Schema ──
     if result.get("model_id"):
-        print(f"  [2/2] POST conceptualschema…")
+        print("  [2/2] POST conceptualschema…")
         try:
             resp = requests.post(
                 f"{API_BASE}/public/reports/conceptualschema",
@@ -224,41 +229,37 @@ def phase1_discovery(out: Path) -> dict[str, Any]:
 
 def wait_visuals(page: Any, timeout_ms: int = 30_000) -> None:
     """Espera a que los card visuals de Power BI terminen de renderizar."""
-    try:
+    import contextlib
+
+    with contextlib.suppress(Exception):
         page.wait_for_function(
-            """() => {
+            r"""() => {
                 const t = document.body.innerText || '';
                 const loading = (t.match(/Cargando objetos visuales/g) || []).length;
                 return loading === 0 && t.replace(/\s/g, '').length > 200;
             }""",
             timeout=timeout_ms,
         )
-    except Exception:
-        pass
     page.wait_for_timeout(2_500)
 
 
 def snap_page(page: Any, label: str, pbi_dir: Path) -> dict[str, Any]:
     """Captura texto completo, aria_snapshot y screenshot de la página actual."""
+    import contextlib
+
     wait_visuals(page, 20_000)
     text = aria = ""
-    try:
+    with contextlib.suppress(Exception):
         text = page.inner_text("body")
-    except Exception:
-        pass
-    try:
+    with contextlib.suppress(Exception):
         aria = page.locator("body").aria_snapshot()
-    except Exception:
-        pass
 
     dump_text(pbi_dir / "aria" / f"{label}.yaml", aria)
     dump_text(pbi_dir / "aria" / f"{label}.txt", text)
 
     shot_path = pbi_dir / "screenshots" / f"{label}.png"
-    try:
+    with contextlib.suppress(Exception):
         page.screenshot(path=str(shot_path), full_page=True)
-    except Exception:
-        pass
 
     return {
         "label": label,
@@ -272,10 +273,10 @@ def snap_page(page: Any, label: str, pbi_dir: Path) -> dict[str, Any]:
 
 
 def navigate_pbi_page(page: Any, name_pattern: str) -> bool:
-    """
-    Navega a una página del reporte Power BI haciendo clic en el botón de
-    navegación interno. En Power BI embed los elementos de menú son BUTTONS
-    (no links). Prueba múltiples estrategias de localización.
+    """Navega a una página del reporte Power BI haciendo clic en el botón de navegación interno.
+
+    En Power BI embed los elementos de menú son BUTTONS (no links).
+    Prueba múltiples estrategias de localización.
     """
     strategies = [
         lambda: page.get_by_role("button", name=re.compile(name_pattern, re.IGNORECASE)).first,
@@ -296,8 +297,7 @@ def navigate_pbi_page(page: Any, name_pattern: str) -> bool:
 
 
 def try_select_company(page: Any) -> bool:
-    """
-    Intenta seleccionar HOTELES ESTELAR (NIT 890304099) en el slicer del reporte.
+    """Intenta seleccionar HOTELES ESTELAR (NIT 890304099) en el slicer del reporte.
 
     Power BI puede tener slicers de distintos tipos:
       - Search input (tipo texto libre)
@@ -309,7 +309,8 @@ def try_select_company(page: Any) -> bool:
     for search_term in [NIT, "ESTELAR", COMPANY_NAME]:
         try:
             inputs = page.locator(
-                "input[type='text'], input[type='search'], input:not([type='hidden']):not([type='button'])"
+                "input[type='text'], input[type='search'],"
+                " input:not([type='hidden']):not([type='button'])"
             ).all()
             for inp in inputs:
                 try:
@@ -371,9 +372,9 @@ def try_select_company(page: Any) -> bool:
 # ── FASE 2+3: Captura Playwright ───────────────────────────────────────────────
 
 def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
-    """
-    Abre el embed de Power BI con Playwright (headless), intercepta TODAS las
-    respuestas de red (especialmente /querydata con los datos financieros reales),
+    """Abre el embed de Power BI con Playwright y captura todos los datos disponibles.
+
+    Intercepta TODAS las respuestas de red (/querydata con datos financieros reales),
     navega a 'Análisis individual', selecciona HOTELES ESTELAR en el slicer,
     y recorre todas las páginas del reporte capturando:
       - aria_snapshot (YAML accesible de los visuals)
@@ -382,7 +383,7 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
       - respuestas JSON de /querydata
     """
     try:
-        from playwright.sync_api import TimeoutError as PWT
+        from playwright.sync_api import TimeoutError as PWT  # noqa: N814
         from playwright.sync_api import sync_playwright
     except ImportError as exc:
         raise RuntimeError(
@@ -421,22 +422,22 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
 
             # querydata → datos financieros reales por empresa/visual
             if "querydata" in url.lower() and resp.status == 200:
-                try:
+                import contextlib
+
+                with contextlib.suppress(Exception):
                     body = resp.json()
                     digest = hashlib.sha1((url + now_iso()).encode()).hexdigest()[:12]
                     path = pbi_dir / "querydata" / f"{digest}.json"
                     dump_json(path, {"url": url, "response": body})
                     with lock:
                         querydata_entries.append({"url": url, "file": str(path)})
-                except Exception:
-                    pass
 
             # modelsAndExploration live → backup de estructura
             elif "modelsandexploration" in url.lower() and resp.status == 200:
-                try:
+                import contextlib
+
+                with contextlib.suppress(Exception):
                     dump_json(pbi_dir / "models_exploration_live.json", resp.json())
-                except Exception:
-                    pass
 
         pg.on("response", on_resp)
 
@@ -456,15 +457,20 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
         # Hacemos clic en 'Página siguiente' para llegar al menú de navegación.
         pg.wait_for_timeout(3_000)
         try:
-            pg.get_by_role("button", name=re.compile("Página siguiente", re.IGNORECASE)).click(timeout=5_000)
+            pg.get_by_role(
+                "button", name=re.compile("Página siguiente", re.IGNORECASE)
+            ).click(timeout=5_000)
             pg.wait_for_timeout(5_000)
         except Exception:
             pass
 
         # ── 4. Navegar a 'Análisis individual' con botón del menú ─────────
         print("  [PBI] Navegando a 'Análisis individual'…")
-        nav_ok = navigate_pbi_page(pg, "Análisis individual") or navigate_pbi_page(pg, "individual")
-        print(f"  [PBI] Navegación: {'✓ OK' if nav_ok else '✗ no encontrado — se recorren páginas en orden'}")
+        nav_ok = (
+            navigate_pbi_page(pg, "Análisis individual") or navigate_pbi_page(pg, "individual")
+        )
+        nav_msg = "✓ OK" if nav_ok else "✗ no encontrado — se recorren páginas en orden"
+        print(f"  [PBI] Navegación: {nav_msg}")
         pg.wait_for_timeout(6_000)
 
         # ── 5. Seleccionar empresa en el slicer ───────────────────────────
@@ -494,7 +500,7 @@ def phase2_capture(out: Path, max_pages: int = 14) -> dict[str, Any]:
                 print(f"  [PBI] Snapshot: {label}")
                 pages_data.append(snap_page(pg, label, pbi_dir))
             except PWT:
-                print(f"  [PBI] Botón 'siguiente' no disponible. Fin.")
+                print("  [PBI] Botón 'siguiente' no disponible. Fin.")
                 break
             except Exception as exc:
                 print(f"  [PBI] Error en página {i}: {exc}")
@@ -525,8 +531,7 @@ _NUMERIC_RE = re.compile(
 
 
 def parse_aria_kv(aria_text: str) -> list[dict[str, str]]:
-    """
-    Extrae pares (indicador → valor) del aria_snapshot de Power BI.
+    """Extrae pares (indicador → valor) del aria_snapshot de Power BI.
 
     Los card visuals de Power BI se representan como bloques consecutivos:
       - paragraph: "$ 1,234,567"   ← valor
@@ -568,8 +573,7 @@ def parse_aria_kv(aria_text: str) -> list[dict[str, str]]:
 
 
 def parse_dsr_rows(descriptor_select: list, ds: list) -> list[dict]:
-    """
-    Parser del formato DSR (Data Shape Result) de Power BI.
+    """Parser del formato DSR (Data Shape Result) de Power BI.
 
     El formato DSR usa arrays 'C' dentro de DM0 donde cada elemento es
     una fila con [grupo_key, valor1, valor2, ...]. También usa RT (Reference
@@ -609,11 +613,12 @@ def parse_dsr_rows(descriptor_select: list, ds: list) -> list[dict]:
 
 
 def phase3_parse(out: Path) -> dict[str, Any]:
-    """
-    Extrae y estructura datos desde:
-      1. Respuestas /querydata interceptadas (datos financieros estructurados)
-      2. aria_snapshot (valores de card visuals)
-      3. Texto plano (menciones de la empresa)
+    """Extrae y estructura datos financieros desde los archivos capturados.
+
+    Fuentes:
+    1. Respuestas /querydata interceptadas (datos financieros estructurados)
+    2. aria_snapshot (valores de card visuals)
+    3. Texto plano (menciones de la empresa)
     """
     qd_rows: list[dict] = []
     aria_kv: list[dict] = []
@@ -653,7 +658,9 @@ def phase3_parse(out: Path) -> dict[str, Any]:
                             ]
                             for row in table.get("rows", []):
                                 if isinstance(row, list):
-                                    row_dict = {cols[j]: v for j, v in enumerate(row) if j < len(cols)}
+                                    row_dict = {
+                                        cols[j]: v for j, v in enumerate(row) if j < len(cols)
+                                    }
                                 elif isinstance(row, dict):
                                     row_dict = dict(row)
                                 else:
@@ -803,9 +810,9 @@ def _render_year_section(lines: list[str], rows: list[dict]) -> None:
 
 
 def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
-    """
-    Genera el Markdown final estructurado por año con toda la información
-    capturada sobre HOTELES ESTELAR.
+    """Genera el Markdown final estructurado por año con toda la información capturada.
+
+    Incluye datos de HOTELES ESTELAR organizados por año, sector y card visuals.
     """
     lines: list[str] = []
 
@@ -813,7 +820,8 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
     lines += [
         "# HOTELES ESTELAR S.A.",
         "",
-        "> **Nota:** Las cifras monetarias están expresadas en **COP millones** según la fuente (Estrategia en Acción / Supersociedades).",
+        "> **Nota:** Las cifras monetarias están expresadas en **COP millones**"
+        " según la fuente (Estrategia en Acción / Supersociedades).",
         "",
         "| Campo | Valor |",
         "|---|---|",
@@ -858,7 +866,6 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
         lines += ["---", ""]
 
     # ── Datos por año ──────────────────────────────────────────────────────
-    estelar_rows = parsed.get("estelar_rows", [])
     by_year = parsed.get("by_year", {})
     years = sorted([y for y in by_year if y != "sin_año"], reverse=True)
 
@@ -955,7 +962,7 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
     lines += [
         "## Metadata de extracción",
         "",
-        f"| Campo | Valor |",
+        "| Campo | Valor |",
         "|---|---|",
         f"| Filas querydata capturadas | {len(parsed.get('querydata_rows', []))} |",
         f"| Pares KV de card visuals | {len(aria_kv)} |",
@@ -972,17 +979,23 @@ def phase4_markdown(parsed: dict, discovery: dict, out: Path) -> str:
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def parse_args() -> argparse.Namespace:
+    """Parsea los argumentos de línea de comandos."""
     p = argparse.ArgumentParser(
         description="Extractor exhaustivo HOTELES ESTELAR — Power BI Estrategia en Acción"
     )
     p.add_argument("--output-dir", default="data/estelar_reportes", help="Directorio de salida")
-    p.add_argument("--max-pages", type=int, default=14, help="Máximo páginas Power BI a recorrer")
+    p.add_argument(
+        "--max-pages", type=int, default=14, help="Máximo páginas Power BI a recorrer"
+    )
     p.add_argument("--skip-discovery", action="store_true", help="Reusar discovery existente")
-    p.add_argument("--skip-capture", action="store_true", help="Reusar captura Playwright existente")
+    p.add_argument(
+        "--skip-capture", action="store_true", help="Reusar captura Playwright existente"
+    )
     return p.parse_args()
 
 
 def main() -> None:
+    """Ejecuta el pipeline completo de extracción de datos de Hoteles Estelar."""
     args = parse_args()
     out = Path(args.output_dir)
     mkdirs(out)
@@ -994,7 +1007,7 @@ def main() -> None:
     disc_summary = out / "discovery" / "summary.json"
     if args.skip_discovery and disc_summary.exists():
         discovery = json.loads(disc_summary.read_text(encoding="utf-8"))
-        print(f"  (reutilizando discovery existente)")
+        print("  (reutilizando discovery existente)")
     else:
         discovery = phase1_discovery(out)
 
@@ -1004,7 +1017,7 @@ def main() -> None:
     print("═══════════════════════════════════════════")
     cap_summary = out / "powerbi" / "capture_summary.json"
     if args.skip_capture and cap_summary.exists():
-        print(f"  (reutilizando captura existente)")
+        print("  (reutilizando captura existente)")
     else:
         phase2_capture(out, max_pages=args.max_pages)
 

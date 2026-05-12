@@ -1,5 +1,5 @@
-"""
-consolidar_estelar.py
+"""consolidar_estelar.py.
+
 ---------------------
 Une todos los archivos de texto/markdown que están directamente en
 data/estelar_reportes/ (sin entrar en subcarpetas) en un único
@@ -16,6 +16,7 @@ EXTENSIONES = {".txt", ".md"}
 
 
 def consolidar() -> None:
+    """Une todos los .md/.txt de estelar_reportes/ en un único archivo consolidado."""
     archivos = sorted(
         f for f in FUENTE.iterdir()
         if f.is_file() and f.suffix.lower() in EXTENSIONES

@@ -1,5 +1,5 @@
-"""
-memory.py
+"""memory.py.
+
 ---------
 Gestión de memoria del agente: historial de conversación y datos del usuario.
 
@@ -24,7 +24,7 @@ Ejemplo de uso::
 from __future__ import annotations
 
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from langgraph.store.memory import InMemoryStore
@@ -55,6 +55,7 @@ class SessionMemory:
     """
 
     def __init__(self, store: InMemoryStore | None = None) -> None:
+        """Inicializa el store; crea uno nuevo si no se proporciona."""
         self._store = store if store is not None else InMemoryStore()
 
     @property
@@ -87,7 +88,7 @@ class SessionMemory:
             {
                 "role": role,
                 "content": content,
-                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "timestamp": datetime.now(UTC).isoformat(),
             },
         )
 

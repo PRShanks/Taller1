@@ -1,5 +1,4 @@
-"""
-scripts/capture_analisis_individual.py
+"""scripts/capture_analisis_individual.py.
 
 Captura dirigida de la página 'Análisis individual' del reporte Power BI
 para HOTELES ESTELAR (NIT 890304099).
@@ -12,7 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from threading import Lock
 from typing import Any
@@ -34,16 +33,21 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+    """Retorna el timestamp actual en formato ISO 8601."""
+    return datetime.now(UTC).isoformat()
 
 
 def dump_json(p: Path, obj: Any) -> None:
+    """Serializa obj como JSON y lo escribe en p, creando directorios si faltan."""
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def wait_visuals(page: Any, timeout_ms: int = 25_000) -> None:
-    try:
+    """Espera a que los objetos visuales de Power BI terminen de cargar."""
+    import contextlib
+
+    with contextlib.suppress(Exception):
         page.wait_for_function(
             r"""() => {
                 const t = document.body.innerText || '';
@@ -52,8 +56,6 @@ def wait_visuals(page: Any, timeout_ms: int = 25_000) -> None:
             }""",
             timeout=timeout_ms,
         )
-    except Exception:
-        pass
     page.wait_for_timeout(3_000)
 
 
@@ -85,7 +87,8 @@ def try_select_estelar(page: Any) -> bool:
     for search_term in [NIT, "HOTELES ESTELAR", "ESTELAR"]:
         try:
             inputs = page.locator(
-                "input[type='text'], input[type='search'], input:not([type='hidden']):not([type='button'])"
+                "input[type='text'], input[type='search'],"
+                " input:not([type='hidden']):not([type='button'])"
             ).all()
             for inp in inputs:
                 try:
@@ -145,7 +148,7 @@ def try_select_estelar(page: Any) -> bool:
 
 
 def main() -> None:
-    from playwright.sync_api import TimeoutError as PWT
+    """Ejecuta la captura dirigida de la página Análisis individual."""
     from playwright.sync_api import sync_playwright
 
     querydata: list[dict] = []
@@ -228,7 +231,7 @@ def main() -> None:
             print(f"  [3] Aria snapshot: {len(aria3)} chars")
             # Verificar si la empresa aparece
             if any(t.lower() in aria3.lower() for t in COMPANY_TERMS):
-                print(f"  [3] ✓ ESTELAR visible en aria snapshot")
+                print("  [3] ✓ ESTELAR visible en aria snapshot")
         except Exception:
             pass
 

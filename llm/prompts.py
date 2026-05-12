@@ -1,5 +1,5 @@
-"""
-prompts.py
+"""prompts.py.
+
 ----------
 Prompts para el chat de Hoteles Estelar S.A.:
   - PROMPT_QA:               Chat Q&A sin historial (usa system_prompt.txt)
@@ -9,6 +9,7 @@ Prompts para el chat de Hoteles Estelar S.A.:
 """
 
 from pathlib import Path
+
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -59,8 +60,9 @@ PROMPT_QA_CON_MEMORIA = ChatPromptTemplate.from_messages([
 # ---------------------------------------------------------------------------
 PROMPT_RESUMEN = ChatPromptTemplate.from_messages([
     ("system",
-     "Eres el Asistente de Soporte Operativo Interno de Hoteles Estelar especializado en el sector hotelero "
-     "colombiano. Tu tarea es producir resúmenes ejecutivos claros, precisos "
+     "Eres el Asistente de Soporte Operativo Interno de Hoteles Estelar, "
+     "especializado en el sector hotelero colombiano. Tu tarea es producir "
+     "resúmenes ejecutivos claros, precisos "
      "y útiles para la toma de decisiones.\n\n"
      "REGLAS ESTRICTAS:\n"
      "- Basa tu resumen ÚNICAMENTE en la información del contexto provisto.\n"

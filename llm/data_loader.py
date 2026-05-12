@@ -1,5 +1,5 @@
-"""
-data_loader.py
+"""data_loader.py.
+
 --------------
 Lee DOS archivos .md del scraper:
   1. HOTELES_ESTELAR_890304099.md  -> datos financieros
@@ -8,8 +8,8 @@ Lee DOS archivos .md del scraper:
 Los combina y limpia en un solo .txt para alimentar al LLM.
 """
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW_MD_FINANCIERO  = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
@@ -52,8 +52,8 @@ def limpiar_markdown(texto: str) -> str:
 
 
 def consolidar_datos() -> Path:
-    """
-    Lee ambos .md, los limpia y los combina en un solo .txt.
+    """Lee ambos .md, los limpia y los combina en un solo .txt.
+
     Si alguno no existe, lanza error indicando cuál falta.
     """
     for ruta in [RAW_MD_FINANCIERO, RAW_MD_CORPORATIVO]:

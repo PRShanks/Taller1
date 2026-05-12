@@ -1,5 +1,5 @@
-"""
-qa_chain.py
+"""qa_chain.py.
+
 -----------
 Sistema de preguntas y respuestas (Q&A) sobre el reporte financiero.
 
@@ -11,25 +11,25 @@ Modos disponibles:
 Soporta historial de conversación para preguntas de seguimiento.
 """
 
-import os
 import json
 import re
+
 from dotenv import load_dotenv
-from rank_bm25 import BM25Okapi
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import BaseMessage
 from langchain_core.output_parsers import StrOutputParser
+from rank_bm25 import BM25Okapi
 
-from llm.prompts import PROMPT_QA, PROMPT_QA_CON_MEMORIA
 from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm
+from llm.prompts import PROMPT_QA, PROMPT_QA_CON_MEMORIA
 
 load_dotenv()
 
 
 def _parsear_respuesta(texto: str) -> dict:
-    """
-    Extrae el JSON devuelto por el LLM.
+    """Extrae el JSON devuelto por el LLM.
+
     Si el LLM envuelve el JSON en un bloque ```json ... ```, lo limpia.
     Si el parseo falla, devuelve la respuesta cruda para no crashear.
     """
@@ -55,9 +55,10 @@ def _parsear_respuesta(texto: str) -> dict:
         }
 
 
-def _construir_bm25(texto: str, tam_chunk: int = 150, solapamiento: int = 30) -> tuple[BM25Okapi, list[str]]:
-    """
-    Divide el texto en ventanas de palabras de tamaño fijo con solapamiento.
+def _construir_bm25(
+    texto: str, tam_chunk: int = 150, solapamiento: int = 30
+) -> tuple[BM25Okapi, list[str]]:
+    """Divide el texto en ventanas de palabras de tamaño fijo con solapamiento.
 
     - tam_chunk: número de palabras por chunk
     - solapamiento: palabras compartidas entre chunks consecutivos
@@ -90,8 +91,7 @@ def responder_pregunta(
     llm: BaseChatModel | None = None,
     historial: list[BaseMessage] | None = None,
 ) -> dict:
-    """
-    Responde una pregunta sobre el reporte.
+    """Responde una pregunta sobre el reporte.
 
     Parámetros:
       - pregunta: la consulta del colaborador

@@ -1,5 +1,5 @@
-"""
-extract_hotelesestelar_web.py
+"""extract_hotelesestelar_web.py.
+
 ------------------------------
 Scraper de la página oficial de Hoteles Estelar (https://www.hotelesestelar.com).
 Extrae:
@@ -17,6 +17,7 @@ Uso:
 """
 
 from __future__ import annotations
+
 import re
 import time
 from pathlib import Path
@@ -27,7 +28,9 @@ from bs4 import BeautifulSoup
 
 # ----------------------------- Configuración -----------------------------
 BASE_URL = "https://www.hotelesestelar.com"
-OUTPUT = Path(__file__).resolve().parent.parent / "data" / "estelar_reportes" / "hoteles_estelar_web.md"
+OUTPUT = (
+    Path(__file__).resolve().parent.parent / "data" / "estelar_reportes" / "hoteles_estelar_web.md"
+)
 
 HEADERS = {
     "User-Agent": (
@@ -59,35 +62,65 @@ def limpiar(texto: str) -> str:
 
 
 # ----------------------------- HOTELES -----------------------------
+_COL = "/destinos-estelar/colombia"
 HOTELES_COLOMBIA = [
     ("Estelar Casa Ambalema", "Ambalema", "/estelar-casa-ambalema/"),
-    ("Estelar En Alto Prado", "Barranquilla", "/destinos-estelar/colombia/barranquilla/estelar-en-alto-prado/"),
-    ("Estelar Apartamentos Barranquilla", "Barranquilla", "/destinos-estelar/colombia/barranquilla/estelar-apartamentos-barranquilla/"),
-    ("Estelar La Fontana", "Bogotá", "/destinos-estelar/colombia/bogota/estelar-la-fontana/"),
-    ("Estelar Parque de la 93", "Bogotá", "/destinos-estelar/colombia/bogota/estelar-parque-de-la-93/"),
-    ("Estelar Suites Jones", "Bogotá", "/destinos-estelar/colombia/bogota/estelar-suites-jones/"),
-    ("Estelar Calle 100", "Bogotá", "/destinos-estelar/colombia/bogota/estelar-calle-100/"),
-    ("Estelar Apartamentos Bogotá", "Bogotá", "/destinos-estelar/colombia/bogota/estelar-apartamentos-bogota/"),
-    ("Intercontinental Cali", "Cali", "/destinos-estelar/colombia/cali/intercontinental/"),
-    ("Estelar Cartagena de Indias", "Cartagena", "/destinos-estelar/colombia/cartagena/estelar-cartagena-de-indias/"),
-    ("Estelar Playa Manzanillo", "Cartagena", "/destinos-estelar/colombia/cartagena/estelar-playa-manzanillo/"),
-    ("Estelar Altamira", "Ibagué", "/destinos-estelar/colombia/ibague/estelar-altamira/"),
-    ("Estelar Recinto del Pensamiento", "Manizales", "/destinos-estelar/colombia/manizales/estelar-recinto-del-pensamiento/"),
-    ("Estelar El Cable", "Manizales", "/destinos-estelar/colombia/manizales/estelar-el-cable/"),
-    ("Estelar Milla de Oro", "Medellín", "/destinos-estelar/colombia/medellin/estelar-milla-de-oro/"),
-    ("Estelar Square", "Medellín", "/destinos-estelar/colombia/medellin/estelar-square/"),
-    ("Estelar Blue", "Medellín", "/destinos-estelar/colombia/medellin/estelar-blue/"),
-    ("Estelar Apartamentos Medellín", "Medellín", "/destinos-estelar/colombia/medellin/estelar-apartamentos-medellin/"),
-    ("Estelar La Torre Suites", "Medellín", "/destinos-estelar/colombia/medellin/estelar-la-torre-suites/"),
-    ("Estelar Paipa Hotel & Centro de Convenciones", "Paipa", "/destinos-estelar/colombia/paipa/estelar-paipa-hotel-centro-de-convenciones/"),
-    ("Estelar Santamar Hotel & Centro de Convenciones", "Santa Marta", "/destinos-estelar/colombia/santa-marta/estelar-santamar-hotel-centro-de-convenciones/"),
-    ("Estelar Villavicencio Hotel & Centro de Convenciones", "Villavicencio", "/destinos-estelar/colombia/villavicencio/estelar-villavicencio-hotel-centro-de-convenciones/"),
-    ("Estelar Yopal", "Yopal", "/destinos-estelar/colombia/yopal/estelar-yopal/"),
+    ("Estelar En Alto Prado", "Barranquilla", f"{_COL}/barranquilla/estelar-en-alto-prado/"),
+    (
+        "Estelar Apartamentos Barranquilla",
+        "Barranquilla",
+        f"{_COL}/barranquilla/estelar-apartamentos-barranquilla/",
+    ),
+    ("Estelar La Fontana", "Bogotá", f"{_COL}/bogota/estelar-la-fontana/"),
+    ("Estelar Parque de la 93", "Bogotá", f"{_COL}/bogota/estelar-parque-de-la-93/"),
+    ("Estelar Suites Jones", "Bogotá", f"{_COL}/bogota/estelar-suites-jones/"),
+    ("Estelar Calle 100", "Bogotá", f"{_COL}/bogota/estelar-calle-100/"),
+    ("Estelar Apartamentos Bogotá", "Bogotá", f"{_COL}/bogota/estelar-apartamentos-bogota/"),
+    ("Intercontinental Cali", "Cali", f"{_COL}/cali/intercontinental/"),
+    (
+        "Estelar Cartagena de Indias",
+        "Cartagena",
+        f"{_COL}/cartagena/estelar-cartagena-de-indias/",
+    ),
+    ("Estelar Playa Manzanillo", "Cartagena", f"{_COL}/cartagena/estelar-playa-manzanillo/"),
+    ("Estelar Altamira", "Ibagué", f"{_COL}/ibague/estelar-altamira/"),
+    (
+        "Estelar Recinto del Pensamiento",
+        "Manizales",
+        f"{_COL}/manizales/estelar-recinto-del-pensamiento/",
+    ),
+    ("Estelar El Cable", "Manizales", f"{_COL}/manizales/estelar-el-cable/"),
+    ("Estelar Milla de Oro", "Medellín", f"{_COL}/medellin/estelar-milla-de-oro/"),
+    ("Estelar Square", "Medellín", f"{_COL}/medellin/estelar-square/"),
+    ("Estelar Blue", "Medellín", f"{_COL}/medellin/estelar-blue/"),
+    (
+        "Estelar Apartamentos Medellín",
+        "Medellín",
+        f"{_COL}/medellin/estelar-apartamentos-medellin/",
+    ),
+    ("Estelar La Torre Suites", "Medellín", f"{_COL}/medellin/estelar-la-torre-suites/"),
+    (
+        "Estelar Paipa Hotel & Centro de Convenciones",
+        "Paipa",
+        f"{_COL}/paipa/estelar-paipa-hotel-centro-de-convenciones/",
+    ),
+    (
+        "Estelar Santamar Hotel & Centro de Convenciones",
+        "Santa Marta",
+        f"{_COL}/santa-marta/estelar-santamar-hotel-centro-de-convenciones/",
+    ),
+    (
+        "Estelar Villavicencio Hotel & Centro de Convenciones",
+        "Villavicencio",
+        f"{_COL}/villavicencio/estelar-villavicencio-hotel-centro-de-convenciones/",
+    ),
+    ("Estelar Yopal", "Yopal", f"{_COL}/yopal/estelar-yopal/"),
 ]
 
+_PER = "/destinos-estelar/peru"
 HOTELES_PERU = [
-    ("Estelar Miraflores", "Lima", "/destinos-estelar/peru/lima/estelar-miraflores/"),
-    ("Estelar Apartamentos Bellavista", "Lima", "/destinos-estelar/peru/lima/estelar-apartamentos-bellavista/"),
+    ("Estelar Miraflores", "Lima", f"{_PER}/lima/estelar-miraflores/"),
+    ("Estelar Apartamentos Bellavista", "Lima", f"{_PER}/lima/estelar-apartamentos-bellavista/"),
 ]
 
 
@@ -198,7 +231,9 @@ def generar_markdown(hoteles: list[dict], restaurantes: list[dict]) -> str:
     lineas.append("# HOTELES ESTELAR — INFORMACIÓN DE LA WEB OFICIAL\n")
     lineas.append("> Información extraída mediante scraping de https://www.hotelesestelar.com\n")
     lineas.append(f"> Fecha de extracción: {time.strftime('%Y-%m-%d')}\n")
-    lineas.append(f"> Total de hoteles: {len(hoteles)} | Total de restaurantes: {len(restaurantes)}\n")
+    lineas.append(
+        f"> Total de hoteles: {len(hoteles)} | Total de restaurantes: {len(restaurantes)}\n"
+    )
     lineas.append("\n---\n")
 
     # ---- Sección HOTELES ----
@@ -260,6 +295,7 @@ def generar_markdown(hoteles: list[dict], restaurantes: list[dict]) -> str:
 
 # ----------------------------- MAIN -----------------------------
 def main():
+    """Ejecuta el scraper completo y escribe el Markdown de salida."""
     print("🚀 Iniciando scraper de Hoteles Estelar...\n")
 
     print("📍 Paso 1: Extrayendo información de cada hotel...")

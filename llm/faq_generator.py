@@ -1,5 +1,5 @@
-"""
-faq_generator.py
+"""faq_generator.py.
+
 ----------------
 Tarea 2 del taller: responde un set de preguntas frecuentes fijas
 sobre el reporte financiero usando LangChain + Claude/Ollama.
@@ -11,9 +11,9 @@ basándose en el contexto corporativo cargado.
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
-from llm.prompts import PROMPT_FAQ
 from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm
+from llm.prompts import PROMPT_FAQ
 
 # Preguntas fijas — siempre las mismas, el modelo solo genera las respuestas
 PREGUNTAS_FAQ: list[str] = [
@@ -35,18 +35,49 @@ PREGUNTAS_FAQ: list[str] = [
     "¿Qué importancia tienen los eventos empresariales dentro de la oferta de Hoteles Estelar?",
     "¿Qué tipo de viajeros hacen parte del segmento corporativo de Hoteles Estelar?",
     "¿Cuáles fueron los ingresos operacionales en 2024 y cuál fue su crecimiento respecto a 2023?",
-    "¿Cuál fue la utilidad neta en 2024 y cuánto representó como porcentaje de los ingresos (margen neto)?",
+    (
+        "¿Cuál fue la utilidad neta en 2024 y cuánto representó como porcentaje"
+        " de los ingresos (margen neto)?"
+    ),
     "¿Cuál fue el EBITDA en 2024 y cuál fue su margen sobre ingresos?",
-    "¿Cuál fue el total de activos, pasivos y patrimonio registrado en el balance general de 2024?",
+    (
+        "¿Cuál fue el total de activos, pasivos y patrimonio registrado"
+        " en el balance general de 2024?"
+    ),
     "¿Cuánto sumó la deuda financiera en 2024 y cuál fue la razón Deuda/EBITDA?",
-    "¿Qué tendencia muestra la evolución de ingresos entre 2019 y 2024, y qué evento explica la caída de 2020?",
-    "Comparando el margen EBITDA de 2024 (14,0 %) con el de 2019 (10,2 %), ¿qué conclusión se puede extraer sobre la eficiencia operativa de la empresa?",
-    "El capital de trabajo neto ha sido negativo en todos los años del reporte. ¿Qué implica esto para la liquidez de corto plazo y cómo lo mitiga la empresa?",
-    "Dado que los costos financieros en 2024 fueron COP 50.197 millones y el EBITDA fue COP 70.147 millones (cobertura 1,4x), ¿qué riesgo financiero representa esta situación y cómo ha evolucionado desde 2019?",
-    "¿Quién es el dueño o beneficiario final de Hoteles Estelar S.A. y cómo está estructurada la cadena de control accionario?",
-    "¿Cuáles son las ubicaciones exactas (direcciones) de todos los hoteles Estelar en Medellín y Bogotá?",
-    "¿Qué alianzas o franquicias internacionales tiene Hoteles Estelar y bajo qué modalidad opera cada una?",
-    "¿Cuáles fueron los resultados financieros de Hoteles Estelar en 2024 y cómo se comparan con el promedio del sector hotelero colombiano?",
+    (
+        "¿Qué tendencia muestra la evolución de ingresos entre 2019 y 2024,"
+        " y qué evento explica la caída de 2020?"
+    ),
+    (
+        "Comparando el margen EBITDA de 2024 (14,0 %) con el de 2019 (10,2 %),"
+        " ¿qué conclusión se puede extraer sobre la eficiencia operativa de la empresa?"
+    ),
+    (
+        "El capital de trabajo neto ha sido negativo en todos los años del reporte."
+        " ¿Qué implica esto para la liquidez de corto plazo y cómo lo mitiga la empresa?"
+    ),
+    (
+        "Dado que los costos financieros en 2024 fueron COP 50.197 millones y el EBITDA fue"
+        " COP 70.147 millones (cobertura 1,4x), ¿qué riesgo financiero representa esta situación"
+        " y cómo ha evolucionado desde 2019?"
+    ),
+    (
+        "¿Quién es el dueño o beneficiario final de Hoteles Estelar S.A."
+        " y cómo está estructurada la cadena de control accionario?"
+    ),
+    (
+        "¿Cuáles son las ubicaciones exactas (direcciones)"
+        " de todos los hoteles Estelar en Medellín y Bogotá?"
+    ),
+    (
+        "¿Qué alianzas o franquicias internacionales tiene Hoteles Estelar"
+        " y bajo qué modalidad opera cada una?"
+    ),
+    (
+        "¿Cuáles fueron los resultados financieros de Hoteles Estelar en 2024"
+        " y cómo se comparan con el promedio del sector hotelero colombiano?"
+    ),
     "¿Qué empresas del Grupo Aval están relacionadas con Hoteles Estelar y en qué sectores operan?"
 ]
 
@@ -55,8 +86,8 @@ def generar_faq(
     contexto: str | None = None,
     llm: BaseChatModel | None = None,
 ) -> str:
-    """
-    Genera respuestas para las preguntas fijas de PREGUNTAS_FAQ.
+    """Genera respuestas para las preguntas fijas de PREGUNTAS_FAQ.
+
     Si no se pasa contexto, lo carga desde el archivo consolidado.
     Si no se pasa llm, usa Claude Haiku.
     """

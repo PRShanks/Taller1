@@ -1,4 +1,5 @@
 def main():
+    """Entry point placeholder."""
     print("Hello from scraper!")
 
 

@@ -1,5 +1,5 @@
-"""
-summarizer.py
+"""summarizer.py.
+
 -------------
 Tarea 1 del taller: generación de un resumen ejecutivo del reporte
 financiero usando LangChain + Claude/Ollama.
@@ -8,18 +8,19 @@ financiero usando LangChain + Claude/Ollama.
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
-from llm.prompts import PROMPT_RESUMEN
 from llm.data_loader import cargar_contexto
 from llm.factory import crear_llm
+from llm.prompts import PROMPT_RESUMEN
 
 
 def generar_resumen(
     contexto: str | None = None,
     llm: BaseChatModel | None = None,
 ) -> str:
-    """
-    Genera el resumen ejecutivo. Si no se pasa contexto, lo carga
-    desde el archivo consolidado. Si no se pasa llm, usa Claude Haiku.
+    """Genera el resumen ejecutivo.
+
+    Si no se pasa contexto, lo carga desde el archivo consolidado.
+    Si no se pasa llm, usa Claude Haiku.
     """
     if contexto is None:
         contexto = cargar_contexto()
