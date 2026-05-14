@@ -11,9 +11,9 @@ basándose en el contexto corporativo cargado.
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
+from llm.clients.factory import crear_llm
 from llm.data_loader import cargar_contexto
-from llm.factory import crear_llm
-from llm.prompts import PROMPT_FAQ
+from llm.prompts.faq import PROMPT_FAQ
 
 # Preguntas fijas — siempre las mismas, el modelo solo genera las respuestas
 PREGUNTAS_FAQ: list[str] = [

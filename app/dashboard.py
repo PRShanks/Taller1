@@ -22,12 +22,12 @@ sys.path.insert(0, str(ROOT))
 
 import streamlit as st  # noqa: E402
 
+from llm.clients.factory import MODELOS_CLAUDE, MODELOS_OLLAMA_SUGERIDOS, crear_llm  # noqa: E402
+from llm.clients.memory import SessionMemory  # noqa: E402
+from llm.core.faq_generator import generar_faq  # noqa: E402
+from llm.core.qa import responder_pregunta  # noqa: E402
+from llm.core.summarizer import generar_resumen  # noqa: E402
 from llm.data_loader import cargar_contexto  # noqa: E402
-from llm.factory import MODELOS_CLAUDE, MODELOS_OLLAMA_SUGERIDOS, crear_llm  # noqa: E402
-from llm.faq_generator import generar_faq  # noqa: E402
-from llm.memory import SessionMemory  # noqa: E402
-from llm.qa_chain import responder_pregunta  # noqa: E402
-from llm.summarizer import generar_resumen  # noqa: E402
 
 # -------------------- Configuración de la página --------------------
 st.set_page_config(
@@ -82,17 +82,6 @@ with st.sidebar:
             help="Nombre exacto del modelo instalado en Ollama (ej: llama3.2, mistral)",
         )
         st.caption("Sugeridos: " + ", ".join(MODELOS_OLLAMA_SUGERIDOS))
-
-    st.divider()
-    st.header("⚙️ Opciones de búsqueda")
-    usar_completo = st.toggle("Contexto completo", value=False)
-    top_k = st.number_input(
-        "Chunks a recuperar (k)",
-        min_value=1,
-        max_value=15,
-        value=5,
-        disabled=usar_completo,
-    )
 
     st.divider()
     st.header("💾 Memoria de sesión")
@@ -198,8 +187,6 @@ if pregunta:
 
                 resultado = responder_pregunta(
                     pregunta,
-                    top_k=top_k,
-                    contexto_completo=usar_completo,
                     llm=crear_llm(proveedor, modelo, temperature=0.0, max_tokens=512),
                     historial=historial,
                 )
@@ -221,7 +208,7 @@ if pregunta:
                     with col2:
                         st.caption(f"💡 {resultado['nota']}")
 
-                if not usar_completo and resultado.get("fuentes"):
+                if resultado.get("fuentes"):
                     with st.expander("📄 Fragmentos usados como fuente"):
                         for i, fuente in enumerate(resultado["fuentes"], 1):
                             st.markdown(f"**Fragmento {i}:**")

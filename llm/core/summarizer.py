@@ -8,9 +8,9 @@ financiero usando LangChain + Claude/Ollama.
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.output_parsers import StrOutputParser
 
+from llm.clients.factory import crear_llm
 from llm.data_loader import cargar_contexto
-from llm.factory import crear_llm
-from llm.prompts import PROMPT_RESUMEN
+from llm.prompts.resumen import PROMPT_RESUMEN
 
 
 def generar_resumen(
