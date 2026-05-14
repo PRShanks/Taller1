@@ -16,8 +16,8 @@
 ## Phase 3: Config & Dependencies
 
 - [x] 3.1 `pyproject.toml` — Remove `"rank-bm25>=0.2.2"`. Add `"langchain-community"`, `"langchain-openai"`, `"supabase"`, `"langchain-text-splitters"`. Run `uv lock`.
-- [ ] 3.2 `.env.example` — Add `SUPABASE_URL=`, `SUPABASE_SERVICE_KEY=`, `EMBEDDING_PROVIDER=ollama`, `OPENAI_API_KEY=`.
-- [ ] 3.3 `Makefile` — Add `ingest` target: `@echo "Placeholder: la ingesta la realiza el equipo de datos."`. Add `reindex` target: same placeholder. Add both to `.PHONY`.
+- [x] 3.2 `.env.example` — Add `SUPABASE_URL=`, `SUPABASE_SERVICE_KEY=`, `EMBEDDING_PROVIDER=ollama`, `OPENAI_API_KEY=`.
+- [x] 3.3 `Makefile` — Add `ingest` target: `@echo "Placeholder: la ingesta la realiza el equipo de datos."`. Add `reindex` target: same placeholder. Add both to `.PHONY`.
 
 ## Phase 4: Testing (Strict TDD — write tests after code)
 
