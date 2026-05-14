@@ -1,19 +1,16 @@
 """data_loader.py.
 
---------------
-Lee DOS archivos .md del scraper:
-  1. HOTELES_ESTELAR_890304099.md  -> datos financieros
-  2. hoteles_estelar.md            -> información corporativa completa
-
-Los combina y limpia en un solo .txt para alimentar al LLM.
+------------------
+Lee todos los archivos ``.md`` de ``data/estelar_reportes/`` usando glob,
+los limpia de marcas Markdown y los combina en un solo archivo ``.txt``
+para alimentar al LLM.
 """
 
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-RAW_MD_FINANCIERO = ROOT / "data" / "estelar_reportes" / "HOTELES_ESTELAR_890304099.md"
-RAW_MD_CORPORATIVO = ROOT / "data" / "estelar_reportes" / "hoteles_estelar.md"
+REPORTES_DIR = ROOT / "data" / "estelar_reportes"
 PROCESSED_TXT = ROOT / "data" / "processed" / "estelar_consolidado.txt"
 
 GLOSARIO = """
@@ -51,34 +48,68 @@ def limpiar_markdown(texto: str) -> str:
     return "\n".join(lineas_limpias)
 
 
-def consolidar_datos() -> Path:
-    """Lee ambos .md, los limpia y los combina en un solo .txt.
+def _nombre_seccion(archivo: Path) -> str:
+    """Genera un nombre de sección legible a partir del nombre del archivo.
 
-    Si alguno no existe, lanza error indicando cuál falta.
+    Parámetros:
+        archivo: Ruta al archivo ``.md``.
+
+    Devuelve:
+        Nombre de sección en mayúsculas, formateado para el encabezado.
     """
-    for ruta in [RAW_MD_FINANCIERO, RAW_MD_CORPORATIVO]:
-        if not ruta.exists():
-            raise FileNotFoundError(
-                f"No se encontró: {ruta}\n"
-                "Asegúrate de que el archivo esté en data/estelar_reportes/"
-            )
+    nombre = archivo.stem
+    nombre = re.sub(r"[-_]+", " ", nombre)
+    return nombre.upper()
 
-    texto_financiero = limpiar_markdown(RAW_MD_FINANCIERO.read_text(encoding="utf-8"))
-    texto_corporativo = limpiar_markdown(RAW_MD_CORPORATIVO.read_text(encoding="utf-8"))
+
+def consolidar_datos() -> Path:
+    """Lee todos los ``.md`` de ``REPORTES_DIR``, los limpia y los combina.
+
+    Si no se encuentra ningún archivo ``.md``, lanza ``FileNotFoundError``
+    listando los archivos existentes en el directorio.
+
+    Devuelve:
+        Ruta al archivo ``.txt`` consolidado.
+    """
+    md_files = sorted(REPORTES_DIR.glob("*.md"))
+
+    if not md_files:
+        existentes = (
+            [str(p.name) for p in sorted(REPORTES_DIR.iterdir())]
+            if REPORTES_DIR.exists()
+            else []
+        )
+        msg = (
+            f"No se encontraron archivos .md en {REPORTES_DIR}.\n"
+            "Asegúrate de que existan reportes en data/estelar_reportes/"
+        )
+        if existentes:
+            msg += f"\nArchivos encontrados: {', '.join(existentes)}"
+        raise FileNotFoundError(msg)
+
+    partes: list[str] = []
+
+    for ruta in md_files:
+        titulo = _nombre_seccion(ruta)
+        texto_limpio = limpiar_markdown(ruta.read_text(encoding="utf-8"))
+        partes.append(
+            "=" * 46
+            + "\n"
+            + f"{titulo}\n"
+            + "=" * 46
+            + "\n\n"
+            + f"{texto_limpio}\n"
+        )
 
     contenido_final = (
-        "==============================================\n"
-        "DATOS FINANCIEROS - HOTELES ESTELAR S.A.\n"
-        "==============================================\n\n"
-        f"{texto_financiero}\n\n"
-        "==============================================\n"
-        "INFORMACIÓN CORPORATIVA - HOTELES ESTELAR S.A.\n"
-        "==============================================\n\n"
-        f"{texto_corporativo}\n\n"
-        "==============================================\n"
-        "GLOSARIO\n"
-        "==============================================\n"
-        f"{GLOSARIO}"
+        "\n".join(partes)
+        + "\n"
+        + "=" * 46
+        + "\n"
+        + "GLOSARIO\n"
+        + "=" * 46
+        + "\n"
+        + f"{GLOSARIO}"
     )
 
     PROCESSED_TXT.parent.mkdir(parents=True, exist_ok=True)
