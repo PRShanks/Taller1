@@ -97,12 +97,15 @@ scrape-quick: ## Extracción rápida (reutiliza datos existentes)
 consolidate: ## Consolidar archivos .md en .txt procesado
 	$(UV) run $(PYTHON) scripts/consolidar_estelar.py
 
-ingest: ## [Placeholder] Ingesta de documentos a Supabase (equipo de datos)
-	@echo "ℹ️  La ingesta de documentos la realiza el equipo de datos."
-	@echo "   Ejecutar cuando SUPABASE_URL y SUPABASE_SERVICE_KEY estén configurados."
+ingest: ## Ingestar documentos corporativos en Supabase (primera carga)
+	@echo "Ingesta de documentos a Supabase..."
+	$(UV) run python -m scripts.ingestar_supabase
+	@echo "Ingesta completada."
 
-reindex: ## [Placeholder] Reindexar documentos en Supabase (equipo de datos)
-	@echo "ℹ️  El reindexado lo realiza el equipo de datos."
+reindex: ## Reindexar documentos en Supabase (borra y recarga todo)
+	@echo "Reindexando documentos en Supabase..."
+	$(UV) run python -m scripts.ingestar_supabase --force
+	@echo "Reindexado completado."
 
 # ---------------------------------------------------------------------------
 # Linting y Formateo
