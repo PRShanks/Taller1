@@ -1,0 +1,601 @@
+id,anio,seccion,concepto,valor_num,valor_raw,unidad,es_ratio
+8f1cbf4f-0d40-42cc-a308-e4aced020ea9,2019,Ingresos,Crecimiento (%),14.2,14.2,%,true
+05b6840c-eb54-4b57-a0ce-1ce1a051767f,2020,Ingresos,Crecimiento (%),-62.1,-62.1,%,true
+93c9c4a7-11d1-42e5-ba8e-34b576fc6721,2021,Ingresos,Crecimiento (%),104.5,104.5,%,true
+ca5976c6-e1ae-4a76-927d-9a475127955b,2022,Ingresos,Crecimiento (%),78.5,78.5,%,true
+2d8b4b22-2f21-4e6f-9184-9fd85365f247,2023,Ingresos,Crecimiento (%),13.3,13.3,%,true
+f44b9831-f83d-4619-889d-ae4d9bf63439,2024,Ingresos,Crecimiento (%),5.5,5.5,%,true
+2d6eba61-b7d8-488f-a577-185717ea78bb,2019,Utilidad bruta,Margen bruto (%),64.7,64.7,%,true
+1d8b265a-1cd7-4f3a-be32-9a5104a1e3dd,2020,Utilidad bruta,Margen bruto (%),52.2,52.2,%,true
+e3adbebf-d4e0-449e-b0dc-23649f5d9275,2021,Utilidad bruta,Margen bruto (%),59.8,59.8,%,true
+bc5653ea-b7e6-455e-99ba-004b32f3e6bd,2022,Utilidad bruta,Margen bruto (%),63.6,63.6,%,true
+b5961722-a23d-4419-9c3c-f8a092450215,2023,Utilidad bruta,Margen bruto (%),62.5,62.5,%,true
+66918dcf-b244-46a1-9604-f0a29306c854,2024,Utilidad bruta,Margen bruto (%),61.7,61.7,%,true
+7b58a221-ddd3-4076-8cee-94480e68c4d0,2019,Gastos operacionales,Gastos operacionales,176823.0,176.823,millones COP,false
+4c526184-4aac-473f-9cb9-bd1c64daa221,2019,Gastos operacionales,Gastos operacionales/Ingresos (%),58.3,58.3,%,true
+f66a5698-5021-4d75-9d1e-a8ab37f9da47,2020,Gastos operacionales,Gastos operacionales,99481.0,99.481,millones COP,false
+432a7237-bde7-4c6d-b1e1-a4beb3b960a1,2020,Gastos operacionales,Gastos operacionales/Ingresos (%),86.6,86.6,%,true
+52c72127-4743-445f-b55b-7e815fa8dead,2021,Gastos operacionales,Gastos operacionales,144497.0,144.497,millones COP,false
+085395c6-30fc-41e3-9ce3-8ab9a1050b6e,2021,Gastos operacionales,Gastos operacionales/Ingresos (%),61.5,61.5,%,true
+8d83f635-4ebc-455c-9e3c-68f779f061da,2022,Gastos operacionales,Gastos operacionales,229624.0,229.624,millones COP,false
+c6467c4a-7959-435d-833e-419abae88df1,2022,Gastos operacionales,Gastos operacionales/Ingresos (%),54.7,54.7,%,true
+20f01472-8699-4628-994a-fd44758215e7,2023,Gastos operacionales,Gastos operacionales,259457.0,259.457,millones COP,false
+186bfa38-8796-44ce-b53f-f71bd2e621c5,2023,Gastos operacionales,Gastos operacionales/Ingresos (%),54.6,54.6,%,true
+97d11765-63eb-4037-9ba9-543aad5f9773,2024,Gastos operacionales,Gastos operacionales,268765.0,268.765,millones COP,false
+0ddc1a18-682d-444c-8fed-8472396c96eb,2024,Gastos operacionales,Gastos operacionales/Ingresos (%),53.6,53.6,%,true
+8ad3ded5-8016-451d-8d31-40b1b9f93af6,2019,EBITDA,Margen EBITDA (%),10.2,10.2,%,true
+43f8bac5-a724-4e6e-95c6-64f971c30032,2020,EBITDA,Margen EBITDA (%),-8.1,-8.1,%,true
+09837c2e-5f7a-43cc-993c-4c3512e33c7e,2021,EBITDA,Margen EBITDA (%),6.5,6.5,%,true
+25db5910-bbe7-4669-98c6-f392cfed9f88,2022,EBITDA,Margen EBITDA (%),14.0,14.0,%,true
+933422a2-8332-4a7e-9180-c124f826db98,2023,EBITDA,Margen EBITDA (%),13.8,13.8,%,true
+9e7a17db-5059-44fd-a0c1-a6e6802a94a7,2024,EBITDA,Margen EBITDA (%),14.0,14.0,%,true
+5aa288be-4849-417c-b5d3-14d25a79ab3c,2019,Capital de trabajo neto,Capital de trabajo neto,-44875.0,-44.875,millones COP,false
+f05c771e-51fe-487f-aed7-073a459c33d8,2019,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-14.8,-14.8,%,true
+db40b00f-2b6d-413b-85bb-4f755bc198d4,2020,Capital de trabajo neto,Capital de trabajo neto,-18960.0,-18.960,millones COP,false
+0eb544c1-791f-4990-9400-089ce6785b36,2020,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-16.5,-16.5,%,true
+bd0b6c85-3c82-4e0a-9b43-94ce8abdefd7,2021,Capital de trabajo neto,Capital de trabajo neto,-27837.0,-27.837,millones COP,false
+5fe066ad-bc07-4504-bdba-f99005a3b42b,2021,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-11.8,-11.8,%,true
+27d535c1-5a4e-4ab8-bb7c-c930b6c182f9,2022,Capital de trabajo neto,Capital de trabajo neto,-30379.0,-30.379,millones COP,false
+664ebee0-46ac-47d5-a84d-d4db1adbdc41,2022,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-7.2,-7.2,%,true
+e5c749a6-daba-4708-98fa-cc8ae3218c32,2023,Capital de trabajo neto,Capital de trabajo neto,-60099.0,-60.099,millones COP,false
+7c5c4d56-2e5f-4f0b-aef5-64e43edb87d4,2023,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-12.6,-12.6,%,true
+34eb14e1-dd12-41fd-b4b1-eb0d19283620,2024,Capital de trabajo neto,Capital de trabajo neto,-50958.0,-50.958,millones COP,false
+d0c2f70b-9a30-4e44-ab34-07bbfcfb88d3,2024,Capital de trabajo neto,Capital de trabajo/Ingresos (%),-10.2,-10.2,%,true
+3e9b3921-fc4d-4d7f-b3ff-be218bea4496,2019,Deuda,Deuda/EBITDA (x),5.1,5.1,x,true
+bfab6edc-e6f6-478b-9002-ccc4bd48bcb8,2020,Deuda,Deuda/EBITDA (x),-28.6,-28.6,x,true
+24fc593d-4d69-4c63-af3d-3a7e33ea4e01,2021,Deuda,Deuda/EBITDA (x),18.2,18.2,x,true
+bc16a372-e24b-4fa4-ace9-c15e12d37f39,2022,Deuda,Deuda/EBITDA (x),5.2,5.2,x,true
+48651c3c-a244-4e44-8a57-6fd7d0a96cb3,2023,Deuda,Deuda/EBITDA (x),4.7,4.7,x,true
+884308cc-4c99-47a7-ac46-80a798d1f249,2024,Deuda,Deuda/EBITDA (x),4.4,4.4,x,true
+ce691abe-8335-4e98-80ed-ba709b45dd23,2019,Balance general,Caja y bancos,10760.0,10.760,millones COP,false
+c7246523-6d66-44bd-bea6-feb973621560,2020,Balance general,Caja y bancos,7299.0,7.299,millones COP,false
+36bfc0b1-101a-4cd2-851c-9008a24c59a1,2021,Balance general,Caja y bancos,19992.0,19.992,millones COP,false
+b884a203-5afe-4d23-bc77-adc644180882,2022,Balance general,Caja y bancos,26507.0,26.507,millones COP,false
+ccaeb942-d04f-4fd4-97b1-f9188fc52b95,2023,Balance general,Caja y bancos,22089.0,22.089,millones COP,false
+296168b6-7d6f-4bcf-bda1-0baba38fe626,2024,Balance general,Caja y bancos,14143.0,14.143,millones COP,false
+d0d77ee4-f90f-439e-8e6c-7c8af92e9e2e,2019,Balance general,Inversiones,27562.0,27.562,millones COP,false
+b2654a2c-fbab-4c9f-b16a-049dc8d5fc93,2020,Balance general,Inversiones,23705.0,23.705,millones COP,false
+3e6578d4-2df0-4a4a-af24-0e5ff24cd15c,2021,Balance general,Inversiones,18294.0,18.294,millones COP,false
+fbbe5964-38f9-40b4-bbbd-40db9ee334ff,2022,Balance general,Inversiones,60639.0,60.639,millones COP,false
+3f6b8a45-2e23-4f49-b6df-395cb897789a,2023,Balance general,Inversiones,58541.0,58.541,millones COP,false
+1ae3dd29-dfcb-42fb-9a6a-3b832a391755,2024,Balance general,Inversiones,103978.0,103.978,millones COP,false
+c3274201-9bd7-4fdc-a1a5-56ac42ba0bc6,2019,Balance general,Cuentas por cobrar,63690.0,63.690,millones COP,false
+db60ecb3-e5c5-46c4-8f09-5878f8d668c8,2020,Balance general,Cuentas por cobrar,74694.0,74.694,millones COP,false
+32dd756d-e276-4b2b-ba82-438537db5808,2021,Balance general,Cuentas por cobrar,49573.0,49.573,millones COP,false
+1a20129c-977e-4b67-8ab2-9f3d8d97e183,2022,Balance general,Cuentas por cobrar,51802.0,51.802,millones COP,false
+422a6e1c-df96-4ed4-bc3f-fdc0a4327cce,2023,Balance general,Cuentas por cobrar,58409.0,58.409,millones COP,false
+282568af-8cfe-4558-8542-61671de5d46d,2024,Balance general,Cuentas por cobrar,57103.0,57.103,millones COP,false
+34029876-3c58-452a-b37b-af0238fae7f3,2019,Balance general,Inventario,7493.0,7.493,millones COP,false
+d5c0e52e-16ba-44d1-a7b3-8cc5ace31e36,2020,Balance general,Inventario,6575.0,6.575,millones COP,false
+6e7df3bb-7599-4860-a61f-66445f29cb26,2021,Balance general,Inventario,8900.0,8.900,millones COP,false
+8b9c4250-1442-474d-bbeb-498e6ddbb745,2022,Balance general,Inventario,10943.0,10.943,millones COP,false
+116e90f4-29cd-471c-bb4d-03517e6f06f6,2023,Balance general,Inventario,11447.0,11.447,millones COP,false
+b72ed723-2007-4366-b2ab-db379b96cb8c,2024,Balance general,Inventario,12208.0,12.208,millones COP,false
+9b9abadd-a495-41cd-b409-3f5c42353c83,2019,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+ad4947c6-ec89-49a2-95fe-42c182638093,2020,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+65fd183b-cd5b-4c93-9a66-4c19f4c88c4f,2021,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+1b41d91a-5433-4d24-8cf9-bbdc213a63a8,2022,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+02a696ce-0757-4378-bc4d-27c9354eb504,2023,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+28f0c20d-fd88-44cd-9e17-e0f24aa5202b,2024,Balance general,Activos biológicos CP,0.0,0,millones COP,false
+834f862d-2a19-45f0-878d-723e623bf500,2019,Balance general,Impuestos a favor,2881.0,2.881,millones COP,false
+9ab7363d-04af-4f6f-8cb0-b1bc67eb764f,2020,Balance general,Impuestos a favor,1338.0,1.338,millones COP,false
+1a0374c9-422d-4c30-9a4a-561eea459348,2021,Balance general,Impuestos a favor,3339.0,3.339,millones COP,false
+41fa8a84-d84d-4bd3-82f4-18ec07152671,2022,Balance general,Impuestos a favor,5861.0,5.861,millones COP,false
+64d2a0b3-0bb6-4520-ac67-f1ffe6b90127,2023,Balance general,Impuestos a favor,7364.0,7.364,millones COP,false
+4352e9c0-4f2b-4906-82ee-347482916865,2024,Balance general,Impuestos a favor,11199.0,11.199,millones COP,false
+dbb1b941-ecee-47ae-9681-e3436e61964d,2019,Balance general,Otros activos corrientes,1285.0,1.285,millones COP,false
+49f9e780-cbbf-4943-9a35-22bc1c3f7de1,2020,Balance general,Otros activos corrientes,19921.0,19.921,millones COP,false
+62a57c52-64d4-48a5-b478-0d11576cfc2a,2021,Balance general,Otros activos corrientes,24880.0,24.880,millones COP,false
+90dc4349-a644-478d-ade2-5925fd04df4b,2022,Balance general,Otros activos corrientes,32930.0,32.930,millones COP,false
+583ae472-cdf8-4a48-ad04-be56a6c1098a,2023,Balance general,Otros activos corrientes,2445.0,2.445,millones COP,false
+28c6085d-068e-47b6-a6a3-e686392c6928,2024,Balance general,Otros activos corrientes,10340.0,10.340,millones COP,false
+2e193d38-8f32-4006-821b-b0161b977336,2019,Balance general,Total activos corrientes,113671.0,113.671,millones COP,false
+ca0f0e82-a9c3-41ae-89a5-c006d9fa36cb,2020,Balance general,Total activos corrientes,133533.0,133.533,millones COP,false
+f673b972-c057-4826-a90e-fdc5a7fa2695,2021,Balance general,Total activos corrientes,124978.0,124.978,millones COP,false
+4d5f96da-e71b-4d0d-ba0c-e66638192f0b,2022,Balance general,Total activos corrientes,188683.0,188.683,millones COP,false
+e917b3d9-a5e7-483b-ab26-96617f748dfb,2023,Balance general,Total activos corrientes,160294.0,160.294,millones COP,false
+7910ad26-c32c-4ebd-9a75-8145c090f1ec,2024,Balance general,Total activos corrientes,208971.0,208.971,millones COP,false
+37c2a1fe-68dd-4d04-8202-f3a13dd06540,2019,Balance general,PPyE,425599.0,425.599,millones COP,false
+05be4856-e5c0-4979-bd93-4c297ffc6cf6,2020,Balance general,PPyE,472745.0,472.745,millones COP,false
+c80844b8-2de9-4046-9bed-dbcb7d599a1a,2021,Balance general,PPyE,464831.0,464.831,millones COP,false
+183c3bbd-e816-4dee-aade-58cb9d023a7b,2022,Balance general,PPyE,467270.0,467.270,millones COP,false
+142a8dac-6e2f-46d2-bf0e-f01fb0782adc,2023,Balance general,PPyE,487686.0,487.686,millones COP,false
+bbfa56ea-6ac9-43b0-8a25-4cc13fcd9de1,2024,Balance general,PPyE,491052.0,491.052,millones COP,false
+a6465417-9a85-40ba-8c69-2ff86c420cc4,2019,Balance general,Intangibles,1140.0,1.140,millones COP,false
+a5557a1f-2dff-44f7-bcd4-053ab49937a6,2020,Balance general,Intangibles,1617.0,1.617,millones COP,false
+d0eb9ab7-d7b0-4f90-b4f4-541a34582cb9,2021,Balance general,Intangibles,1136.0,1.136,millones COP,false
+34014746-b4ed-4008-bddc-7f0251e9d3b6,2022,Balance general,Intangibles,2576.0,2.576,millones COP,false
+5bdc3b77-9782-4e32-8c76-873d969eee60,2023,Balance general,Intangibles,2649.0,2.649,millones COP,false
+510b993a-0fcc-400e-92f3-9f491b957635,2024,Balance general,Intangibles,1846.0,1.846,millones COP,false
+37858ae4-9eee-4e44-acb0-b65e6c70b57c,2019,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+d9fdb21b-3bef-49b3-baf1-7272e09f3597,2020,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+59e9c02d-11f9-4c17-a5ae-3802727a3601,2021,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+fcea8413-e1d6-4268-8651-53317d6a5f81,2022,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+5629be7e-f7f6-4ba3-833f-a9715dd49d8a,2023,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+d79be24a-33b4-4908-8877-3ab32a2f111b,2024,Balance general,Activos biológicos LP,0.0,0,millones COP,false
+c4c9ab15-e5c6-45d6-94dd-951e41c6dac9,2019,Balance general,Intercompanies,95178.0,95.178,millones COP,false
+bec25256-c5a6-430e-8c01-90723ca34675,2020,Balance general,Intercompanies,80907.0,80.907,millones COP,false
+dd150854-4b0c-4ee5-bbe0-b26270951747,2021,Balance general,Intercompanies,81513.0,81.513,millones COP,false
+c7a9abe1-4dbc-4ef9-bbbf-bb2fb6e5d840,2022,Balance general,Intercompanies,105915.0,105.915,millones COP,false
+1ed02caf-7950-4711-9d43-e30c80c7cb5d,2023,Balance general,Intercompanies,110631.0,110.631,millones COP,false
+14dd17c2-60cb-4a06-81ab-23bf82806762,2024,Balance general,Intercompanies,119719.0,119.719,millones COP,false
+b0990ac9-82c6-4f96-9fa6-efaf0f3a011b,2019,Balance general,Otras CxC no corrientes,8123.0,8.123,millones COP,false
+8f61aa36-232d-4eda-84ff-66308d14aaca,2020,Balance general,Otras CxC no corrientes,16287.0,16.287,millones COP,false
+b3b737c9-73ff-4c96-8bdc-fc1e46b30afb,2021,Balance general,Otras CxC no corrientes,27160.0,27.160,millones COP,false
+d678b31b-c9b9-478c-873c-16250770302e,2022,Balance general,Otras CxC no corrientes,18267.0,18.267,millones COP,false
+082d2732-4711-43fa-8034-6773de6ba67e,2023,Balance general,Otras CxC no corrientes,16713.0,16.713,millones COP,false
+f0ce9bcc-d1f8-4c1f-b3b7-cf7601e65a16,2024,Balance general,Otras CxC no corrientes,22102.0,22.102,millones COP,false
+a2a4232e-2cf1-484c-9169-891f4b72fa4b,2019,Balance general,Otros activos no corrientes,602.0,602,millones COP,false
+f4bc73f7-9610-47df-b5d7-be19b98434ff,2020,Balance general,Otros activos no corrientes,0.0,0,millones COP,false
+3fedcf89-b48c-4a3a-94de-717c6b70a630,2021,Balance general,Otros activos no corrientes,0.0,0,millones COP,false
+9bfceab2-10e2-4fc7-ab4e-5ada5601ad6e,2022,Balance general,Otros activos no corrientes,0.0,0,millones COP,false
+5e925f81-1074-4531-b96f-f0877d8b18f6,2023,Balance general,Otros activos no corrientes,34876.0,34.876,millones COP,false
+becc7666-2c11-4e36-b8e4-6d10770ba0b5,2024,Balance general,Otros activos no corrientes,884.0,884,millones COP,false
+792d7b93-b4b4-470b-b62d-de99a75f9772,2019,Balance general,Total activos no corrientes,530641.0,530.641,millones COP,false
+00f8564f-0dfc-489b-bc88-af28121ffde1,2020,Balance general,Total activos no corrientes,571556.0,571.556,millones COP,false
+0ed61239-8fc0-4ff4-9b43-c02b9c61d495,2021,Balance general,Total activos no corrientes,574641.0,574.641,millones COP,false
+a57e852f-9d68-4a91-9139-a2372aac6bfb,2022,Balance general,Total activos no corrientes,594028.0,594.028,millones COP,false
+a188eff4-ef8d-4521-860b-bfde7ea1b6c7,2023,Balance general,Total activos no corrientes,652554.0,652.554,millones COP,false
+fe380711-579c-47f8-b1a9-e0fd7740cfc7,2024,Balance general,Total activos no corrientes,635603.0,635.603,millones COP,false
+25de2b37-2e36-4e6e-9fe6-346f5d71bf5d,2019,Balance general,Total activos,644313.0,644.313,millones COP,false
+7f62e4c8-2663-4096-8db8-3d226f5761f9,2020,Balance general,Total activos,705089.0,705.089,millones COP,false
+76e5a909-3ae4-48d2-a8dd-c4a9c8a8bd6f,2021,Balance general,Total activos,699619.0,699.619,millones COP,false
+4d587c1d-92c8-4243-aed6-ec283eb6655d,2022,Balance general,Total activos,782711.0,782.711,millones COP,false
+3087e45b-bea8-4af4-b612-621310ddb1b6,2023,Balance general,Total activos,812849.0,812.849,millones COP,false
+359c170a-0e56-485c-8962-e8ae98b6b4ac,2024,Balance general,Total activos,844574.0,844.574,millones COP,false
+77071044-f2eb-4f9e-8382-9d1bed3ab011,2019,Balance general,Deuda,158186.0,158.186,millones COP,false
+b0970ac2-e5f2-4596-bbd0-42f2e40f53b9,2020,Balance general,Deuda,267971.0,267.971,millones COP,false
+df44cbd5-d574-4dde-bb2f-b20fe477572e,2021,Balance general,Deuda,280150.0,280.150,millones COP,false
+e2b94359-9f48-433c-bbb0-351746893a88,2022,Balance general,Deuda,305998.0,305.998,millones COP,false
+87e8f552-2490-4d9e-8cef-ab5f2f30245d,2023,Balance general,Deuda,306915.0,306.915,millones COP,false
+9ce253ed-1115-4e13-a356-74882d1e8b24,2024,Balance general,Deuda,307021.0,307.021,millones COP,false
+0dc7af65-17e8-4cae-b43e-a05ee0f29799,2019,Balance general,Proveedores,110595.0,110.595,millones COP,false
+9d0abd9d-1c99-406b-9178-22d05e3612c1,2020,Balance general,Proveedores,116904.0,116.904,millones COP,false
+692ae6f4-cf44-462a-833e-1e2f147a8974,2021,Balance general,Proveedores,107901.0,107.901,millones COP,false
+239855ff-0843-43a5-bdc3-58c00593ae08,2022,Balance general,Proveedores,121908.0,121.908,millones COP,false
+f1a2daa1-18f2-400a-b83e-6b1c316b0b4c,2023,Balance general,Proveedores,126581.0,126.581,millones COP,false
+60a42f9c-c73d-434d-9358-7d116db3f1a2,2024,Balance general,Proveedores,126777.0,126.777,millones COP,false
+6f7b4ec3-4d82-4133-ac05-fc6d57a8f1c1,2019,Balance general,Obligaciones laborales,9630.0,9.630,millones COP,false
+e853b768-f383-48a5-a6a2-01e879f72de6,2020,Balance general,Obligaciones laborales,4584.0,4.584,millones COP,false
+af7e1a57-96bb-4f53-9ed8-08044eb13f4f,2021,Balance general,Obligaciones laborales,6628.0,6.628,millones COP,false
+c9d64998-a495-4fda-b8e7-d0fe59b916be,2022,Balance general,Obligaciones laborales,10008.0,10.008,millones COP,false
+33b1dd41-8a8d-496d-b757-c234225fd3a5,2023,Balance general,Obligaciones laborales,13182.0,13.182,millones COP,false
+ba825d0e-6f55-444e-b1f4-48dfd6f16ef1,2024,Balance general,Obligaciones laborales,14465.0,14.465,millones COP,false
+6668d23b-519f-41ce-8491-a78828504ed5,2019,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+a806119a-6bae-4cb2-8ac5-abd4a115cf03,2020,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+128d4cf2-2486-4603-a26f-cc662a48022f,2021,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+36eb0906-3deb-4243-ac9e-c4ea5f3dffa7,2022,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+b5700af1-a025-401a-9815-0aed6afc4454,2023,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+0d2e8454-c8b8-4c1e-b759-00c78aac43d3,2024,Balance general,Impuestos por pagar,0.0,0,millones COP,false
+6a685665-0439-4656-b8c3-f8f44a5b7173,2019,Balance general,Provisiones,0.0,0,millones COP,false
+fb3928e3-c7a9-4994-bad1-4ee7e5c1b56e,2020,Balance general,Provisiones,0.0,0,millones COP,false
+20542c42-1085-457a-8f89-ef64d7aaa44b,2021,Balance general,Provisiones,0.0,0,millones COP,false
+55abd47e-2618-4b06-aa47-d747b4f5dae4,2022,Balance general,Provisiones,0.0,0,millones COP,false
+04447620-6956-43b9-a960-6bea658c6a4c,2023,Balance general,Provisiones,0.0,0,millones COP,false
+98bc475d-158e-49ed-afac-981babff9d81,2024,Balance general,Provisiones,566.0,566,millones COP,false
+9278e039-627b-4250-b94b-48f139a3155a,2019,Balance general,Otros pasivos,5724.0,5.724,millones COP,false
+9f4b0494-9a70-4242-a448-21ba29b0c5ca,2020,Balance general,Otros pasivos,345.0,345,millones COP,false
+2ea19554-8612-4956-95ed-8fe948a309ed,2021,Balance general,Otros pasivos,0.0,0,millones COP,false
+804add9c-5fd3-4a3b-882e-3bcaf781a1f6,2022,Balance general,Otros pasivos,8433.0,8.433,millones COP,false
+43db2d23-687b-4e2a-a872-99e04d945c68,2023,Balance general,Otros pasivos,10211.0,10.211,millones COP,false
+0d049a89-7ff5-4c9f-8fd2-b3d770d284ee,2024,Balance general,Otros pasivos,11110.0,11.110,millones COP,false
+5cd1b5f6-4c1d-472f-a2b5-f85db76c825b,2019,Balance general,Total pasivos,284134.0,284.134,millones COP,false
+43e0ccd9-aaa7-4c62-9959-f64a8f3b3ced,2020,Balance general,Total pasivos,389804.0,389.804,millones COP,false
+738e0e59-38e3-490b-90ac-2e8b50cfa8f8,2021,Balance general,Total pasivos,394679.0,394.679,millones COP,false
+01c049fc-9da7-4cb0-b5e4-50fdb88a2ba4,2022,Balance general,Total pasivos,446346.0,446.346,millones COP,false
+e1c3044d-f9e9-49f8-b096-bdf024bd3fcf,2023,Balance general,Total pasivos,456889.0,456.889,millones COP,false
+a906e903-96f9-447a-993a-388aa4bb1895,2024,Balance general,Total pasivos,459940.0,459.940,millones COP,false
+6230fc20-0de8-43cd-b3ec-459caf16a174,2019,Balance general,Capitales,251776.0,251.776,millones COP,false
+b9f8efe6-d5cb-445c-946a-887ad498b153,2020,Balance general,Capitales,250219.0,250.219,millones COP,false
+7a4c1adf-d994-4073-8500-64f5605dda17,2021,Balance general,Capitales,250251.0,250.251,millones COP,false
+fb873154-d7f6-4b7c-bf5c-430830812bc8,2022,Balance general,Capitales,251056.0,251.056,millones COP,false
+1cbfdf21-01cb-4bab-9aa3-17430fbe954b,2023,Balance general,Capitales,250918.0,250.918,millones COP,false
+c9874273-0a74-4242-84a9-4b4e339dc4e6,2024,Balance general,Capitales,264206.0,264.206,millones COP,false
+0e0e29f7-5558-40fb-a152-7e16b251849f,2019,Balance general,Reservas,34226.0,34.226,millones COP,false
+c538a637-8d1c-46f5-a4b9-801c12aaf5d6,2020,Balance general,Reservas,35645.0,35.645,millones COP,false
+adb41c05-0039-48c8-a067-87907d62f9bc,2021,Balance general,Reservas,16087.0,16.087,millones COP,false
+a7bdd037-cd02-4e10-8dc1-9a8f30d6050e,2022,Balance general,Reservas,16087.0,16.087,millones COP,false
+f594646d-9478-4dd5-847a-89549bd64e50,2023,Balance general,Reservas,18511.0,18.511,millones COP,false
+9169143d-1dbc-43b9-a89c-b633de935516,2024,Balance general,Reservas,21393.0,21.393,millones COP,false
+1485e51b-6263-43f7-93f6-5fce778029e6,2019,Balance general,Resultado de Ej. Ant.,62976.0,62.976,millones COP,false
+90292205-6aee-4166-aad7-94ae32c4e5ef,2020,Balance general,Resultado de Ej. Ant.,19328.0,19.328,millones COP,false
+38416f77-7dcd-4aaa-b95d-950d8d1e3e64,2021,Balance general,Resultado de Ej. Ant.,26682.0,26.682,millones COP,false
+4c455832-c138-4267-8049-4a3ff8ae98a8,2022,Balance general,Resultado de Ej. Ant.,48040.0,48.040,millones COP,false
+b31cf6a4-3692-4ed9-830b-293bc94f7be6,2023,Balance general,Resultado de Ej. Ant.,74549.0,74.549,millones COP,false
+93e5e219-bb64-463d-9780-3ae00bd50e0a,2024,Balance general,Resultado de Ej. Ant.,81195.0,81.195,millones COP,false
+e0336794-16df-4e37-9a74-806a4eee80d9,2019,Balance general,Superavit,11200.0,11.200,millones COP,false
+20af43c9-372c-4fef-8830-92752a1e4542,2020,Balance general,Superavit,10093.0,10.093,millones COP,false
+ba7da839-fc29-472c-8505-b2180be51f31,2021,Balance general,Superavit,11920.0,11.920,millones COP,false
+1175a8b8-19bb-46cc-86cd-16c59dcbd09f,2022,Balance general,Superavit,21182.0,21.182,millones COP,false
+76e434f3-d099-48c2-b7f8-aaac1575e7da,2023,Balance general,Superavit,11980.0,11.980,millones COP,false
+dd140ee6-14fa-4c6b-a811-629d8e791213,2024,Balance general,Superavit,17841.0,17.841,millones COP,false
+47e0b8a6-5225-4f42-82dc-ef10edeae0e1,2019,Balance general,Total patrimonio,360178.0,360.178,millones COP,false
+ff575ce6-9b98-4b0f-b656-80cb2382ec03,2020,Balance general,Total patrimonio,315285.0,315.285,millones COP,false
+b728fdf1-364a-43b5-9086-c3b88eb95533,2021,Balance general,Total patrimonio,304939.0,304.939,millones COP,false
+0c5d99b4-3a86-4817-9619-56e63948e4e7,2022,Balance general,Total patrimonio,336364.0,336.364,millones COP,false
+5a641fdc-2c57-4f6e-8da1-195f6e50c20c,2023,Balance general,Total patrimonio,355960.0,355.960,millones COP,false
+7f83a96b-b694-4bed-a578-b02a8a28c550,2024,Balance general,Total patrimonio,384634.0,384.634,millones COP,false
+abd75cc9-b355-4ff6-a23a-e19cb7a3d161,2019,Balance general,Check ecuación contable,0.0,0,millones COP,false
+53b1421c-71d4-490e-a4c9-d32ecc2a1faf,2020,Balance general,Check ecuación contable,0.0,0,millones COP,false
+58b9a15c-ed54-4b89-9b25-8752780463c7,2021,Balance general,Check ecuación contable,0.0,0,millones COP,false
+425e9b94-865a-493a-b124-2787c47261b0,2022,Balance general,Check ecuación contable,0.0,0,millones COP,false
+0e32768c-9bcd-4b66-8fba-a2405870dab3,2023,Balance general,Check ecuación contable,0.0,0,millones COP,false
+40b710db-84ab-4a22-8423-34419c04dd18,2024,Balance general,Check ecuación contable,0.0,0,millones COP,false
+79bb3cec-92cd-4ef4-b838-35d9e25af39e,2019,Capital de trabajo,Deuda/Capital de trabajo,-3.5,"-3,5",millones COP,true
+b6b56fc1-3b45-49ab-9ba9-951eaff5101d,2020,Capital de trabajo,Deuda/Capital de trabajo,-14.1,"-14,1",millones COP,true
+0e9a2d72-2c45-4274-a137-bf098d051c92,2021,Capital de trabajo,Deuda/Capital de trabajo,-10.1,"-10,1",millones COP,true
+fd732cff-1c13-462c-b88d-4637873f5a7c,2022,Capital de trabajo,Deuda/Capital de trabajo,-10.1,"-10,1",millones COP,true
+e8740f93-4920-41e5-8a1e-f0aca0fe2f5c,2023,Capital de trabajo,Deuda/Capital de trabajo,-5.1,"-5,1",millones COP,true
+33eaaf57-4146-4fa5-94f9-c6f7b85bda43,2024,Capital de trabajo,Deuda/Capital de trabajo,-6.0,"-6,0",millones COP,true
+07319e30-cc9a-48ce-9d8b-fb3740405ea3,2019,Estado de resultados,Ingresos,303068.0,303.068,millones COP,false
+6c6e736a-f805-4f49-8f38-14993368429b,2020,Estado de resultados,Ingresos,114930.0,114.930,millones COP,false
+35e0d216-3ede-42b9-b9a3-de6f7f7c3efe,2021,Estado de resultados,Ingresos,235079.0,235.079,millones COP,false
+7afc992a-2a30-415d-a924-b1df4bb0e831,2022,Estado de resultados,Ingresos,419714.0,419.714,millones COP,false
+eaa9cf48-4e8d-4dce-810a-950f425c9af0,2023,Estado de resultados,Ingresos,475618.0,475.618,millones COP,false
+4c4f0622-1cb5-44f7-b0fb-1a4a63ff1034,2024,Estado de resultados,Ingresos,501762.0,501.762,millones COP,false
+0f2e966f-10e4-4d93-a89e-2a2959a1ab52,2019,Estado de resultados,Costos,107053.0,107.053,millones COP,false
+09e1585c-296c-4e9c-b3ab-7e5b150f5ee3,2020,Estado de resultados,Costos,54974.0,54.974,millones COP,false
+c3fab4a7-7ce7-466f-85c3-ae0c34da627c,2021,Estado de resultados,Costos,94591.0,94.591,millones COP,false
+86887f33-41ff-44f8-8993-c73961292a5e,2022,Estado de resultados,Costos,152674.0,152.674,millones COP,false
+d9dbd218-700f-4625-9455-3e4ba5127a5f,2023,Estado de resultados,Costos,178463.0,178.463,millones COP,false
+addbc6c1-4ff5-43b7-9422-45f1f9e108eb,2024,Estado de resultados,Costos,192156.0,192.156,millones COP,false
+49204d8b-d857-4c87-9957-ffd91cc49187,2019,Estado de resultados,Utilidad bruta,196015.0,196.015,millones COP,false
+b361c611-3349-415b-b375-6d92397d698a,2020,Estado de resultados,Utilidad bruta,59955.0,59.955,millones COP,false
+eac0caba-67fa-4858-aea7-d097b6fe853c,2021,Estado de resultados,Utilidad bruta,140488.0,140.488,millones COP,false
+beab5b02-cfe7-4710-8c6e-7399ba9f3971,2022,Estado de resultados,Utilidad bruta,267039.0,267.039,millones COP,false
+f4e1e117-e3e3-4ebc-b2df-bca049081c9b,2023,Estado de resultados,Utilidad bruta,297155.0,297.155,millones COP,false
+433e70fe-7da9-42c6-83e2-8818823639f3,2024,Estado de resultados,Utilidad bruta,309606.0,309.606,millones COP,false
+3ab4e775-d269-4a61-a50b-8da9f35b6e9b,2019,Estado de resultados,Gastos de administración,89976.0,89.976,millones COP,false
+dd255851-f870-4374-a773-ee9478d89e98,2020,Estado de resultados,Gastos de administración,76035.0,76.035,millones COP,false
+31d48a2d-4911-4ecf-ad11-868bcf9452d9,2021,Estado de resultados,Gastos de administración,85125.0,85.125,millones COP,false
+ca7e4c3d-77fd-4553-8690-d9d5b131f67d,2022,Estado de resultados,Gastos de administración,110109.0,110.109,millones COP,false
+98809f7b-5f4b-4b03-8145-0f225ab3b819,2023,Estado de resultados,Gastos de administración,125167.0,125.167,millones COP,false
+8e80762e-b4fe-4417-b5be-6f2f120a6d49,2024,Estado de resultados,Gastos de administración,133786.0,133.786,millones COP,false
+81e5bd0d-0245-4af8-87fe-8149274b10f1,2019,Estado de resultados,Gastos de ventas,14653.0,14.653,millones COP,false
+190ce2d8-13d4-4a4e-9974-e186015a54bb,2020,Estado de resultados,Gastos de ventas,9195.0,9.195,millones COP,false
+36979442-8483-4436-8bd5-37e1bd391df0,2021,Estado de resultados,Gastos de ventas,12170.0,12.170,millones COP,false
+263be7a8-52e2-4e6a-94cd-7d3171659bf2,2022,Estado de resultados,Gastos de ventas,22272.0,22.272,millones COP,false
+d2058ecb-29f8-4753-9026-90d3efc2589f,2023,Estado de resultados,Gastos de ventas,25969.0,25.969,millones COP,false
+94474ba3-3625-406c-83be-08d3ba48b1b4,2024,Estado de resultados,Gastos de ventas,28369.0,28.369,millones COP,false
+f28cacbc-37c9-4783-b5ec-b9918e3d16fb,2019,Estado de resultados,Otros gastos operacionales,72193.0,72.193,millones COP,false
+18e7860e-f41a-48b4-b6d0-a1b2e6cff3b8,2020,Estado de resultados,Otros gastos operacionales,14252.0,14.252,millones COP,false
+3f0d29d4-256c-4ddd-8fd9-5823f0af3e34,2021,Estado de resultados,Otros gastos operacionales,47202.0,47.202,millones COP,false
+6e6cf4ab-7ec3-4bfa-a7dc-5de1bdb470b4,2022,Estado de resultados,Otros gastos operacionales,97243.0,97.243,millones COP,false
+7577e644-f1c3-4e96-ade2-e7116f6ccb54,2023,Estado de resultados,Otros gastos operacionales,108321.0,108.321,millones COP,false
+d9269a1d-2b75-451d-85ee-8e6167722cd5,2024,Estado de resultados,Otros gastos operacionales,106611.0,106.611,millones COP,false
+4d83a4d6-1da8-41c9-a9a1-89480b81f2ab,2019,Estado de resultados,Total gastos operacionales,176823.0,176.823,millones COP,false
+b6d9d308-b511-4196-b2ca-72346bdcb8bb,2020,Estado de resultados,Total gastos operacionales,99481.0,99.481,millones COP,false
+c5f2dfdc-60f4-4bdc-b293-4cce4bf40918,2021,Estado de resultados,Total gastos operacionales,144497.0,144.497,millones COP,false
+79420964-7a28-45ad-bcf6-93f496d819cb,2022,Estado de resultados,Total gastos operacionales,229624.0,229.624,millones COP,false
+78b859bf-4ff3-4d41-b135-e88a48da8926,2023,Estado de resultados,Total gastos operacionales,259457.0,259.457,millones COP,false
+86c551e5-b5cf-4a6f-a651-8cc1204f4ac1,2024,Estado de resultados,Total gastos operacionales,268765.0,268.765,millones COP,false
+0bf5d349-4617-487a-aba0-55fc3afce941,2019,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+8a64d147-0ee9-48c7-8c62-bedc3874879a,2020,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+d9927d6c-ff69-43c4-8a82-a0cbac624304,2021,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+8313dfff-e66c-4850-adc0-b75166cc7fca,2022,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+2fa0e2b4-ea1d-4d8c-90e2-285aa524c2ac,2023,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+739736bc-a5a0-4020-b459-f8ebf0ee2153,2024,Estado de resultados,Otras ganancias/perdidas,0.0,0,millones COP,false
+f15ba56d-396a-4118-b445-7aa7e9a6a90a,2019,Estado de resultados,Otros ingresos operacionales,5612.0,5.612,millones COP,false
+f1d914b8-810d-4469-92f3-98b0c0647ad7,2020,Estado de resultados,Otros ingresos operacionales,15861.0,15.861,millones COP,false
+21350cbc-a51f-4c49-a66c-207e2f3c3025,2021,Estado de resultados,Otros ingresos operacionales,9122.0,9.122,millones COP,false
+609c0106-5d5c-4fff-b4d8-45931e6c3e58,2022,Estado de resultados,Otros ingresos operacionales,11985.0,11.985,millones COP,false
+60526097-9c9c-45e6-b446-cd8675a74259,2023,Estado de resultados,Otros ingresos operacionales,18159.0,18.159,millones COP,false
+eb6daac1-9316-49c0-bd4f-7bf31f54a1f4,2024,Estado de resultados,Otros ingresos operacionales,18471.0,18.471,millones COP,false
+f03f6ca2-6ae2-4458-8177-1bb0016397bb,2019,Estado de resultados,Utilidad operativa,24804.0,24.804,millones COP,false
+26cd3316-1ccb-4b71-9d80-fbfa74a9f41a,2020,Estado de resultados,Utilidad operativa,-23665.0,-23.665,millones COP,false
+c2c77dcf-1b0d-4ac4-ae22-8b9a042b347e,2021,Estado de resultados,Utilidad operativa,5113.0,5.113,millones COP,false
+726565df-ced1-48b9-afcf-1e523245c2cd,2022,Estado de resultados,Utilidad operativa,49401.0,49.401,millones COP,false
+3adcd751-a764-4a5f-85a5-edcb8e497c5a,2023,Estado de resultados,Utilidad operativa,55857.0,55.857,millones COP,false
+694930ce-ba3f-4137-947d-12f4d9e8f504,2024,Estado de resultados,Utilidad operativa,59312.0,59.312,millones COP,false
+1e6aad4c-aef0-4582-80ee-0f5b38a3f7dc,2019,Estado de resultados,D&A,6182.0,6.182,millones COP,false
+65e60774-cb0d-4cd3-ad34-a4f500bfff01,2020,Estado de resultados,D&A,14301.0,14.301,millones COP,false
+e1ec8baa-1e09-44f9-bbdd-04cf4a2fef9e,2021,Estado de resultados,D&A,10251.0,10.251,millones COP,false
+c0cc5cec-9ce2-4afb-beb9-4d67110a6e6a,2022,Estado de resultados,D&A,9481.0,9.481,millones COP,false
+a7761801-5482-4658-a4c4-7cc43a3ff644,2023,Estado de resultados,D&A,9738.0,9.738,millones COP,false
+0444edb3-f14a-4b76-bd96-4e6b0c8a6a09,2024,Estado de resultados,D&A,10835.0,10.835,millones COP,false
+cca3aa57-cef6-4bb4-a5fa-ff83f1468661,2019,Estado de resultados,EBITDA,30986.0,30.986,millones COP,false
+1530177f-863e-44a9-bbaa-6bf7b85ad0d5,2020,Estado de resultados,EBITDA,-9364.0,-9.364,millones COP,false
+c189ccbf-a1d6-4a24-b65a-3bbb631a0b12,2021,Estado de resultados,EBITDA,15363.0,15.363,millones COP,false
+3a10d3c5-d6d6-4986-bf01-d45146afb56e,2022,Estado de resultados,EBITDA,58882.0,58.882,millones COP,false
+ac315750-07bf-435b-aa2c-d20f8ddfd1b8,2023,Estado de resultados,EBITDA,65595.0,65.595,millones COP,false
+379ee917-5796-4edb-a57d-d8c3e5c0cce7,2024,Estado de resultados,EBITDA,70147.0,70.147,millones COP,false
+201d8d63-40d9-411d-add1-47f055f00333,2019,Estado de resultados,Ingresos financieros,782.0,782,millones COP,false
+c8a271aa-1210-4a88-9882-3c4ef8cb57ca,2020,Estado de resultados,Ingresos financieros,1332.0,1.332,millones COP,false
+4fc08a2b-246f-42b9-8451-5bcb05a3d286,2021,Estado de resultados,Ingresos financieros,722.0,722,millones COP,false
+73e5f711-e84f-47a3-9558-579a90b322e6,2022,Estado de resultados,Ingresos financieros,4282.0,4.282,millones COP,false
+d5712146-3019-4739-9a0a-6bddb4f064d9,2023,Estado de resultados,Ingresos financieros,13088.0,13.088,millones COP,false
+7ccd13d6-8765-4c4a-b6e1-ba3a0994c5a8,2024,Estado de resultados,Ingresos financieros,13278.0,13.278,millones COP,false
+b75238b3-4862-4f77-b794-4aed0c8e4410,2019,Estado de resultados,Costos financieros,14992.0,14.992,millones COP,false
+a4edbaba-5f52-42b6-bce6-dc3e18f39b27,2020,Estado de resultados,Costos financieros,15739.0,15.739,millones COP,false
+d64f45ae-018f-4686-b48d-b3e5405fa8f0,2021,Estado de resultados,Costos financieros,18725.0,18.725,millones COP,false
+258bd7dd-f271-4e34-9f1b-8aad7701c10b,2022,Estado de resultados,Costos financieros,32614.0,32.614,millones COP,false
+31f061c0-8bbd-4a1a-820b-dd5eef80dde6,2023,Estado de resultados,Costos financieros,52343.0,52.343,millones COP,false
+d0a6db58-e1f0-42fd-9f23-5179cc1db459,2024,Estado de resultados,Costos financieros,50197.0,50.197,millones COP,false
+fcec1aad-7410-40b0-8e25-ab3c5c965277,2019,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+7af1bdda-70ad-46da-b4be-426dde765d32,2020,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+af1f62a6-5520-4b93-9637-709401e546c0,2021,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+d497be98-5bec-41c6-b730-f1e0ba001c39,2022,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+2928a432-c9d6-49e0-920d-c5e19ada7149,2023,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+9c554db7-7037-4715-91d3-99ece3a66bb2,2024,Estado de resultados,Otros financieros (neto),0.0,0,millones COP,false
+8e474201-894a-4a87-9ea4-05154050633f,2019,Estado de resultados,Coberturas,0.0,0,millones COP,false
+f84b463e-8b5a-4515-ac0c-422c77303cdb,2020,Estado de resultados,Coberturas,0.0,0,millones COP,false
+fd5a1303-5914-4ffb-86d1-987bdb510941,2021,Estado de resultados,Coberturas,0.0,0,millones COP,false
+b636a8a8-14ba-4bd3-9a3c-2427b763b386,2022,Estado de resultados,Coberturas,0.0,0,millones COP,false
+9c06e684-069c-4343-84cc-2615b2ccc66c,2023,Estado de resultados,Coberturas,0.0,0,millones COP,false
+02140d12-2dec-4ea1-89d6-9d2506ad19db,2024,Estado de resultados,Coberturas,0.0,0,millones COP,false
+ee6aa71b-d656-40b0-9e50-2b0f1af58e50,2019,Estado de resultados,Utilidades en subsidiarias,5401.0,5.401,millones COP,false
+6629fce9-deb5-4573-a72d-0a8b35d3a4d1,2020,Estado de resultados,Utilidades en subsidiarias,-10001.0,-10.001,millones COP,false
+1f4a09e8-3d63-42a5-803a-e2a9e3fd0213,2021,Estado de resultados,Utilidades en subsidiarias,-101.0,-101,millones COP,false
+a22a3536-4b52-4cf3-979c-3814b995bc26,2022,Estado de resultados,Utilidades en subsidiarias,11554.0,11.554,millones COP,false
+0dd271ab-1969-497f-86a4-9abd0b7a663e,2023,Estado de resultados,Utilidades en subsidiarias,13880.0,13.880,millones COP,false
+52f22155-43ec-47a1-b01b-e9ec7bfa95da,2024,Estado de resultados,Utilidades en subsidiarias,13871.0,13.871,millones COP,false
+0a27e752-cc41-4a9d-9185-625299bde8ab,2019,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+8ac0bef1-2c7f-4a93-ba3a-03d97a2c75dc,2020,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+cf0c39e1-3ef8-4626-a55b-7992002e20e6,2021,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+85dfa170-fc14-488a-b408-6744f25d6135,2022,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+c7c3ddd3-3b03-4dab-a7d7-dc18e40d6342,2023,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+301d2324-bf60-4985-ba9d-bee67f23f002,2024,Estado de resultados,Otros ingresos no operacionales,0.0,0,millones COP,false
+9f9918c7-d162-4560-ad3d-448c238ce945,2019,Estado de resultados,Otros egresos no operacionales,374.0,374,millones COP,false
+8b83f0e0-1cc7-4514-bf74-d68b0a0d8a7c,2020,Estado de resultados,Otros egresos no operacionales,501.0,501,millones COP,false
+21a77f08-6050-432a-a7e2-b740e7cdf5d7,2021,Estado de resultados,Otros egresos no operacionales,447.0,447,millones COP,false
+7b9d97dd-1011-4a87-b391-b93a4378f85a,2022,Estado de resultados,Otros egresos no operacionales,-126.0,-126,millones COP,false
+e6b89e41-58c2-4df9-a33f-7db31737fabb,2023,Estado de resultados,Otros egresos no operacionales,-106.0,-106,millones COP,false
+9b576029-1a83-4b3f-a640-c8b20e6ec750,2024,Estado de resultados,Otros egresos no operacionales,-51.0,-51,millones COP,false
+2d1c97a4-eb72-4870-8b79-8ccf367a5566,2019,Estado de resultados,UAI,15620.0,15.620,millones COP,false
+034863d2-71d1-408d-8f7d-e07ba8b4e8a9,2020,Estado de resultados,UAI,-48573.0,-48.573,millones COP,false
+382909e1-0a11-4723-8342-ad2affe0dc0a,2021,Estado de resultados,UAI,-13437.0,-13.437,millones COP,false
+3bd50717-f820-4d03-b51d-6e12a9109186,2022,Estado de resultados,UAI,32748.0,32.748,millones COP,false
+8a57e697-2422-4a23-bb8e-d5f1355f606f,2023,Estado de resultados,UAI,30588.0,30.588,millones COP,false
+2444e123-4b7b-4c3d-b6fa-2fed54c25cb3,2024,Estado de resultados,UAI,36315.0,36.315,millones COP,false
+95c98124-28fd-4b19-8924-ec84ad0b80b0,2019,Estado de resultados,Impuestos,1429.0,1.429,millones COP,false
+74e81d29-97b6-4457-87ec-295485b50022,2020,Estado de resultados,Impuestos,-4786.0,-4.786,millones COP,false
+9bc7154e-92b2-425c-a2ae-1fbc743a6f86,2021,Estado de resultados,Impuestos,-2385.0,-2.385,millones COP,false
+d3dbf2a0-c9f9-4ff1-9fd3-4a990f9d364a,2022,Estado de resultados,Impuestos,8504.0,8.504,millones COP,false
+a4ebb6d8-c46c-4824-9f53-cd83fbd7fb60,2023,Estado de resultados,Impuestos,1791.0,1.791,millones COP,false
+12944148-8bf4-4740-871b-e28af06ac615,2024,Estado de resultados,Impuestos,902.0,902,millones COP,false
+830020d6-1ad6-4bf3-9c6f-b37730f25012,2019,Estado de resultados,Utilidad neta,14192.0,14.192,millones COP,false
+25236401-c5d1-43cc-a7fe-9ca0ed850c62,2020,Estado de resultados,Utilidad neta,-43786.0,-43.786,millones COP,false
+6c666f75-b369-44ca-8acd-13dec4235d52,2021,Estado de resultados,Utilidad neta,-11053.0,-11.053,millones COP,false
+a8c4bd68-d8cf-491c-8c46-ba0c5905e462,2022,Estado de resultados,Utilidad neta,24245.0,24.245,millones COP,false
+b59a8ec3-7ce5-4c62-adc1-5671cf3d883a,2023,Estado de resultados,Utilidad neta,28796.0,28.796,millones COP,false
+ce0c85bf-1a61-492f-be3c-c095dffb63e4,2024,Estado de resultados,Utilidad neta,35413.0,35.413,millones COP,false
+42665f08-a7f9-4ea1-b2dc-6fa09daba2ba,2019,Estado de resultados,Δ Ingresos,14.2,"14,2 %",%,true
+1ec249c6-fe7f-4c4e-a70a-db63fa6a1727,2020,Estado de resultados,Δ Ingresos,-62.1,"-62,1 %",%,true
+433a82b7-fc5c-44f2-bfa7-dbf42a8722aa,2021,Estado de resultados,Δ Ingresos,104.5,"104,5 %",%,true
+897eefe9-d503-43cc-8f44-65fea0636c2f,2022,Estado de resultados,Δ Ingresos,78.5,"78,5 %",%,true
+f2381488-67e7-4271-b85a-4fa61fb1fe8a,2023,Estado de resultados,Δ Ingresos,13.3,"13,3 %",%,true
+31cbcee7-bb8b-4e09-bee2-2fd77011146d,2024,Estado de resultados,Δ Ingresos,5.5,"5,5 %",%,true
+f7a20ba8-b312-4610-a12a-230eb7fa14aa,2019,Estado de resultados,Margen bruto,64.7,"64,7 %",%,true
+6300320e-079e-47f7-bfa8-964b76577671,2020,Estado de resultados,Margen bruto,52.2,"52,2 %",%,true
+2525ca1a-d6ac-476b-93e8-120d50e21fd5,2021,Estado de resultados,Margen bruto,59.8,"59,8 %",%,true
+f7eaef8c-0015-42f5-9e65-e6437eccd030,2022,Estado de resultados,Margen bruto,63.6,"63,6 %",%,true
+14787c90-1244-4464-8f3c-5bef6c7c9453,2023,Estado de resultados,Margen bruto,62.5,"62,5 %",%,true
+35cd3c6e-9979-481c-9a8c-bd2efb7da77a,2024,Estado de resultados,Margen bruto,61.7,"61,7 %",%,true
+5dff0e9e-985b-407b-bd7a-a7262140ccdf,2019,Estado de resultados,Margen EBITDA,10.2,"10,2 %",%,true
+184b5e8d-06fd-4d18-b413-2b9dfd20e63d,2020,Estado de resultados,Margen EBITDA,-8.1,"-8,1 %",%,true
+c4d36b2b-4e77-4356-9594-9e255c789d47,2021,Estado de resultados,Margen EBITDA,6.5,"6,5 %",%,true
+95ba0ade-8b8e-4daa-ae12-2f9989aabc16,2022,Estado de resultados,Margen EBITDA,14.0,"14,0 %",%,true
+f58332ee-4c36-4c55-9e55-6fbf66525a65,2023,Estado de resultados,Margen EBITDA,13.8,"13,8 %",%,true
+ccb3df4d-7095-43ec-840b-e9d8eb8d7d34,2024,Estado de resultados,Margen EBITDA,14.0,"14,0 %",%,true
+60303b6a-91b3-4a1b-a409-33efa23edd77,2019,Estado de resultados,Gastos operacionales/Ingresos,58.3,"58,3 %",%,true
+7ad71cb3-1376-46ef-bdfd-7021bf535e60,2020,Estado de resultados,Gastos operacionales/Ingresos,86.6,"86,6 %",%,true
+7d000849-b652-47ef-b7a3-70534fb5e9f5,2021,Estado de resultados,Gastos operacionales/Ingresos,61.5,"61,5 %",%,true
+98b70d71-b700-4f3c-95ca-130ccda2c1fe,2022,Estado de resultados,Gastos operacionales/Ingresos,54.7,"54,7 %",%,true
+08a5074c-9a16-480a-b8e1-acb0f7100f64,2023,Estado de resultados,Gastos operacionales/Ingresos,54.6,"54,6 %",%,true
+4d4c6ffd-52ad-48a0-917d-294c5718a08c,2024,Estado de resultados,Gastos operacionales/Ingresos,53.6,"53,6 %",%,true
+ee1d3596-cafc-452f-90a1-832a27165a2a,2019,Estado de resultados,Margen Neto,4.7,"4,7 %",%,true
+92eec69b-493d-4054-af25-22790feb75e7,2020,Estado de resultados,Margen Neto,-38.1,"-38,1 %",%,true
+187ca73f-5078-452f-b912-718a23b907c2,2021,Estado de resultados,Margen Neto,-4.7,"-4,7 %",%,true
+6cce68c8-fdd6-4195-8c4f-97d4860be694,2022,Estado de resultados,Margen Neto,5.8,"5,8 %",%,true
+f5ed7477-96ee-4992-a033-2ab4db78e872,2023,Estado de resultados,Margen Neto,6.1,"6,1 %",%,true
+9bae0d50-bec2-4057-bd7f-1e2f130497e7,2024,Estado de resultados,Margen Neto,7.1,"7,1 %",%,true
+1fca6877-f187-4c55-8859-192dc454aaa5,2019,Estado de resultados,Deuda/EBITDA,5.1,"5,1x",x,true
+caa022e9-f339-497c-a692-51e3d7103617,2020,Estado de resultados,Deuda/EBITDA,-28.6,"-28,6x",x,true
+47509761-17a2-4f73-b715-e21515dd7d51,2021,Estado de resultados,Deuda/EBITDA,18.2,"18,2x",x,true
+5987ec8b-b8f7-4ada-a51c-3094f4036f60,2022,Estado de resultados,Deuda/EBITDA,5.2,"5,2x",x,true
+29e01f8c-9710-4d61-ab23-0af9c16e8076,2023,Estado de resultados,Deuda/EBITDA,4.7,"4,7x",x,true
+fa479b23-a877-47f7-8b2d-1d8b64ae8ea2,2024,Estado de resultados,Deuda/EBITDA,4.4,"4,4x",x,true
+c1c39ef3-026f-4862-968e-f52496f78ef5,2019,Estado de resultados,EBITDA/Costos financieros,2.1,"2,1x",x,true
+102a9e0f-ef00-495b-8d0d-cec88b26c796,2020,Estado de resultados,EBITDA/Costos financieros,-0.6,"-0,6x",x,true
+0a4f9040-996b-40cc-9961-e09a5bc74a72,2021,Estado de resultados,EBITDA/Costos financieros,0.8,"0,8x",x,true
+6b5ee375-381e-43df-b5fe-5cd079b972d7,2022,Estado de resultados,EBITDA/Costos financieros,1.8,"1,8x",x,true
+3cb0c4b3-fd50-461c-a994-6bae9834b7d2,2023,Estado de resultados,EBITDA/Costos financieros,1.3,"1,3x",x,true
+0c7f6a69-6329-44c8-88b5-d515becf1de5,2024,Estado de resultados,EBITDA/Costos financieros,1.4,"1,4x",x,true
+ed2cd199-aa3f-4779-bbeb-4656d487f84d,2019,Flujo de caja,(+) EBITDA,30986.0,30.986,millones COP,false
+395ea4fa-3707-4edf-b997-62d973fef173,2020,Flujo de caja,(+) EBITDA,-9364.0,-9.364,millones COP,false
+043b06c2-aef8-46e8-9af0-975dfca5e273,2021,Flujo de caja,(+) EBITDA,15363.0,15.363,millones COP,false
+b6da7edd-a783-4e5c-95db-537972099cb0,2022,Flujo de caja,(+) EBITDA,58882.0,58.882,millones COP,false
+d138c322-b055-49b5-920a-ca0f8deaa96b,2023,Flujo de caja,(+) EBITDA,65595.0,65.595,millones COP,false
+0d642dc1-6df5-4d00-8d18-9cc9ff2f2999,2024,Flujo de caja,(+) EBITDA,70147.0,70.147,millones COP,false
+3a9e6eb3-bfd6-427e-b4eb-6f352c27c72a,2019,Flujo de caja,(-) Impuestos,-1429.0,-1.429,millones COP,false
+cacfd4f2-b950-46f3-8c5f-0903bf0ee6c9,2020,Flujo de caja,(-) Impuestos,4786.0,4.786,millones COP,false
+57e2c7ce-8a45-44ff-af3c-89fcf38b62d9,2021,Flujo de caja,(-) Impuestos,2385.0,2.385,millones COP,false
+4e54c669-c84a-4ce1-a350-6ffd37d63bc0,2022,Flujo de caja,(-) Impuestos,-8504.0,-8.504,millones COP,false
+f093ba13-573c-4e66-b988-6a0af1b8ad98,2023,Flujo de caja,(-) Impuestos,-1791.0,-1.791,millones COP,false
+71d83456-d219-4610-b6ee-774fe2960718,2024,Flujo de caja,(-) Impuestos,-902.0,-902,millones COP,false
+638dbc1c-8d72-40dc-8999-0348867f99bd,2019,Flujo de caja,(-) Δ Capital de trabajo neto,-1961.0,-1.961,millones COP,false
+52599a2d-1273-42df-8cb0-39d6aace298b,2020,Flujo de caja,(-) Δ Capital de trabajo neto,-25915.0,-25.915,millones COP,false
+73219aaf-766a-404d-ba2c-a2ad20557d55,2021,Flujo de caja,(-) Δ Capital de trabajo neto,8878.0,8.878,millones COP,false
+0a0cf3e0-3443-4fc1-873d-a31e3708bdc2,2022,Flujo de caja,(-) Δ Capital de trabajo neto,2542.0,2.542,millones COP,false
+a1965733-b413-4ae0-bb2f-08b9d84d37fb,2023,Flujo de caja,(-) Δ Capital de trabajo neto,29720.0,29.720,millones COP,false
+82fd7d30-bb13-49a1-819c-63aaaf62eb0f,2024,Flujo de caja,(-) Δ Capital de trabajo neto,-9141.0,-9.141,millones COP,false
+eb689b85-464c-4c78-87f3-e0499736c91b,2019,Flujo de caja,(-) Δ CapEx,-24421.0,-24.421,millones COP,false
+e9a3db11-430a-4aa5-a85f-b9410124c7e4,2020,Flujo de caja,(-) Δ CapEx,-61926.0,-61.926,millones COP,false
+9d3ef4f8-99f5-4c91-b7d3-175b529e8c0b,2021,Flujo de caja,(-) Δ CapEx,-1855.0,-1.855,millones COP,false
+26cc1e52-158f-40af-996c-b15f67d33ea3,2022,Flujo de caja,(-) Δ CapEx,-13360.0,-13.360,millones COP,false
+fee2ec84-47cc-44a6-a082-c6859955545e,2023,Flujo de caja,(-) Δ CapEx,-30226.0,-30.226,millones COP,false
+91ad9525-3812-47e5-b4d0-a801e4aa768f,2024,Flujo de caja,(-) Δ CapEx,-13399.0,-13.399,millones COP,false
+c272a42e-fcd8-41ac-a6f5-f8bca9698ab8,2019,Flujo de caja,(1) Flujo de caja operativo,3176.0,3.176,millones COP,false
+eb2d9f37-ccc0-476f-b271-85bb25caf463,2020,Flujo de caja,(1) Flujo de caja operativo,-92418.0,-92.418,millones COP,false
+8b907499-1908-4cca-abd7-1d02e78b73b7,2021,Flujo de caja,(1) Flujo de caja operativo,24770.0,24.770,millones COP,false
+abc98893-83ac-4733-9572-03f31da9a70d,2022,Flujo de caja,(1) Flujo de caja operativo,39560.0,39.560,millones COP,false
+6efed3f7-d747-4cc7-b56c-de993f0caaa7,2023,Flujo de caja,(1) Flujo de caja operativo,63298.0,63.298,millones COP,false
+1a6bf5fc-e015-44a7-be50-cf9ef9bb182c,2024,Flujo de caja,(1) Flujo de caja operativo,46705.0,46.705,millones COP,false
+8e2ddde8-7a03-4a17-a3ab-7c7462fa9489,2019,Flujo de caja,(+) Δ Deuda,11487.0,11.487,millones COP,false
+399dcbfb-30ba-43b7-abce-b7296acab6d4,2020,Flujo de caja,(+) Δ Deuda,109785.0,109.785,millones COP,false
+125127c3-f908-408b-9ff6-d40882e8520f,2021,Flujo de caja,(+) Δ Deuda,12179.0,12.179,millones COP,false
+b19fb123-1173-4e77-adbe-8626e6401646,2022,Flujo de caja,(+) Δ Deuda,25848.0,25.848,millones COP,false
+f8180280-9244-4610-9cda-abadd4107ea5,2023,Flujo de caja,(+) Δ Deuda,917.0,917,millones COP,false
+50b7bcda-904e-46f0-8064-e704361e0c95,2024,Flujo de caja,(+) Δ Deuda,106.0,106,millones COP,false
+7a37b604-606f-4225-8a76-2a418bc36024,2019,Flujo de caja,(-) Costos financieros,-14992.0,-14.992,millones COP,false
+02336f30-374c-4b04-a98c-3bbf81f343c1,2020,Flujo de caja,(-) Costos financieros,-15739.0,-15.739,millones COP,false
+b94a5e9b-6368-48cf-b29b-263127486b01,2021,Flujo de caja,(-) Costos financieros,-18725.0,-18.725,millones COP,false
+a7dc861e-5c4e-46c3-b624-c3f10f1565c2,2022,Flujo de caja,(-) Costos financieros,-32614.0,-32.614,millones COP,false
+b9800897-23e9-490f-938a-4480cfb486a8,2023,Flujo de caja,(-) Costos financieros,-52343.0,-52.343,millones COP,false
+800eb553-e4b7-446d-9768-f757b19df91d,2024,Flujo de caja,(-) Costos financieros,-50197.0,-50.197,millones COP,false
+962f9b8e-dae1-4f36-94dd-a31bbbb23f8a,2019,Flujo de caja,(2) Flujo financiero,-3505.0,-3.505,millones COP,false
+e57bb133-4852-4b0f-a311-17eb7f77bb5b,2020,Flujo de caja,(2) Flujo financiero,94047.0,94.047,millones COP,false
+d78e63a9-f03e-4a62-84ac-e35e2746ea76,2021,Flujo de caja,(2) Flujo financiero,-6546.0,-6.546,millones COP,false
+82b5ac93-d2ac-46d1-b152-75e3267efd0e,2022,Flujo de caja,(2) Flujo financiero,-6766.0,-6.766,millones COP,false
+584a8510-a319-4594-9ac1-b357d2cd9362,2023,Flujo de caja,(2) Flujo financiero,-51425.0,-51.425,millones COP,false
+2ec65156-f1cc-45ac-994a-5e55a31255f8,2024,Flujo de caja,(2) Flujo financiero,-50091.0,-50.091,millones COP,false
+3df3506f-7003-49ca-9a57-f7287ad5c461,2019,Flujo de caja,"(-) Δ OAOP, neto",-4566.0,-4.566,millones COP,false
+cb4e6e02-74c9-40b2-bf54-875b2a59b963,2020,Flujo de caja,"(-) Δ OAOP, neto",5187.0,5.187,millones COP,false
+a93a0547-e093-4be2-85c8-c96db4608b3a,2021,Flujo de caja,"(-) Δ OAOP, neto",-6413.0,-6.413,millones COP,false
+74cf155a-5a83-4311-ad06-27902a3c0442,2022,Flujo de caja,"(-) Δ OAOP, neto",-49421.0,-49.421,millones COP,false
+dc2d9868-3cf6-41a0-a830-8ea2b2ef7a9b,2023,Flujo de caja,"(-) Δ OAOP, neto",-34162.0,-34.162,millones COP,false
+693c4752-f981-401e-884c-a05b8cd4a544,2024,Flujo de caja,"(-) Δ OAOP, neto",-25023.0,-25.023,millones COP,false
+4b615825-7d03-4a11-b1a7-0953795d7bf3,2019,Flujo de caja,(+) Δ Patrimonio,895.0,895,millones COP,false
+10ec1d83-60f2-45f1-8a6e-d619f526db26,2020,Flujo de caja,(+) Δ Patrimonio,-1107.0,-1.107,millones COP,false
+b6252429-23de-4b22-951c-aa7ec03d1794,2021,Flujo de caja,(+) Δ Patrimonio,707.0,707,millones COP,false
+b1362d0f-8fa2-46c1-ae98-1245d1e0000c,2022,Flujo de caja,(+) Δ Patrimonio,7180.0,7.180,millones COP,false
+19c76023-d72f-487c-816f-acc8e209598d,2023,Flujo de caja,(+) Δ Patrimonio,-9201.0,-9.201,millones COP,false
+ad035cd9-8e82-4ec6-ac69-6439590524e5,2024,Flujo de caja,(+) Δ Patrimonio,-6738.0,-6.738,millones COP,false
+a1f052da-155c-4bbc-b9b2-e3f95f4b00d1,2019,Flujo de caja,(+) Ingresos financieros,782.0,782,millones COP,false
+919ba5c8-4c80-44a5-afce-23edf0d3cd5f,2020,Flujo de caja,(+) Ingresos financieros,1332.0,1.332,millones COP,false
+904ba1c7-9ee0-4091-af5f-d818f803267c,2021,Flujo de caja,(+) Ingresos financieros,722.0,722,millones COP,false
+b17a9830-a669-4af0-8c38-c9164ddf6630,2022,Flujo de caja,(+) Ingresos financieros,4282.0,4.282,millones COP,false
+0653cdfe-aaca-4950-8078-cc2c8b7bce7c,2023,Flujo de caja,(+) Ingresos financieros,13088.0,13.088,millones COP,false
+7a365596-8934-4f7d-b237-a6ccae87d4a5,2024,Flujo de caja,(+) Ingresos financieros,13278.0,13.278,millones COP,false
+b7598280-2cd4-4f1a-a20a-3de99ec93558,2019,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,5026.0,5.026,millones COP,false
+1c757666-91c6-4ca7-ba07-ee066f620ead,2020,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,-10502.0,-10.502,millones COP,false
+bcc0a3b6-e294-4f9a-8512-f3d074f500ac,2021,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,-547.0,-547,millones COP,false
+b2711429-86b7-4209-8580-b77798f9b2a8,2022,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,11680.0,11.680,millones COP,false
+77f64d38-6d95-4833-aa64-bacc74dd37a5,2023,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,13985.0,13.985,millones COP,false
+719c1692-0700-4789-af49-4d203b02f32f,2024,Flujo de caja,(+) Otros Ingresos/Egresos no operacionales,13922.0,13.922,millones COP,false
+d0e9d187-63aa-488f-8570-ca71355ada4d,2019,Flujo de caja,(3) Flujo no operativo,2137.0,2.137,millones COP,false
+fe90c59d-0a0f-4466-b3ac-4ee82004f5e6,2020,Flujo de caja,(3) Flujo no operativo,-5089.0,-5.089,millones COP,false
+b52fdfd3-d7c9-40da-8d59-cdbc3fa23498,2021,Flujo de caja,(3) Flujo no operativo,-5531.0,-5.531,millones COP,false
+092ee347-22f5-46c8-87c5-d56405e973fb,2022,Flujo de caja,(3) Flujo no operativo,-26279.0,-26.279,millones COP,false
+cab8424c-58d7-47cd-965e-480edf820017,2023,Flujo de caja,(3) Flujo no operativo,-16290.0,-16.290,millones COP,false
+6f91711f-d107-40c9-ab59-ac1c718bec0c,2024,Flujo de caja,(3) Flujo no operativo,-4561.0,-4.561,millones COP,false
+21cee548-e785-4162-b7bf-8f0d3224a888,2019,Flujo de caja,(1+2+3) Flujo del periodo,1808.0,1.808,millones COP,false
+81a99eab-0964-4498-bb09-07deb73944d2,2020,Flujo de caja,(1+2+3) Flujo del periodo,-3461.0,-3.461,millones COP,false
+313175e8-f17d-4cd8-8a6c-913344be5bca,2021,Flujo de caja,(1+2+3) Flujo del periodo,12694.0,12.694,millones COP,false
+d17a2912-ea1a-465f-ac8a-9c38d0497ffb,2022,Flujo de caja,(1+2+3) Flujo del periodo,6515.0,6.515,millones COP,false
+a98030d8-f5e0-4e5d-856e-5e1434f405ea,2023,Flujo de caja,(1+2+3) Flujo del periodo,-4418.0,-4.418,millones COP,false
+62a539ac-9628-4cec-9e8b-cd69c1807c7a,2024,Flujo de caja,(1+2+3) Flujo del periodo,-7947.0,-7.947,millones COP,false
+7ef4f4fb-57cf-42c0-a061-03801f80691b,2019,Flujo de caja,Caja inicial,8952.0,8.952,millones COP,false
+9a35512e-6087-403a-959c-475734ab1cd5,2020,Flujo de caja,Caja inicial,10760.0,10.760,millones COP,false
+cb8097cc-3e37-4865-9e11-674ea630ec7c,2021,Flujo de caja,Caja inicial,7299.0,7.299,millones COP,false
+f4ef9703-5684-456b-95bf-92516af7ac3f,2022,Flujo de caja,Caja inicial,19992.0,19.992,millones COP,false
+1e8ac89a-78e9-43f6-896c-fd873c84d308,2023,Flujo de caja,Caja inicial,26507.0,26.507,millones COP,false
+daf7dbde-397c-4e82-bc79-56b51f9e4a6d,2024,Flujo de caja,Caja inicial,22089.0,22.089,millones COP,false
+638cbecb-2dcc-4c5c-9205-74be0de919b0,2019,Flujo de caja,Caja final,10760.0,10.760,millones COP,false
+b32fe922-dca3-4baa-b26e-e01c5bbbe556,2020,Flujo de caja,Caja final,7299.0,7.299,millones COP,false
+f2b29607-192c-4d2d-8437-437eb0b8f487,2021,Flujo de caja,Caja final,19992.0,19.992,millones COP,false
+2b327145-35af-4011-8fd3-950301a23dd2,2022,Flujo de caja,Caja final,26507.0,26.507,millones COP,false
+bbb04adf-2b58-4196-aca2-89994b07faad,2023,Flujo de caja,Caja final,22089.0,22.089,millones COP,false
+03bbee6d-d3eb-46ac-a6bd-f904e2cf4ece,2024,Flujo de caja,Caja final,14143.0,14.143,millones COP,false
+9f9eaa54-4819-44c4-b35f-e310acbf48ce,2019,Flujo de caja,Check caja,0.0,0,millones COP,false
+bff82906-9b0b-433a-a778-6274579e9f68,2020,Flujo de caja,Check caja,0.0,0,millones COP,false
+dfd8322e-d853-4583-9107-259fde28c233,2021,Flujo de caja,Check caja,0.0,0,millones COP,false
+19e6ab27-704d-4aae-a7e7-5ba109c8a82c,2022,Flujo de caja,Check caja,0.0,0,millones COP,false
+c0a54b41-704b-4292-a115-e1e54e6783bf,2023,Flujo de caja,Check caja,0.0,0,millones COP,false
+9a2f3c21-ea43-45c4-a3d9-740e25a5825a,2024,Flujo de caja,Check caja,0.0,0,millones COP,false
+3f456d6e-15f1-4214-a981-6dd29c94ab4a,2019,EBITDA vs Flujo operativo,Flujo de caja operativo,3176.0,3.176,millones COP,false
+f5b3aec6-4d3c-4ea5-bded-df5051d67af9,2019,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),10.2,10.2,%,true
+39d5ec63-b84a-4233-8c7d-f0919ea566cb,2020,EBITDA vs Flujo operativo,Flujo de caja operativo,-92418.0,-92.418,millones COP,false
+49877ca5-26a2-4ddf-9910-b64359503cd3,2020,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),987.0,987.0,%,true
+82f4950e-40cf-4730-9b72-238e26e6d9c2,2021,EBITDA vs Flujo operativo,Flujo de caja operativo,24770.0,24.770,millones COP,false
+21a9f78c-ffc9-4ad3-8877-5daa0c47f153,2021,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),161.2,161.2,%,true
+02b430c3-68a3-430b-aeb8-0173ee489ee6,2022,EBITDA vs Flujo operativo,Flujo de caja operativo,39560.0,39.560,millones COP,false
+93f1f37e-aa6e-4d14-94b8-ad5386cb5e25,2022,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),67.2,67.2,%,true
+f2ea1cdc-4b2c-4055-8528-71b9f5d18a3b,2023,EBITDA vs Flujo operativo,Flujo de caja operativo,63298.0,63.298,millones COP,false
+9886491f-b45e-4326-9d62-66e975a160be,2023,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),96.5,96.5,%,true
+c447da3c-758e-483a-abd0-62fe7ed68aa7,2024,EBITDA vs Flujo operativo,Flujo de caja operativo,46705.0,46.705,millones COP,false
+4d2ef85c-7af9-47a8-9809-692f4ddc6736,2024,EBITDA vs Flujo operativo,Flujo operativo/EBITDA (%),66.6,66.6,%,true
+a9c2144f-7da0-4df4-8939-91915fb9a823,2019,Capital de trabajo neto,Activos Wk,75350.0,75.350,millones COP,false
+3c7c6791-7288-4aee-a238-9652cc9c4d19,2020,Capital de trabajo neto,Activos Wk,102529.0,102.529,millones COP,false
+1fa856e3-f6af-4ca9-817b-801841b75cbb,2021,Capital de trabajo neto,Activos Wk,86692.0,86.692,millones COP,false
+31ece8ff-acb6-482f-8b37-664631b522c3,2022,Capital de trabajo neto,Activos Wk,101537.0,101.537,millones COP,false
+a56a14b5-e071-499c-a38d-2821639b118f,2023,Capital de trabajo neto,Activos Wk,79664.0,79.664,millones COP,false
+0469dcd7-e6bb-4ed3-baaf-26e990b1a2bd,2024,Capital de trabajo neto,Activos Wk,90851.0,90.851,millones COP,false
+dd608de4-5a46-4743-8181-b1669335b898,2019,Capital de trabajo neto,Pasivos Wk,120225.0,120.225,millones COP,false
+5185dd8b-9cbb-4ca3-9855-0536f4f5b56d,2020,Capital de trabajo neto,Pasivos Wk,121488.0,121.488,millones COP,false
+e06448e4-bc25-4843-a49f-823f21743582,2021,Capital de trabajo neto,Pasivos Wk,114530.0,114.530,millones COP,false
+6a806541-4212-4794-8bf7-812368ffc9a7,2022,Capital de trabajo neto,Pasivos Wk,131916.0,131.916,millones COP,false
+18cda7be-a578-45be-a0b7-2e89a97f85c9,2023,Capital de trabajo neto,Pasivos Wk,139763.0,139.763,millones COP,false
+a5eaa023-421f-49c6-84a1-0b0b5a77c78c,2024,Capital de trabajo neto,Pasivos Wk,141809.0,141.809,millones COP,false
+34f8ad66-dedf-4580-9d16-f372ec88e096,2019,Capital de trabajo neto,Δ Capital de trabajo neto,1961.0,1.961,millones COP,false
+dae6fdb2-faca-4feb-a978-32074c45048d,2020,Capital de trabajo neto,Δ Capital de trabajo neto,25915.0,25.915,millones COP,false
+0dbaa071-5cd1-4601-b517-25763c173bfa,2021,Capital de trabajo neto,Δ Capital de trabajo neto,-8878.0,-8.878,millones COP,false
+a327c11d-3ac5-48ff-8bac-48a1a2f466c2,2022,Capital de trabajo neto,Δ Capital de trabajo neto,-2542.0,-2.542,millones COP,false
+b13b248e-6d3e-48ad-81cb-10da82184997,2023,Capital de trabajo neto,Δ Capital de trabajo neto,-29720.0,-29.720,millones COP,false
+efba3077-db17-41a5-89e4-1df8cda4b060,2024,Capital de trabajo neto,Δ Capital de trabajo neto,9141.0,9.141,millones COP,false
+245553e6-98e0-402e-b851-39fa4313d576,2019,Días de capital de trabajo,Dias cuentas por cobrar,372.0,372,días,true
+e9e2c0a0-b43e-407e-a5be-6b7ccca1feab,2019,Días de capital de trabajo,Dias inventario,43.0,43,días,true
+22c7b6b6-4280-4539-bc25-c44fbd2d6947,2019,Días de capital de trabajo,Dias proveedores,76.0,76,días,true
+5d327c87-aec7-4739-9a16-d3520155e299,2020,Días de capital de trabajo,Dias cuentas por cobrar,766.0,766,días,true
+e341b4b1-00e2-4644-9b51-ca4dd5fcff35,2020,Días de capital de trabajo,Dias inventario,234.0,234,días,true
+20fa76d6-fdc6-4799-a9c8-5f4df0f52917,2020,Días de capital de trabajo,Dias proveedores,76.0,76,días,true
+bbdc31f1-8f5c-4659-be94-147dcc9dd891,2021,Días de capital de trabajo,Dias cuentas por cobrar,411.0,411,días,true
+f84c6afc-f2c7-4f12-a3cf-5787de23b576,2021,Días de capital de trabajo,Dias inventario,76.0,76,días,true
+8582ec12-0977-4612-8c2d-bab871fb15b7,2021,Días de capital de trabajo,Dias proveedores,34.0,34,días,true
+efe92c23-89a4-4aeb-9eb1-6f24b1019213,2022,Días de capital de trabajo,Dias cuentas por cobrar,287.0,287,días,true
+98837525-ab4c-41f2-9564-c6d5a77fd085,2022,Días de capital de trabajo,Dias inventario,44.0,44,días,true
+df493b19-7b51-4e96-be40-1c1cca1ecd3f,2022,Días de capital de trabajo,Dias proveedores,26.0,26,días,true
+d7d2581a-2762-4bf4-89d8-e3ee087db648,2023,Días de capital de trabajo,Dias cuentas por cobrar,255.0,255,días,true
+190d6931-8ca4-4acf-9bb7-95d4914e18d3,2023,Días de capital de trabajo,Dias inventario,44.0,44,días,true
+53652ae1-72bd-4123-8c8f-878f25b26bdb,2023,Días de capital de trabajo,Dias proveedores,23.0,23,días,true
+d8ca4559-cb7a-4d97-b153-611992397d34,2024,Días de capital de trabajo,Dias cuentas por cobrar,238.0,238,días,true
+28310a70-b91a-45a1-ae71-e22e9a88ec51,2024,Días de capital de trabajo,Dias inventario,41.0,41,días,true
+bc72ae44-694a-4a0d-8511-7ce2208a373b,2024,Días de capital de trabajo,Dias proveedores,21.0,21,días,true
+45a1dd40-2ef2-4e16-b2a1-611de4dfc935,2019,Activos de largo plazo,Activos fijos y CapEx,426738.0,426.738,millones COP,false
+5af80526-403f-4287-9500-645c5dfd0511,2020,Activos de largo plazo,Activos fijos y CapEx,474363.0,474.363,millones COP,false
+735f2cfc-d8e1-4e42-a6cd-1a4b2d471f29,2021,Activos de largo plazo,Activos fijos y CapEx,465968.0,465.968,millones COP,false
+03443250-1479-4e9d-8de5-a7ef1ecbb8c5,2022,Activos de largo plazo,Activos fijos y CapEx,469846.0,469.846,millones COP,false
+d319ecb4-c670-4c03-8522-b1a585e74a07,2023,Activos de largo plazo,Activos fijos y CapEx,490334.0,490.334,millones COP,false
+bbbd9740-98a3-4054-b1f2-09e872fe32dd,2024,Activos de largo plazo,Activos fijos y CapEx,492898.0,492.898,millones COP,false
+891edc5a-8831-4dec-a7fc-6af333aab7f1,2019,Activos de largo plazo,Δ CapEx,24421.0,24.421,millones COP,false
+216235fd-c8b7-411a-bc2e-9c949d903aaf,2020,Activos de largo plazo,Δ CapEx,61926.0,61.926,millones COP,false
+5e8aac46-c573-4402-99ae-4cb88ec56b91,2021,Activos de largo plazo,Δ CapEx,1855.0,1.855,millones COP,false
+3287fca6-8f5a-4292-9e8f-077aa8052257,2022,Activos de largo plazo,Δ CapEx,13360.0,13.360,millones COP,false
+8b09ffa1-798e-4b08-8e29-1661bc286aff,2023,Activos de largo plazo,Δ CapEx,30226.0,30.226,millones COP,false
+a36b71c0-d643-4b3a-aa52-9a0df3d1cbca,2024,Activos de largo plazo,Δ CapEx,13399.0,13.399,millones COP,false
+84b08739-4b86-4e79-a15a-6b5272c4472c,2019,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-14.8,-14.8,%,true
+817f55b6-9952-46d4-a4b9-3ce8ed9c45de,2019,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,8.1,8.1,%,true
+bad4e5d6-bc94-4424-9161-b59b3043445b,2020,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-16.5,-16.5,%,true
+69cc5778-700e-4ece-97e7-4fd4555ea4d8,2020,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,53.9,53.9,%,true
+6f6e5f2f-a17a-4e32-9c3c-d6b905b1867f,2021,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-11.8,-11.8,%,true
+15060c7c-0283-4ce1-ba9f-bd6cae66394a,2021,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,0.8,0.8,%,true
+a9a27736-0f8b-4a8c-ac85-008596764b02,2022,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-7.2,-7.2,%,true
+066260c1-fc37-4b50-96ca-10c9f756ccd7,2022,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,3.2,3.2,%,true
+93ef6b49-1a83-405e-a6e7-2226009b97e2,2023,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-12.6,-12.6,%,true
+81468450-39af-4ce8-9a38-7a9b4339371c,2023,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,6.4,6.4,%,true
+b70642a1-01af-4302-907f-677e9f6120d8,2024,CapEx y Capital de trabajo / Ingresos,% Capital de trabajo/Ingresos,-10.2,-10.2,%,true
+a6b6861f-4ae5-4d58-b368-0317b371b78c,2024,CapEx y Capital de trabajo / Ingresos,% CapEx/Ingresos,2.7,2.7,%,true
+40530825-5265-4d74-8d2f-e356e8baede2,2019,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,131465.0,131.465,millones COP,false
+85cb32b9-f5e6-4592-b4db-0d042ada5469,2020,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,120898.0,120.898,millones COP,false
+5c26a24b-ba53-41fb-a567-820ab3303cfb,2021,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,126967.0,126.967,millones COP,false
+bd520254-407a-4464-95b3-894618cf100e,2022,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,184821.0,184.821,millones COP,false
+09c018d5-49c3-408f-b333-a66c7818dd1d,2023,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,220761.0,220.761,millones COP,false
+a51a22e8-544d-4193-88cf-07dc2a5366de,2024,Otros activos y otros pasivos no operacionales,Otros activos no operacionales,246683.0,246.683,millones COP,false
+5632adb4-26fb-4590-b736-de4d3ac67c8e,2019,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,5724.0,5.724,millones COP,false
+8b8e930c-1349-4212-ab60-5dbc6815d132,2020,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,345.0,345,millones COP,false
+1a9cc335-024e-4ab8-b00f-877fa1e9aad6,2021,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,0.0,0,millones COP,false
+cc520284-3975-4db4-8e4a-2840af6745d1,2022,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,8433.0,8.433,millones COP,false
+6a11a515-e2bd-45b1-95c7-f23319d1bc74,2023,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,10211.0,10.211,millones COP,false
+6513251f-b631-4726-91a5-10a95cb25274,2024,Otros activos y otros pasivos no operacionales,Otros pasivos no operacionales,11110.0,11.110,millones COP,false
+b35b3130-29eb-4591-b55e-72ed1949c169,2019,Otros activos y otros pasivos no operacionales,"OAOP, neto",125741.0,125.741,millones COP,false
+6ca05be0-bf51-49b0-b3c2-1c4b8b015201,2020,Otros activos y otros pasivos no operacionales,"OAOP, neto",120554.0,120.554,millones COP,false
+77d9ff92-619c-457c-83ee-51f28180eec5,2021,Otros activos y otros pasivos no operacionales,"OAOP, neto",126967.0,126.967,millones COP,false
+b408271a-7cd4-4c97-b717-790d5cf27e3e,2022,Otros activos y otros pasivos no operacionales,"OAOP, neto",176388.0,176.388,millones COP,false
+73bb8cf5-bef1-46ff-acc7-cdde5525247b,2023,Otros activos y otros pasivos no operacionales,"OAOP, neto",210550.0,210.550,millones COP,false
+8626fb25-e004-42bf-982a-b7174fc65cba,2024,Otros activos y otros pasivos no operacionales,"OAOP, neto",235573.0,235.573,millones COP,false
+0558a205-ffaf-45e3-b505-14eda0a29bdd,2019,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",4566.0,4.566,millones COP,false
+3fb649e4-442d-46dd-85b4-70cca55d0e99,2020,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",-5187.0,-5.187,millones COP,false
+c2cf99b7-efdd-4dc0-aef0-49601e0ce76d,2021,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",6413.0,6.413,millones COP,false
+b2fa0df2-9dcd-439c-bcfd-2b428f3d7ca4,2022,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",49421.0,49.421,millones COP,false
+5a5e3ebd-3ffd-4958-a2af-0c6ff47c1505,2023,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",34162.0,34.162,millones COP,false
+ba6a2be5-e3a5-4d89-88c4-950c30ffed2b,2024,Otros activos y otros pasivos no operacionales,"Δ OAOP, neto",25023.0,25.023,millones COP,false
