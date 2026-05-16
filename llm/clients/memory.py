@@ -3,9 +3,8 @@
 ---------
 Gestión de memoria del agente: historial de conversación y datos del usuario.
 
-Implementación actual: InMemoryStore de LangGraph (volátil, por sesión).
-Objetivo futuro: reemplazar por un store persistente (Postgres, Redis, etc.)
-sin cambios en la interfaz pública.
+Implementación actual: SqliteStore de LangGraph (persistente en SQLite).
+El historial sobrevive a refrescos del navegador y reinicios del servidor.
 
 Arquitectura de namespaces:
     - Historial: ("sessions", session_id, "messages")
@@ -13,7 +12,7 @@ Arquitectura de namespaces:
 
 Ejemplo de uso::
 
-    from llm.memory import SessionMemory
+    from llm.clients.memory import SessionMemory
 
     memory = SessionMemory()
     memory.save_message("sesion-001", "human", "¿Cuáles fueron los ingresos?")
@@ -23,11 +22,14 @@ Ejemplo de uso::
 
 from __future__ import annotations
 
+import sqlite3
 import uuid
 from datetime import UTC, datetime
+from pathlib import Path
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
-from langgraph.store.memory import InMemoryStore
+from langgraph.store.base import BaseStore
+from langgraph.store.sqlite import SqliteStore
 
 # ---------------------------------------------------------------------------
 # Constantes de namespaces
@@ -40,26 +42,50 @@ PROFILE_NS = "profile"
 # Límite por defecto de mensajes en el historial
 DEFAULT_HISTORY_LIMIT = 20
 
+# Ruta por defecto de la base de datos (raíz del proyecto / data / memoria.db)
+_DEFAULT_DB_PATH = str(
+    Path(__file__).resolve().parent.parent.parent / "data" / "memoria.db"
+)
+
 
 class SessionMemory:
     """Gestiona la memoria de conversación y datos del usuario por sesión.
 
-    Por ahora usa InMemoryStore (volátil). Para hacer persistente,
-    reemplazar el store por uno implementado sobre una base de datos
-    (Postgres, Redis, etc.) que cumpla la interfaz BaseStore de LangGraph.
+    Usa ``SqliteStore`` (persistente en disco) por defecto. Acepta cualquier
+    ``BaseStore`` de LangGraph para poder intercambiar la implementación
+    (ej: ``InMemoryStore`` para tests, ``PostgresStore`` para producción).
 
     Parámetros:
-        store: Instancia del store (crea una nueva si es None).
+        store: Instancia del store (crea un ``SqliteStore`` si es None).
                Compartir la misma instancia entre llamadas permite
                persistir datos durante la sesión de Streamlit.
+        db_path: Ruta del archivo SQLite. Solo se usa si ``store`` es None.
+                 Por defecto: ``data/memoria.db`` en la raíz del proyecto.
     """
 
-    def __init__(self, store: InMemoryStore | None = None) -> None:
-        """Inicializa el store; crea uno nuevo si no se proporciona."""
-        self._store = store if store is not None else InMemoryStore()
+    def __init__(
+        self,
+        store: BaseStore | None = None,
+        db_path: str | None = None,
+    ) -> None:
+        """Inicializa el store; crea un SqliteStore persistente si no se proporciona."""
+        if store is not None:
+            self._store = store
+        else:
+            path = db_path or _DEFAULT_DB_PATH
+            # Asegurar que el directorio existe
+            Path(path).parent.mkdir(parents=True, exist_ok=True)
+            conn = sqlite3.connect(
+                path,
+                check_same_thread=False,
+                isolation_level=None,  # autocommit — SqliteStore gestiona tx manualmente
+            )
+            conn.execute("PRAGMA journal_mode=WAL")  # mejor concurrencia
+            self._store = SqliteStore(conn)
+            self._store.setup()
 
     @property
-    def store(self) -> InMemoryStore:
+    def store(self) -> BaseStore:
         """Acceso al store subyacente para operaciones avanzadas."""
         return self._store
 

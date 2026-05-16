@@ -2,5 +2,5 @@
 
 Módulos:
   - factory: Factory pattern para crear LLMs (Claude, Ollama)
-  - memory:  Memoria de sesión (InMemoryStore de LangGraph)
+  - memory:  Memoria de sesión (SqliteStore de LangGraph)
 """

@@ -3,7 +3,7 @@ name = "hoteles-estelar-chat"
 version = "0.2.0"
 description = "Chatbot corporativo para Hoteles Estelar S.A. con Q&A, resumen ejecutivo y generación de FAQ basados en reportes financieros."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "langchain-anthropic>=1.4.2",
     "langchain-community>=0.3.0",
@@ -12,9 +12,10 @@ dependencies = [
     "langchain-openai>=0.3.0",
     "langchain-text-splitters>=0.3.0",
     "langgraph>=0.2.28",
+    "langgraph-checkpoint-sqlite>=3.0.0",
     "python-dotenv>=1.2.2",
     "streamlit>=1.57.0",
-    "supabase>=1.0.0,<2.0.0",
+    "supabase>=2.0.0",
 ]
 
 [project.optional-dependencies]

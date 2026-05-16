@@ -3,7 +3,7 @@
 ------------
 Chat Q&A sobre el reporte financiero de Hoteles Estelar S.A.
 
-Incluye memoria de conversación por sesión usando InMemoryStore de LangGraph.
+Incluye memoria de conversación persistente vía SqliteStore de LangGraph.
 El agente recuerda preguntas y respuestas previas dentro de la sesión,
 lo que permite hacer preguntas de seguimiento sobre lo ya consultado.
 
@@ -47,7 +47,7 @@ def _contexto_completo() -> str:
 
 
 # -------------------- Memoria de sesión --------------------
-# InMemoryStore se crea una vez como recurso global (persiste entre reruns).
+# SqliteStore se crea una vez como recurso global (persiste entre reruns).
 # Cada sesión de Streamlit usa su propio session_id para namespacear los datos.
 @st.cache_resource
 def _crear_memoria() -> SessionMemory:
