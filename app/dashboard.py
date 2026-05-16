@@ -142,7 +142,7 @@ if pregunta:
         ):
             try:
                 llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=1024)
-                # Contexto completo explícito — no BM25
+                # Contexto completo explícito (no fragmentos RAG)
                 respuesta = generar_resumen(contexto=_contexto_completo(), llm=llm)
                 st.markdown(respuesta)
             except Exception as e:
@@ -156,7 +156,7 @@ if pregunta:
         with st.chat_message("assistant"), st.spinner("Generando FAQ con el contexto completo..."):
             try:
                 llm = crear_llm(proveedor, modelo, temperature=0.3, max_tokens=2048)
-                # Contexto completo explícito — no BM25
+                # Contexto completo explícito (no fragmentos RAG)
                 respuesta = generar_faq(contexto=_contexto_completo(), llm=llm)
                 st.markdown(respuesta)
             except Exception as e:

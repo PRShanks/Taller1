@@ -10,7 +10,7 @@
 | Gestor de paquetes | uv (NO pip, NO poetry) |
 | Framework LLM | LangChain (langchain-core, langchain-anthropic, langchain-ollama) |
 | Proveedores LLM | Anthropic Claude (API) y Ollama (local) |
-| Recuperación | BM25 (rank-bm25) — búsqueda léxica con chunks |
+| Recuperación | Supabase pgvector con OpenAI/Ollama embeddings |
 | UI | Streamlit |
 | Scraping | Playwright + Requests (scripts separados) |
 | Variables de entorno | python-dotenv (.env, NUNCA en el repo) |
@@ -20,29 +20,39 @@
 ```text
 Taller1/
 ├── app/
-│   ├── __init__.py
-│   └── dashboard.py          # UI Streamlit (orquestación)
+│   └── dashboard.py              # UI Streamlit (orquestación)
 ├── llm/
 │   ├── __init__.py
-│   ├── data_loader.py         # Carga y consolidación de datos
-│   ├── factory.py             # Factory pattern para crear LLMs
-│   ├── faq_generator.py      # Generación de FAQ
-│   ├── memory.py              # Memoria de sesión (InMemoryStore)
-│   ├── prompts.py             # Todos los prompts (separación de lógica)
-│   ├── qa_chain.py            # Q&A con BM25 + LLM + memoria
-│   └── summarizer.py          # Resumen ejecutivo
+│   ├── clients/
+│   │   ├── factory.py            # Factory pattern para crear LLMs
+│   │   └── memory.py             # Memoria de sesión (SqliteStore persistente)
+│   ├── core/
+│   │   ├── qa.py                 # Q&A con RAG + tool-calling loop
+│   │   ├── faq_generator.py      # Generación de FAQ
+│   │   └── summarizer.py         # Resumen ejecutivo
+│   ├── financial/
+│   │   ├── db.py                 # SQLite con auto-seed desde CSV
+│   │   └── tool.py               # @tool query_financiero
+│   ├── prompts/
+│   │   └── qa.py                 # Prompts y carga del system prompt
+│   ├── rag/
+│   │   ├── embeddings.py         # Factory de embeddings (OpenAI/Ollama)
+│   │   ├── sanitizer.py          # Anti-inyección para contexto RAG
+│   │   └── vector_store.py       # SupabaseVectorStore propio
+│   ├── models.py                 # Modelos Pydantic (RespuestaQA)
+│   └── data_loader.py            # Carga y consolidación de .md a .txt
 ├── scripts/
-│   ├── consolidar_estelar.py  # Consolida .md en .txt
-│   ├── extract_estelar_report.py  # Extracción de Power BI
+│   ├── consolidar_estelar.py     # Consolida .md en .txt
+│   ├── extract_estelar_report.py # Extracción de Power BI
 │   ├── extract_hotelesestelar_web.py
 │   └── capture_analisis_individual.py
 ├── data/
-│   ├── estelar_reportes/      # Datos crudos (.md)
-│   └── processed/              # Datos consolidados (.txt autogenerado)
-├── system_prompt.txt           # System prompt externo (editable sin tocar código)
-├── main.py                     # Entry point genérico
-├── pyproject.toml              # Dependencias y metadata del proyecto
-└── Makefile                    # Automatización de tareas
+│   ├── estelar_reportes/         # Datos crudos (.md + .csv)
+│   └── processed/                # Datos consolidados (.txt + .db autogenerados)
+├── system_prompt.md              # System prompt externo (editable sin tocar código)
+├── main.py                       # Entry point genérico
+├── pyproject.toml                # Dependencias y metadata del proyecto
+└── Makefile                      # Automatización de tareas
 ```
 
 ### Principios de Diseño
@@ -50,8 +60,8 @@ Taller1/
 - **Alta cohesión**: cada módulo tiene UNA responsabilidad clara.
   - `factory.py` → crear LLMs
   - `data_loader.py` → cargar datos
-  - `prompts.py` → definir prompts
-  - `qa_chain.py` → lógica de Q&A
+  - `prompts/qa.py` → prompts y carga del system prompt
+  - `core/qa.py` → lógica de Q&A con RAG + tool-calling loop
   - `summarizer.py` → lógica de resumen
   - `faq_generator.py` → lógica de FAQ
 - **Bajo acoplamiento**: inyección de dependencias (`llm=None` con default via factory).
@@ -62,7 +72,7 @@ Taller1/
 
 ## Memoria de Sesión
 
-El módulo `llm/memory.py` gestiona la memoria de conversación usando `InMemoryStore` de LangGraph.
+El módulo `llm/clients/memory.py` gestiona la memoria de conversación usando `SqliteStore` de LangGraph (persistente en disco).
 
 Arquitectura de namespaces:
 - **Historial**: `("sessions", session_id, "messages")` — mensajes de la conversación
@@ -71,14 +81,13 @@ Arquitectura de namespaces:
 Flujo actual:
 1. `SessionMemory` se crea como singleton en Streamlit via `@st.cache_resource`
 2. Cada sesión de Streamlit tiene un `session_id` único
-3. Se guarda cada mensaje (humano + AI) en el store
-4. Al hacer una pregunta, se recupera el historial y se pasa al LLM via `MessagesPlaceholder`
-5. El botón "Limpiar historial" en el sidebar elimina la sesión del store
+3. Se guarda cada mensaje (humano + AI) en el store SQLite
+4. Al hacer una pregunta, se recupera el historial como `list[BaseMessage]` y se pasa al LLM via `_build_mensajes_base()`
+5. El botón "Limpiar historial" en el sidebar elimina los mensajes de la sesión
 
 Objetivo futuro:
-- Reemplazar `InMemoryStore` por un store persistente (Postgres, Redis, etc.)
+- Reemplazar `SqliteStore` por `PostgresStore` para sesiones distribuidas
 - La interfaz `SessionMemory` se mantiene, solo se cambia el store subyacente
-- Agregar datos personalizados por usuario via `save_user_data` / `get_user_data`
 
 ## Reglas Obligatorias
 

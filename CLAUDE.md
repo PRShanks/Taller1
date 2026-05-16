@@ -4,7 +4,7 @@
 
 Enterprise chatbot for Hoteles Estelar S.A. that provides Q&A, executive summaries, and FAQ generation based on financial and corporate reports. Built incrementally as part of a university course on Generative AI techniques.
 
-**Stack:** Python 3.12 · uv · LangChain · Anthropic Claude + Ollama · BM25 · Streamlit
+**Stack:** Python 3.12 · uv · LangChain · Anthropic Claude + Ollama · Supabase pgvector · Streamlit
 
 ## Key Architecture Decisions
 
@@ -12,7 +12,8 @@ Enterprise chatbot for Hoteles Estelar S.A. that provides Q&A, executive summari
 - **Dependency injection**: all domain functions accept `llm: BaseChatModel | None` — never instantiate LLMs inside business logic.
 - **Prompts separated**: all system prompts and templates live in `llm/prompts.py` and `system_prompt.txt`. Never hardcode prompts in chain logic.
 - **External system prompt**: `system_prompt.txt` is loaded at runtime so non-technical users can edit behavior without touching code.
-- **BM25 retrieval**: chunks of 150 words with 30-word overlap for Q&A. Simpler than vector embeddings and sufficient for structured financial text.
+- **Semantic retrieval via Supabase pgvector**: uses `SupabaseVectorStore` with OpenAI/Ollama embeddings for semantic search. Vector dimensions match the model: 768 for nomic-embed-text, 1536 (or configured) for text-embedding-3-small.
+- **Tool-calling router**: `bind_tools([query_financiero])` lets the LLM decide between RAG and deterministic SQLite financial data. Structured output with `method="json_mode"` + retry on validation error.
 
 ## Conventions
 
@@ -42,18 +43,22 @@ tests/        → Test files mirroring llm/ structure
 - Never import from `app/` in `llm/`. The dependency direction is `app/` → `llm/` → `data/`.
 - Business logic goes in `llm/`. UI orchestration goes in `app/`.
 
-### LangChain Chains
+### Message Flow
 
-Chains follow this pattern:
+The project uses direct message lists instead of chains for the main Q&A flow:
 
 ```python
-chain = PROMPT_TEMPLATE | llm | StrOutputParser()
-result = chain.invoke({"variable": value})
+mensajes = [
+    ("system", system_prompt),
+    *historial,
+    ("human", f"...{contexto}...{pregunta}"),
+]
+resultado = _invoke_estructurado(llm, mensajes)
 ```
 
-- Always use `StrOutputParser()` at the end.
-- Never call `llm.invoke()` directly for multi-step chains.
-- Pass the LLM instance, don't create it inline.
+- For tool-calling, `bind_tools([tool])` is used to expose tools to the LLM.
+- Structured output uses `with_structured_output(model, method="json_mode")` with retry on ValidationError.
+- Chains (`|` operator) are still used in summarizer and FAQ generator via `StrOutputParser()`.
 
 ## Common Tasks
 
@@ -87,7 +92,8 @@ make setup        # Initial setup (venv + dependencies)
 ## Important Notes
 
 - Python 3.12 is REQUIRED. Dependency `faiss-cpu` (future use) does not support 3.13+.
-- `.env` contains `ANTHROPIC_API_KEY` — never commit it.
-- The BM25 chunking is configured in `qa_chain.py` (chunk size 150 words, overlap 30).
-- `data/processed/estelar_consolidado.txt` is auto-generated from `data/estelar_reportes/*.md` — never edit it manually.
-- When consulting LangChain documentation, always use the latest version. The API changes frequently between major versions.
+- `.env` contiene las credenciales (ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY, OPENAI_API_KEY) — nunca commitearlo.
+- El tool-calling loop usa `bind_tools([query_financiero])` + `with_structured_output(method="json_mode")`. Si el LLM omite campos, el retry automático le informa cuáles faltan y lo reintenta.
+- `data/processed/estelar_consolidado.txt` es auto-generado desde `data/estelar_reportes/*.md` — nunca editarlo manualmente.
+- `data/processed/metricas_financieras.db` es auto-generado desde `data/estelar_reportes/metricas_financieras.csv` — nunca editarlo manualmente.
+- Cuando se consulte documentación de LangChain, siempre usar la versión más reciente. La API cambia frecuentemente entre versiones mayores.
