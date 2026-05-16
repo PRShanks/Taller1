@@ -94,54 +94,90 @@ def _invoke_estructurado(
     config: dict | None = None,
 ) -> RespuestaQA:
     """Invoca ``with_structured_output(RespuestaQA)`` con retry automático.
-
+ 
     Usa ``method="json_mode"`` para que el LLM genere JSON según el schema
     de ``RespuestaQA`` en vez de usar tool-calling. Así evita confusiones
     cuando el historial contiene tool_calls previas (``query_financiero``).
-
-    Si el LLM omite campos requeridos (ValidationError), se le informa
-    cuáles faltan y se reintenta hasta ``_MAX_STRUCTURED_RETRIES`` veces.
-
+ 
+    Si el LLM omite campos requeridos (ValidationError) o devuelve texto
+    no parseable, se reintenta hasta ``_MAX_STRUCTURED_RETRIES`` veces.
+    Si se agotan los reintentos, devuelve un RespuestaQA de fallback en
+    lugar de propagar la excepción.
+ 
     Parámetros:
         llm: Instancia del LLM.
         mensajes: Lista de mensajes para el invoke.
         config: Configuración opcional (LangSmith metadata, etc.).
-
+ 
     Devuelve:
         ``RespuestaQA`` validada.
-
-    Raise:
-        ValidationError: Si se agotan los reintentos.
     """
     llm_estructurado = llm.with_structured_output(
         RespuestaQA,
         method="json_mode",
     )
-
+ 
+    ultimo_error = None
+ 
     for intento in range(1, _MAX_STRUCTURED_RETRIES + 1):
         try:
             return llm_estructurado.invoke(mensajes, config=config)
         except ValidationError as e:
             campos = ", ".join(str(err["loc"][0]) for err in e.errors())
+            ultimo_error = str(e)
             logger.warning(
                 "RespuestaQA incompleta (intento %d/%d): faltan %s",
                 intento,
                 _MAX_STRUCTURED_RETRIES,
                 campos,
             )
-            if intento == _MAX_STRUCTURED_RETRIES:
-                raise
-            mensajes = [
-                *mensajes,
-                (
-                    "human",
-                    f"Faltan campos obligatorios en tu respuesta: {campos}. "
-                    "Incluí TODOS los campos requeridos.",
-                ),
-            ]
-
-    raise RuntimeError("No debería llegar aquí")  # pragma: no cover
-
+            if intento < _MAX_STRUCTURED_RETRIES:
+                mensajes = [
+                    *mensajes,
+                    (
+                        "human",
+                        f"Faltan campos obligatorios en tu respuesta: {campos}. "
+                        "Incluí TODOS los campos requeridos en formato JSON.",
+                    ),
+                ]
+        except Exception as e:
+            ultimo_error = str(e)
+            logger.warning(
+                "Error en invoke estructurado (intento %d/%d): %s",
+                intento,
+                _MAX_STRUCTURED_RETRIES,
+                ultimo_error,
+            )
+            if intento < _MAX_STRUCTURED_RETRIES:
+                mensajes = [
+                    *mensajes,
+                    (
+                        "human",
+                        "Tu respuesta anterior no pudo ser procesada. "
+                        "Responde ÚNICAMENTE con un JSON válido con los campos: "
+                        "respuesta, encontrado, confianza, nota.",
+                    ),
+                ]
+ 
+    # Fallback: invocar sin structured output y construir RespuestaQA manual
+    logger.error(
+        "Agotados %d reintentos. Usando fallback. Último error: %s",
+        _MAX_STRUCTURED_RETRIES,
+        ultimo_error,
+    )
+    try:
+        respuesta_raw = llm.invoke(mensajes, config=config)
+        texto = respuesta_raw.content if hasattr(respuesta_raw, "content") else str(respuesta_raw)
+    except Exception:
+        texto = "No pude generar una respuesta en este momento."
+ 
+    return RespuestaQA(
+        respuesta=texto,
+        encontrado=True,
+        confianza="media",
+        nota="Respuesta generada en modo de compatibilidad.",
+    )
+ 
 
 # ---------------------------------------------------------------------------
 # Q&A principal
