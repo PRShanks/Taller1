@@ -1,9 +1,9 @@
-"""qa.py
+"""qa.py.
 
 Prompts para el Q&A del chatbot de Hoteles Estelar.
 
 Exporta:
-  - PROMPT_QA:             Chat sin historial (usa system_prompt.txt)
+  - PROMPT_QA:             Chat sin historial (usa system_prompt.md)
   - PROMPT_QA_CON_MEMORIA: Chat con historial de conversación
 """
 
@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 # ---------------------------------------------------------------------------
 # Q&A — system prompt externo para facilitar edición sin tocar código
 # ---------------------------------------------------------------------------
-_SYSTEM_PROMPT_PATH = ROOT / "system_prompt.txt"
+_SYSTEM_PROMPT_PATH = ROOT / "system_prompt.md"
 
 
 def _cargar_system_prompt() -> str:
@@ -25,6 +25,20 @@ def _cargar_system_prompt() -> str:
     contenido = _SYSTEM_PROMPT_PATH.read_text(encoding="utf-8")
     # Escapar llaves para que LangChain no las interprete como variables de plantilla
     return contenido.replace("{", "{{").replace("}", "}}")
+
+
+def cargar_system_prompt() -> str:
+    """Carga el system prompt desde ``system_prompt.md``.
+
+    Versión pública de ``_cargar_system_prompt``. Útil para construir
+    mensajes manualmente en el tool-calling loop de ``responder_pregunta``,
+    donde no se usa ``ChatPromptTemplate``.
+
+    Devuelve:
+        Contenido del archivo ``system_prompt.md`` con las llaves escapadas
+        para que LangChain no las interprete como variables de plantilla.
+    """
+    return _cargar_system_prompt()
 
 
 PROMPT_QA = ChatPromptTemplate.from_messages(

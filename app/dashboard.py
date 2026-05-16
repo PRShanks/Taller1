@@ -204,8 +204,10 @@ if pregunta:
                 col1, col2 = st.columns([1, 5])
                 with col1:
                     st.caption(f"Confianza: {badge}")
-                if resultado.get("nota"):
-                    with col2:
+                with col2:
+                    if resultado.get("uso_tool_financiera"):
+                        st.caption("📊 Consultado con tool financiera")
+                    if resultado.get("nota"):
                         st.caption(f"💡 {resultado['nota']}")
 
                 if resultado.get("fuentes"):

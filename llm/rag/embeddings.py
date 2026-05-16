@@ -58,6 +58,7 @@ def crear_embeddings(
             )
         return OpenAIEmbeddings(
             model=modelo or "text-embedding-3-small",
+            dimensions=768,
             api_key=api_key,
         )
 
